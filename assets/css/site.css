@@ -372,12 +372,17 @@ a.cartao:hover { transform: translateY(-3px); box-shadow: var(--sombra); border-
 .rodape { background: var(--videira-profunda); color: #B6C4A8; padding: 72px 0 28px; font-size: .95rem; }
 .rodape a { color: #DCE6D1; text-decoration: none; }
 .rodape a:hover { color: #fff; text-decoration: underline; }
-.rodape-grade { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; }
+.rodape-grade { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.2fr; gap: 40px; }
 .rodape h4 { font-family: var(--f-texto); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: #8FA87A; margin-bottom: 1rem; }
 .rodape ul { list-style: none; padding: 0; margin: 0; }
 .rodape li { margin-bottom: .55rem; }
-.rodape .logo-rodape { height: 120px; width: auto; margin-bottom: 18px; }
-.rodape .ipb { font-size: .85rem; line-height: 1.6; }
+.marcas-rodape { display: flex; align-items: center; gap: 22px; }
+.rodape .logo-rodape { height: 104px; width: auto; }
+.marcas-rodape .divisor { width: 1px; align-self: stretch; margin: 10px 0; background: rgba(255,255,255,.18); }
+.rodape .logo-ipb { display: block; opacity: .85; transition: opacity .2s; }
+.rodape .logo-ipb:hover { opacity: 1; }
+.rodape .logo-ipb img { height: 56px; width: auto; }
+.rodape .slogan { margin: 18px 0 0; font-family: var(--f-titulo); font-style: italic; font-size: 1.15rem; color: #DCE6D1; }
 .rodape-base { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .82rem; color: #7E9470; }
 .redes { display: flex; gap: 10px; margin-top: 16px; }
 .redes a { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.07); }
