@@ -8,12 +8,13 @@ Site institucional publicado em **https://ipchacara.org** pelo GitHub Pages.
 | Endereço       | Arquivo                    | Conteúdo |
 |----------------|----------------------------|----------|
 | `/`            | `index.html`               | Página inicial |
-| `/sobre`       | `sobre/index.html`         | História, propósito, IPB, liderança |
+| `/sobre`       | `sobre/index.html`         | Propósito e IPB (história e liderança estão em `_rascunhos/`) |
 | `/cremos`      | `cremos/index.html`        | Confissão de fé, Cinco Solas, Westminster |
-| `/ministerios` | `ministerios/index.html`   | PGDs, EBD, oração, sociedades, louvor, serviço |
+| `/ministerios` | `ministerios/index.html`   | EBD, oração, sociedades, música, serviço |
+| `/sociedades/ucp` … `/uph` | `sociedades/*/index.html` | Uma página por sociedade interna (história, propósito, lema) |
 | `/eventos`     | `eventos/index.html`       | Agenda (semana e mês) |
 | `/visitante`   | `visitante/index.html`     | Cadastro de visitantes (grava na planilha via Google Apps Script) |
-| `/contribua`   | `contribua/index.html`     | Dízimos e ofertas |
+| `/contribua`   | `contribua/index.html`     | Dízimos e ofertas (PIX da igreja sede, QR Codes em `assets/img/pix-*.png`) |
 | `/contato`     | `contato/index.html`       | Endereço, mapa, mensagem e pedido de oração |
 | `/natal2026`   | `natal2026/index.html`     | Inscrição de coristas da Cantata (Google Forms) |
 | `/identidade`  | `identidade/index.html`    | Guia de identidade visual (fora do menu) |
@@ -36,20 +37,17 @@ O evento aparece sozinho na agenda e nos "Próximos encontros" da página inicia
 
 **Trocar o destaque da página inicial** (hoje, a Cantata): bloco `DESTAQUE SAZONAL` em `index.html`.
 
+**PDFs dos Símbolos de Fé:** ficam em `assets/docs/` (Confissão, Catecismo Maior e Breve Catecismo) e são linkados pelos cartões da página `/cremos`. Para trocar um documento, substitua o arquivo mantendo o mesmo nome.
+
 **Colocar fotos:** envie a imagem para `Imagens/` e, dentro do `<div class="quadro-arte">` desejado, adicione `<img class="foto" src="/Imagens/arquivo.jpg" alt="descrição">`. Prefira JPG com até 1600 px de largura.
 
 ## Conteúdo pendente
 
-Trechos com fundo amarelo listrado (classe `a-definir`) precisam ser preenchidos pela igreja:
-
-- [ ] História da igreja — `sobre/index.html`
-- [ ] Nomes e fotos do pastor e do Conselho; diáconos — `sobre/index.html`
-- [ ] Classes da Escola Bíblica — `ministerios/index.html`
-- [ ] Quais sociedades internas estão ativas — `ministerios/index.html`
-- [ ] Chave PIX, QR Code e dados bancários — `contribua/index.html`
+- [ ] História da igreja e liderança (pastor, presbíteros e diáconos): o layout está pronto em `_rascunhos/sobre-historia-e-lideranca.html`, com instruções para voltar à página `/sobre`
 - [ ] WhatsApp, Instagram e YouTube — `assets/js/site.js`
-- [ ] Fotos reais (fachada, cultos, PGDs, EBD, louvor)
 - [ ] Logo em vetor (SVG/PDF) e versão horizontal
+
+A pasta `_rascunhos/` não é publicada pelo GitHub Pages (pastas que começam com `_` são ignoradas).
 
 ## Identidade visual
 

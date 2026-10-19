@@ -100,7 +100,7 @@
           <div class="rodape-grade">
             <div>
               <img class="logo-rodape" src="/assets/img/logo-vertical-branco.png" alt="Presbiteriana Chácara Parreiral" width="187" height="120">
-              <p class="ipb">Igreja federada à Igreja Presbiteriana do Brasil (IPB).</p>
+              <p class="ipb">Igreja Presbiteriana do Brasil (IPB).</p>
               <div class="redes">${redes}</div>
             </div>
             <div>

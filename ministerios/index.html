@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ministérios — Presbiteriana Chácara Parreiral</title>
-<meta name="description" content="PGDs, Escola Bíblica, sociedades internas, música e diaconia: conheça os ministérios da Igreja Presbiteriana Chácara Parreiral.">
+<meta name="description" content="Escola Bíblica, oração, sociedades internas, música e diaconia: conheça os ministérios da Igreja Presbiteriana Chácara Parreiral.">
 <meta name="theme-color" content="#15240F">
 <link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +15,14 @@
 <style>
   .ministerio { scroll-margin-top: calc(var(--header-h) + 24px); }
   .ministerio .quando { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+  .classes { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
+  .classes li { background: #fff; border: 1px solid var(--linha); border-left: 3px solid var(--c-escola, #2E6A9E); border-radius: 10px; padding: 12px 16px; }
+  .classes strong { display: block; color: var(--videira); }
+  .classes span { font-size: .93rem; color: var(--texto-suave); }
   .sociedades { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 40px; }
-  .sociedade { background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 22px 18px; }
+  .sociedade { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 22px 18px; text-decoration: none; color: inherit; transition: transform .2s, box-shadow .2s; }
+  .sociedade:hover { transform: translateY(-3px); box-shadow: var(--sombra); color: inherit; }
+  .sociedade .mais { margin-top: auto; padding-top: 12px; font-weight: 700; font-size: .85rem; color: var(--uva); }
   .sociedade .sigla { font-family: var(--f-titulo); font-size: 1.7rem; color: var(--uva); line-height: 1; }
   .sociedade h3 { font-size: 1rem; margin: 8px 0 6px; font-family: var(--f-texto); font-weight: 700; }
   .sociedade p { font-size: .9rem; color: var(--texto-suave); margin: 0; }
@@ -37,23 +43,6 @@
     </div>
   </section>
 
-  <!-- PGDs -->
-  <section class="secao ministerio" id="pgds">
-    <div class="container duas-colunas">
-      <div class="revelar">
-        <div class="quadro-arte"><img class="simb" src="/assets/img/simbolo-branco.png" alt=""><span class="legenda">Espaço para foto de um PGD</span></div>
-      </div>
-      <div class="revelar">
-        <div class="sobretitulo">Pequenos grupos</div>
-        <h2>PGDs — Pequenos Grupos Discipuladores</h2>
-        <p class="lead">A igreja também acontece nas casas. A cada quinze dias, nos reunimos em pequenos grupos para estudar a Bíblia, orar e cuidar uns dos outros.</p>
-        <p>É nos PGDs que as amizades se aprofundam e ninguém passa despercebido. Se você é novo na igreja, esse é o melhor caminho para se sentir parte da família.</p>
-        <div class="quando"><span class="selo pgd">Quintas, quinzenal</span><span class="selo pgd">19h30</span><span class="selo pgd">Nas casas</span></div>
-        <a class="btn btn-videira" href="/contato" style="margin-top:24px">Quero participar de um PGD</a>
-      </div>
-    </div>
-  </section>
-
   <!-- EBD -->
   <section class="secao areia ministerio" id="ebd">
     <div class="container duas-colunas">
@@ -61,11 +50,14 @@
         <div class="sobretitulo">Ensino</div>
         <h2>Escola Bíblica Dominical</h2>
         <p class="lead">Todo domingo, antes do culto, separamos um tempo para estudar a Palavra de Deus com calma e em turmas.</p>
-        <p>Há classes para crianças, adolescentes, jovens e adultos, além de uma classe para novos membros e para quem quer conhecer melhor a fé cristã. <span class="a-definir">[Confirmar as classes oferecidas]</span></p>
+        <ul class="classes">
+          <li><strong>Jovens e adultos</strong><span>Uma classe única, para estudarmos juntos e de forma aprofundada.</span></li>
+          <li><strong>Crianças</strong><span>Classes separadas por faixa etária, com linguagem e material adequados a cada idade.</span></li>
+        </ul>
         <div class="quando"><span class="selo escola">Domingos</span><span class="selo escola">18h00</span><span class="selo escola">Todas as idades</span></div>
       </div>
       <div class="revelar">
-        <div class="quadro-arte" style="background:linear-gradient(140deg,#2E5A7A,#1F3A52)"><img class="simb" src="/assets/img/simbolo-branco.png" alt=""><span class="legenda">Espaço para foto da EBD</span></div>
+        <div class="quadro-arte" style="background:linear-gradient(140deg,#2E5A7A,#1F3A52)"><img class="simb" src="/assets/img/simbolo-branco.png" alt=""></div>
       </div>
     </div>
   </section>
@@ -87,14 +79,14 @@
         <div class="sobretitulo">Sociedades internas</div>
         <h2>Comunhão em cada fase da vida</h2>
         <p class="lead">Na Igreja Presbiteriana, crianças, adolescentes, jovens, mulheres e homens se organizam em sociedades para estudar, servir e conviver.</p>
-        <p><span class="a-definir">[Confirmar quais sociedades estão ativas na igreja e remover as demais]</span></p>
+        <p>Conheça a história e o propósito de cada uma.</p>
       </div>
       <div class="sociedades">
-        <div class="sociedade revelar"><div class="sigla">UCP</div><h3>União de Crianças Presbiterianas</h3><p>Crianças aprendendo de Jesus com alegria.</p></div>
-        <div class="sociedade revelar"><div class="sigla">UPA</div><h3>União Presbiteriana de Adolescentes</h3><p>Adolescentes de 12 a 18 anos.</p></div>
-        <div class="sociedade revelar"><div class="sigla">UMP</div><h3>União de Mocidade Presbiteriana</h3><p>Jovens de 19 a 35 anos.</p></div>
-        <div class="sociedade revelar"><div class="sigla">SAF</div><h3>Sociedade Auxiliadora Feminina</h3><p>Mulheres servindo e cuidando.</p></div>
-        <div class="sociedade revelar"><div class="sigla">UPH</div><h3>União Presbiteriana de Homens</h3><p>Homens em comunhão e serviço.</p></div>
+        <a class="sociedade revelar" href="/sociedades/ucp/"><div class="sigla">UCP</div><h3>União de Crianças Presbiterianas</h3><p>Crianças de 6 a 11 anos.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/upa/"><div class="sigla">UPA</div><h3>União Presbiteriana de Adolescentes</h3><p>Adolescentes de 12 a 18 anos.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/ump/"><div class="sigla">UMP</div><h3>União de Mocidade Presbiteriana</h3><p>Jovens de 18 a 35 anos.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/saf/"><div class="sigla">SAF</div><h3>Sociedade Auxiliadora Feminina</h3><p>Mulheres servindo e cuidando.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/uph/"><div class="sigla">UPH</div><h3>União Presbiteriana de Homens</h3><p>Homens em comunhão e serviço.</p><span class="mais">Conheça →</span></a>
       </div>
     </div>
   </section>
@@ -103,14 +95,14 @@
   <section class="secao ministerio" id="louvor">
     <div class="container duas-colunas">
       <div class="revelar">
-        <div class="quadro-arte" style="background:linear-gradient(140deg,var(--uva),var(--uva-escura))"><img class="simb" src="/assets/img/simbolo-branco.png" alt=""><span class="legenda">Espaço para foto do louvor</span></div>
+        <div class="quadro-arte" style="background:linear-gradient(140deg,var(--uva),var(--uva-escura))"><img class="simb" src="/assets/img/simbolo-branco.png" alt=""></div>
       </div>
       <div class="revelar">
         <div class="sobretitulo">Música</div>
         <h2>Música e louvor</h2>
         <p class="lead">Nossos músicos e cantores servem para que toda a igreja cante a Deus com entendimento e de coração.</p>
-        <p>Além do louvor nos cultos, temos o coral, que prepara apresentações especiais como a Cantata de Natal.</p>
-        <div class="grupo-btn" style="margin-top:20px"><a class="btn btn-uva" href="/natal2026">Inscrição para a Cantata</a></div>
+        <p>Além do louvor nos cultos, estamos começando o nosso coral. Se você gosta de cantar, venha fazer parte: não é preciso experiência, só disposição para aprender e louvar a Deus junto com os irmãos.</p>
+        <div class="grupo-btn" style="margin-top:20px"><a class="btn btn-uva" href="/contato">Quero participar do coral</a></div>
       </div>
     </div>
   </section>

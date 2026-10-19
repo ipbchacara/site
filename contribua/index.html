@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contribua — Presbiteriana Chácara Parreiral</title>
-<meta name="description" content="Dízimos e ofertas para a Igreja Presbiteriana Chácara Parreiral: PIX, transferência ou no gazofilácio durante o culto.">
+<meta name="description" content="Dízimos e ofertas para a Igreja Presbiteriana Chácara Parreiral: PIX por QR Code ou chave, ou no gazofilácio durante o culto.">
 <meta name="theme-color" content="#15240F">
 <link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,31 +32,41 @@
         <div class="sobretitulo">Por que contribuímos</div>
         <h2 style="margin-top:0">Gratidão, não obrigação</h2>
         <p>Tudo o que temos vem de Deus. Quando devolvemos o dízimo e entregamos nossas ofertas, reconhecemos que ele é o Senhor da nossa vida e participamos da sua obra.</p>
-        <p>As contribuições sustentam o ministério pastoral, as atividades da igreja, a manutenção do templo, a ação social e o apoio a missões. O uso dos recursos é decidido pelo Conselho e prestado em contas à igreja.</p>
+        <p>As contribuições sustentam o ministério pastoral, as atividades da igreja, a manutenção do templo, a ação social e o apoio a missões. O uso dos recursos é decidido pela liderança da igreja e prestado em contas à igreja.</p>
         <blockquote>“Cada um contribua segundo tiver proposto no coração, não com tristeza ou por necessidade; porque Deus ama a quem dá com alegria.”<cite>2 Coríntios 9.7</cite></blockquote>
       </div>
 
       <div class="revelar" style="display:grid;gap:20px">
-        <div class="cartao-form">
-          <div class="sobretitulo">PIX</div>
+        <p class="pix-instrucao">Abra o app do seu banco, escolha PIX e leia o QR Code ou cole a chave.</p>
+        <div class="cartao-form pix-cartao">
+          <div class="sobretitulo">Dízimo</div>
           <div class="pix">
-            <div class="pix-qr"><span class="a-definir">[QR Code do PIX]</span></div>
+            <button class="pix-qr-img" type="button" onclick="ampliarQR('dizimo','Dízimo')" aria-label="Ampliar QR Code de Dízimo"><img id="qr-dizimo" src="/assets/img/pix-dizimo.png" alt="QR Code PIX para Dízimo" width="168" height="168"></button>
             <div>
-              <h3 style="margin-bottom:.3em">Chave PIX (CNPJ)</h3>
-              <p style="color:var(--texto-suave);font-size:.95rem">Em nome de Igreja Presbiteriana Chácara Parreiral.</p>
-              <div class="chave"><span id="chave-pix" class="a-definir">[00.000.000/0001-00]</span><button class="btn btn-videira" type="button" style="padding:.5rem 1rem;font-size:.85rem" onclick="copiarPix(this)">Copiar</button></div>
+              <span class="pix-tipo">PIX · Chave CNPJ</span>
+              <div class="chave"><span id="chave-dizimo">02.342.872/0001-63</span></div>
+              <span class="pix-nome">Igreja Presbiteriana em Jardim Camburi</span>
+              <button class="btn btn-videira pix-copiar" type="button" onclick="copiarPix('chave-dizimo', this)">Copiar chave PIX</button>
             </div>
           </div>
         </div>
-        <div class="cartao">
-          <h3>Transferência bancária</h3>
-          <p><span class="a-definir">[Banco · Agência · Conta · CNPJ]</span></p>
+        <div class="cartao-form pix-cartao">
+          <div class="sobretitulo">Ofertas</div>
+          <div class="pix">
+            <button class="pix-qr-img" type="button" onclick="ampliarQR('oferta','Ofertas')" aria-label="Ampliar QR Code de Ofertas"><img id="qr-oferta" src="/assets/img/pix-oferta.png" alt="QR Code PIX para Ofertas" width="168" height="168"></button>
+            <div>
+              <span class="pix-tipo">PIX · Chave e-mail</span>
+              <div class="chave"><span id="chave-oferta">ipbcp.cp@gmail.com</span></div>
+              <span class="pix-nome">Igreja Presbiteriana em Jardim Camburi</span>
+              <button class="btn btn-videira pix-copiar" type="button" onclick="copiarPix('chave-oferta', this)">Copiar chave PIX</button>
+            </div>
+          </div>
         </div>
         <div class="cartao">
           <h3>No culto</h3>
           <p>Você também pode entregar seu dízimo ou oferta no gazofilácio durante os cultos de domingo.</p>
         </div>
-        <p style="font-size:.88rem;color:var(--texto-suave);margin:0">Antes de transferir, confira se o nome do recebedor é o da igreja. Em caso de dúvida, fale com a tesouraria: <a href="mailto:secretaria@ipchacara.org">secretaria@ipchacara.org</a>.</p>
+        <p class="nota" style="margin:0;max-width:none">O recebedor aparece como <strong>Igreja Presbiteriana em Jardim Camburi</strong>, nossa igreja sede, que recebe as contribuições enquanto caminhamos para a organização como igreja. Em caso de dúvida, fale com a tesouraria: <a href="mailto:secretaria@ipchacara.org">secretaria@ipchacara.org</a>.</p>
       </div>
     </div>
   </section>
@@ -64,13 +74,29 @@
 
 <div id="site-footer"></div>
 
+<div class="qr-modal" id="qr-modal" hidden onclick="if(event.target===this)fecharQR()">
+  <div class="qr-modal-caixa" role="dialog" aria-modal="true" aria-labelledby="qr-modal-titulo">
+    <p class="sobretitulo" id="qr-modal-titulo"></p>
+    <img id="qr-modal-img" src="" alt="QR Code ampliado">
+    <button class="btn btn-contorno" type="button" onclick="fecharQR()">Fechar</button>
+  </div>
+</div>
+
 <script>
-  function copiarPix(botao) {
-    const texto = document.getElementById('chave-pix').textContent.trim();
-    const ok = () => { botao.textContent = 'Copiado!'; setTimeout(() => botao.textContent = 'Copiar', 2000); };
+  function copiarPix(id, botao) {
+    const texto = document.getElementById(id).textContent.trim();
+    const original = botao.textContent;
+    const ok = () => { botao.textContent = 'Chave copiada!'; setTimeout(() => botao.textContent = original, 2000); };
     if (navigator.clipboard) navigator.clipboard.writeText(texto).then(ok).catch(() => {});
     else { const t = document.createElement('textarea'); t.value = texto; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); ok(); }
   }
+  function ampliarQR(id, rotulo) {
+    document.getElementById('qr-modal-img').src = document.getElementById('qr-' + id).src;
+    document.getElementById('qr-modal-titulo').textContent = rotulo;
+    document.getElementById('qr-modal').hidden = false;
+  }
+  function fecharQR() { document.getElementById('qr-modal').hidden = true; }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharQR(); });
 </script>
 </body>
 </html>

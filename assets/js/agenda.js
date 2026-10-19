@@ -10,23 +10,13 @@ const PROGRAMACAO_SEMANAL = [
   { dia: 2, titulo: 'Reunião de Oração',        hora: '19h30', tipo: 'oracao', selo: 'Semanal' },
 ];
 
-// PGDs: quinzenal, às quintas, a partir desta data de referência (ano, mês-1, dia)
-const PGD_INICIO = new Date(2026, 3, 23);
-const PGD = { titulo: 'PGDs', hora: '19h30', tipo: 'pgd', selo: 'Quinzenal', sub: 'Pequenos Grupos Discipuladores, nas casas' };
-
 // Eventos especiais. Formato da data: 'AAAA-MM-DD'.
 // Exemplo:
 //   { data: '2026-12-20', titulo: 'Cantata de Natal', hora: '19h30', tipo: 'especial', selo: 'Especial', sub: 'Aberta à comunidade', link: '/natal2026' },
 const EVENTOS_ESPECIAIS = [
 ];
 
-const ROTULO_TIPO = { culto: 'Culto', escola: 'Escola Bíblica', oracao: 'Oração', pgd: 'PGDs', especial: 'Especial' };
-
-function ehPGD(data) {
-  const d = new Date(data.getFullYear(), data.getMonth(), data.getDate());
-  const dif = Math.round((d - PGD_INICIO) / 86400000);
-  return data.getDay() === 4 && dif >= 0 && dif % 14 === 0;
-}
+const ROTULO_TIPO = { culto: 'Culto', escola: 'Escola Bíblica', oracao: 'Oração', especial: 'Especial' };
 
 function dataISO(d) {
   return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
@@ -34,7 +24,6 @@ function dataISO(d) {
 
 function eventosDoDia(data) {
   const lista = PROGRAMACAO_SEMANAL.filter(e => e.dia === data.getDay()).map(e => ({ ...e }));
-  if (ehPGD(data)) lista.push({ ...PGD });
   const iso = dataISO(data);
   EVENTOS_ESPECIAIS.forEach(e => { if (e.data === iso) lista.push({ tipo: 'especial', selo: 'Especial', ...e }); });
   return lista.sort((a, b) => a.hora.localeCompare(b.hora));
