@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Dízimos e Ofertas — Presbiteriana Chácara Parreiral</title>
+<!-- Página fora dos menus, para acesso direto pelo Linktree (ipchacara.org/pix) -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="PIX para dízimos e ofertas da Igreja Presbiteriana Chácara Parreiral.">
+<meta name="theme-color" content="#15240F">
+<link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+  body { background: var(--videira-profunda); min-height: 100vh; }
+  .pix-pagina { max-width: 440px; margin: 0 auto; padding: 20px 16px calc(28px + env(safe-area-inset-bottom)); }
+  .pix-topo { text-align: center; color: #fff; margin-bottom: 18px; }
+  .pix-topo img { height: 52px; width: auto; margin: 0 auto 12px; }
+  .pix-topo h1 { color: #fff; font-size: 1.55rem; margin-bottom: .25em; }
+  .pix-topo p { color: #C9D6BD; margin: 0; font-size: .88rem; line-height: 1.5; }
+  .pix-topo strong { color: #fff; }
+  .pix-card { background: #fff; border-radius: var(--raio-g); padding: 16px; margin-bottom: 12px; }
+  .pix-card .sobretitulo { margin-bottom: 10px; }
+  .pix-linha { display: grid; grid-template-columns: 116px 1fr; gap: 14px; align-items: center; }
+  .qr-botao { display: block; width: 100%; padding: 6px 6px 4px; background: #fff; border: 1px solid var(--linha); border-radius: 12px; cursor: zoom-in; font: inherit; }
+  .qr-botao img { width: 100%; height: auto; image-rendering: pixelated; }
+  .qr-botao .ampliar { display: flex; align-items: center; justify-content: center; gap: 4px; margin-top: 2px; font-size: .68rem; font-weight: 600; color: var(--texto-suave); }
+  .qr-botao .ampliar svg { width: 11px; height: 11px; }
+  .pix-dados { min-width: 0; }
+  .pix-dados .tipo { display: block; font-size: .74rem; font-weight: 700; color: var(--texto-suave); margin-bottom: 4px; }
+  .pix-dados .chave { padding: 8px 10px; font-size: .92rem; }
+  .pix-dados .nome { display: block; font-size: .72rem; line-height: 1.35; color: var(--texto-suave); margin-top: 6px; }
+  .pix-card .btn { width: 100%; margin-top: 12px; padding: .75rem 1rem; font-size: .92rem; }
+  .pix-card .btn svg { width: 16px; height: 16px; }
+  .pix-rodape { text-align: center; color: #8FA87A; font-size: .8rem; line-height: 1.6; margin-top: 20px; }
+  .pix-rodape a { color: #DCE6D1; font-weight: 700; text-decoration: none; }
+  .pix-rodape a:hover { color: #fff; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<main class="pix-pagina">
+  <header class="pix-topo">
+    <img src="/assets/img/logo-vertical-branco.png" alt="Presbiteriana Chácara Parreiral" width="81" height="52">
+    <h1>Dízimos e Ofertas</h1>
+    <p>Abra o <strong>app do seu banco</strong>, escolha PIX e leia o QR Code ou cole a chave.</p>
+  </header>
+
+  <section class="pix-card" aria-labelledby="t-dizimo">
+    <div class="sobretitulo" id="t-dizimo">Dízimo</div>
+    <div class="pix-linha">
+      <button class="qr-botao" type="button" onclick="ampliarQR('dizimo', 'Dízimo')" aria-label="Ampliar QR Code do dízimo">
+        <img id="qr-dizimo" src="/assets/img/pix-dizimo.png" alt="QR Code PIX para dízimo" width="220" height="220">
+        <span class="ampliar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Ampliar</span>
+      </button>
+      <div class="pix-dados">
+        <span class="tipo">Chave CNPJ</span>
+        <div class="chave" id="chave-dizimo">02.342.872/0001-63</div>
+        <span class="nome">Igreja Presbiteriana em Jardim Camburi</span>
+      </div>
+    </div>
+    <button class="btn btn-videira" type="button" onclick="copiarChave('chave-dizimo', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span>Copiar chave PIX</span>
+    </button>
+  </section>
+
+  <section class="pix-card" aria-labelledby="t-oferta">
+    <div class="sobretitulo" id="t-oferta">Ofertas</div>
+    <div class="pix-linha">
+      <button class="qr-botao" type="button" onclick="ampliarQR('oferta', 'Ofertas')" aria-label="Ampliar QR Code das ofertas">
+        <img id="qr-oferta" src="/assets/img/pix-oferta.png" alt="QR Code PIX para ofertas" width="220" height="220">
+        <span class="ampliar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Ampliar</span>
+      </button>
+      <div class="pix-dados">
+        <span class="tipo">Chave e-mail</span>
+        <div class="chave" id="chave-oferta">ipbcp.cp@gmail.com</div>
+        <span class="nome">Igreja Presbiteriana em Jardim Camburi</span>
+      </div>
+    </div>
+    <button class="btn btn-videira" type="button" onclick="copiarChave('chave-oferta', this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span>Copiar chave PIX</span>
+    </button>
+  </section>
+
+  <footer class="pix-rodape">
+    O recebedor aparece como Igreja Presbiteriana em Jardim Camburi, nossa igreja sede.<br>
+    <a href="/">Conheça o nosso site →</a>
+  </footer>
+</main>
+
+<div class="qr-modal" id="qr-modal" hidden onclick="if (event.target === this) fecharQR()">
+  <div class="qr-modal-caixa" role="dialog" aria-modal="true" aria-labelledby="qr-modal-titulo">
+    <p class="sobretitulo" id="qr-modal-titulo"></p>
+    <img id="qr-modal-img" src="" alt="QR Code ampliado">
+    <button class="btn btn-contorno" type="button" onclick="fecharQR()">Fechar</button>
+  </div>
+</div>
+
+<script>
+  function copiarChave(id, botao) {
+    const texto = document.getElementById(id).textContent.trim();
+    const rotulo = botao.querySelector('span');
+    const ok = () => { rotulo.textContent = 'Chave copiada!'; setTimeout(() => rotulo.textContent = 'Copiar chave PIX', 2000); };
+    if (navigator.clipboard) navigator.clipboard.writeText(texto).then(ok).catch(copiaManual);
+    else copiaManual();
+    function copiaManual() {
+      const t = document.createElement('textarea'); t.value = texto; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); ok(); } catch (e) {} t.remove();
+    }
+  }
+  function ampliarQR(id, rotulo) {
+    document.getElementById('qr-modal-img').src = document.getElementById('qr-' + id).src;
+    document.getElementById('qr-modal-titulo').textContent = rotulo;
+    document.getElementById('qr-modal').hidden = false;
+  }
+  function fecharQR() { document.getElementById('qr-modal').hidden = true; }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharQR(); });
+</script>
+</body>
+</html>
