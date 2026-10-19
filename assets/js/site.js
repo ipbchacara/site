@@ -110,7 +110,7 @@
             </div>
             <div>
               <h4>Navegue</h4>
-              <ul>${MENU.slice(1, 5).map(l => `<li><a href="${l.href}">${l.rotulo}</a></li>`).join('')}</ul>
+              <ul>${[...MENU.slice(1, 3), { rotulo: 'Como nos organizamos', href: '/governo' }, ...MENU.slice(3, 5)].map(l => `<li><a href="${l.href}">${l.rotulo}</a></li>`).join('')}</ul>
             </div>
             <div>
               <h4>Participe</h4>
