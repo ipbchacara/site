@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identidade visual — Presbiteriana Chácara Parreiral</title>
+<meta name="description" content="Guia de identidade visual da Igreja Presbiteriana Chácara Parreiral: logo, cores, tipografia e aplicações.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#15240F">
+<link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/site.js" defer></script>
+<style>
+  .indice { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .indice a { color: #DCE6D1; text-decoration: none; font-size: .88rem; font-weight: 600; padding: .4rem .9rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; }
+  .indice a:hover { background: #fff; color: var(--videira); }
+  .bloco { scroll-margin-top: calc(var(--header-h) + 24px); }
+  .logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .logos > *, .cores > *, .posts > * { min-width: 0; }
+  .logo-caixa { border-radius: var(--raio); border: 1px solid var(--linha); aspect-ratio: 1; display: grid; place-items: center; padding: 28px; position: relative; }
+  .logo-caixa img { position: absolute; left: 14%; top: 14%; width: 72% !important; height: 62% !important; object-fit: contain; }
+  .logo-caixa small { position: absolute; left: 12px; bottom: 10px; font-size: .75rem; color: var(--texto-suave); }
+  .logo-caixa.escuro small { color: #8FA87A; }
+  .logo-caixa a { position: absolute; right: 10px; bottom: 8px; font-size: .75rem; font-weight: 700; }
+  .escuro { background: var(--videira-profunda); border-color: transparent; }
+  .vermelho { background: var(--uva); border-color: transparent; }
+  .cores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cor { border-radius: var(--raio); overflow: hidden; border: 1px solid var(--linha); background: #fff; }
+  .cor .amostra { height: 120px; }
+  .cor .dados { padding: 14px 16px; font-size: .85rem; color: var(--texto-suave); }
+  .cor .dados strong { display: block; color: var(--videira); font-size: 1rem; }
+  .cor .dados code { font-family: ui-monospace, Consolas, monospace; color: var(--texto); }
+  .proporcao { display: flex; height: 48px; border-radius: 12px; overflow: hidden; margin-top: 24px; border: 1px solid var(--linha); }
+  .tipos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .tipo { background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 28px; }
+  .tipo .grande { font-size: 4.5rem; line-height: 1; color: var(--videira); margin: 12px 0; }
+  .regras { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .regras ul { margin: 0; padding-left: 1.2em; }
+  .regras li { margin-bottom: .5em; color: var(--texto-suave); }
+  .sim h3 { color: var(--folha); }
+  .nao h3 { color: var(--uva); }
+  .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .post { aspect-ratio: 4/5; border-radius: var(--raio); overflow: hidden; position: relative; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; color: #fff; }
+  .post .aneis { opacity: .9; }
+  .post .topo-post { display: flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; position: relative; }
+  .post .topo-post img { height: 28px; width: auto; }
+  .post h4 { font-family: var(--f-titulo); font-size: 1.9rem; line-height: 1.1; color: #fff; margin: 0; position: relative; font-weight: 600; }
+  .post h4 em { font-weight: 400; }
+  .post p { position: relative; margin: 0; font-size: .9rem; opacity: .85; }
+  .post.claro { background: var(--pergaminho); color: var(--videira); border: 1px solid var(--linha); }
+  .post.claro h4 { color: var(--videira); }
+  .post .aneis.canto { inset: auto -30% -30% auto; width: 90%; aspect-ratio: 1; }
+  @media (max-width: 960px) { .logos, .cores { grid-template-columns: repeat(2, 1fr); } .posts { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .tipos, .regras, .posts { grid-template-columns: 1fr; } .tipo .grande { font-size: 3.4rem; } }
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main id="conteudo">
+  <section class="pagina-topo">
+    <img class="simbolo-fundo" src="/assets/img/simbolo-branco.png" alt="">
+    <div class="container">
+      <div class="sobretitulo">Guia de marca · proposta v1</div>
+      <h1>Identidade visual</h1>
+      <p class="lead">Como usar a marca da Presbiteriana Chácara Parreiral no site, nas redes sociais, em impressos e em eventos, sempre com a mesma cara.</p>
+      <nav class="indice" aria-label="Seções do guia">
+        <a href="#conceito">Conceito</a><a href="#logo">Logo</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#elementos">Elementos</a><a href="#voz">Tom de voz</a><a href="#aplicacoes">Aplicações</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- CONCEITO -->
+  <section class="secao bloco" id="conceito">
+    <div class="container duas-colunas">
+      <div class="revelar">
+        <div class="sobretitulo">Conceito</div>
+        <h2>Videira</h2>
+        <p class="lead">“Eu sou a videira, vós, os ramos. Quem permanece em mim, e eu, nele, esse dá muito fruto.” — João 15.5</p>
+        <p>O nome do bairro, Chácara <strong>Parreiral</strong>, e a passagem de João 15 se encontram no símbolo: um cacho de uvas ligado ao ramo. As uvas são as pessoas, cada uma inteira, mas juntas formando um só cacho. O ramo verde, com sua folha, é a vida que vem de Cristo.</p>
+        <p>Toda a identidade parte dessa ideia: <strong>raiz</strong> (fé reformada, sólida), <strong>comunhão</strong> (o cacho) e <strong>fruto</strong> (vida que transborda para a cidade).</p>
+      </div>
+      <div class="revelar">
+        <div class="quadro-arte" style="aspect-ratio:1">
+          <div class="aneis"><span></span><span></span><span></span></div>
+          <img class="simb" src="/assets/img/simbolo-branco.png" alt="Símbolo da igreja: cacho de uvas com ramo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section class="secao areia bloco" id="logo">
+    <div class="container">
+      <div class="cabeca-secao revelar">
+        <div class="sobretitulo">Logo</div>
+        <h2>Versões da marca</h2>
+        <p class="lead">Use a versão colorida sempre que possível. Em fundos escuros ou sobre fotos, use a versão branca. A versão só com o símbolo serve para espaços pequenos: avatar de redes sociais, ícone do site, carimbos.</p>
+      </div>
+      <div class="logos">
+        <div class="logo-caixa revelar" style="background:#fff"><img src="/assets/img/logo-vertical.png" alt="Logo colorida"><small>Principal</small><a href="/Imagens/Logos/original-vertical.png" download>PNG</a></div>
+        <div class="logo-caixa escuro revelar"><img src="/assets/img/logo-vertical-branco.png" alt="Logo branca"><small>Negativa</small><a href="/Imagens/Logos/branco-vertical-vertical.png" download style="color:#C9DD9A">PNG</a></div>
+        <div class="logo-caixa revelar" style="background:#fff"><img src="/assets/img/simbolo.png" alt="Símbolo colorido" style="height:80%"><small>Símbolo</small><a href="/Imagens/Logos/logotipo.png" download>PNG</a></div>
+        <div class="logo-caixa vermelho revelar"><img src="/assets/img/simbolo-branco.png" alt="Símbolo branco" style="height:80%"><small style="color:#FFD9DC">Símbolo negativo</small><a href="/Imagens/Logos/logotipo-branco.png" download style="color:#fff">PNG</a></div>
+      </div>
+      <div class="regras revelar" style="margin-top:40px">
+        <div class="cartao sim"><h3>Faça</h3><ul>
+          <li>Deixe ao redor da logo um espaço livre de pelo menos a largura de uma uva.</li>
+          <li>Use a logo com no mínimo 2,5 cm de largura no impresso e 120 px na tela. Abaixo disso, use só o símbolo.</li>
+          <li>Coloque a logo sobre fundos lisos: pergaminho, branco, verde-profundo ou vermelho-uva.</li>
+        </ul></div>
+        <div class="cartao nao"><h3>Evite</h3><ul>
+          <li>Esticar, inclinar, girar ou trocar as cores da logo.</li>
+          <li>Aplicar sombras, contornos, brilhos ou degradês sobre ela.</li>
+          <li>Colocar a versão colorida sobre fotos ou fundos com muita informação.</li>
+        </ul></div>
+      </div>
+      <p class="revelar" style="margin-top:28px;font-size:.92rem;color:var(--texto-suave)"><strong>Próximo passo recomendado:</strong> redesenhar a logo em vetor (SVG/PDF) e criar uma versão horizontal (símbolo à esquerda, nome à direita) para cabeçalhos e faixas. Hoje o arquivo só existe em PNG.</p>
+    </div>
+  </section>
+
+  <!-- CORES -->
+  <section class="secao bloco" id="cores">
+    <div class="container">
+      <div class="cabeca-secao revelar">
+        <div class="sobretitulo">Cores</div>
+        <h2>Paleta</h2>
+        <p class="lead">As três primeiras cores vêm direto da logo. O pergaminho e a areia são os fundos que deixam tudo mais acolhedor que o branco puro.</p>
+      </div>
+      <div class="cores">
+        <div class="cor revelar"><div class="amostra" style="background:#BE1E2D"></div><div class="dados"><strong>Vermelho-uva</strong><code>#BE1E2D</code> · RGB 190 30 45<br>Destaques e botões de ação.</div></div>
+        <div class="cor revelar"><div class="amostra" style="background:#3F6005"></div><div class="dados"><strong>Verde-folha</strong><code>#3F6005</code> · RGB 63 96 5<br>Detalhes, ícones e links.</div></div>
+        <div class="cor revelar"><div class="amostra" style="background:#253D1B"></div><div class="dados"><strong>Verde-videira</strong><code>#253D1B</code> · RGB 37 61 27<br>Títulos e textos principais.</div></div>
+        <div class="cor revelar"><div class="amostra" style="background:#15240F"></div><div class="dados"><strong>Verde-profundo</strong><code>#15240F</code> · RGB 21 36 15<br>Fundos escuros e rodapé.</div></div>
+        <div class="cor revelar"><div class="amostra" style="background:#F7F3EA"></div><div class="dados"><strong>Pergaminho</strong><code>#F7F3EA</code> · RGB 247 243 234<br>Fundo principal.</div></div>
+        <div class="cor revelar"><div class="amostra" style="background:#ECE4D2"></div><div class="dados"><strong>Areia</strong><code>#ECE4D2</code> · RGB 236 228 210<br>Fundo alternado de seções.</div></div>
+        <div class="cor revelar"><div class="amostra" style="background:#C9A24A"></div><div class="dados"><strong>Trigo</strong><code>#C9A24A</code> · RGB 201 162 74<br>Uso raro: datas festivas e foco.</div></div>
+        <div class="cor revelar"><div class="amostra" style="background:#9A1622"></div><div class="dados"><strong>Vinho</strong><code>#9A1622</code> · RGB 154 22 34<br>Variação escura do vermelho.</div></div>
+      </div>
+      <div class="revelar">
+        <p style="margin:32px 0 0;font-size:.92rem;color:var(--texto-suave)">Proporção sugerida em uma peça: muito fundo claro, verde para estrutura, vermelho só no que precisa chamar atenção.</p>
+        <div class="proporcao" aria-hidden="true">
+          <span style="flex:50;background:#F7F3EA"></span><span style="flex:25;background:#15240F"></span><span style="flex:12;background:#253D1B"></span><span style="flex:8;background:#3F6005"></span><span style="flex:5;background:#BE1E2D"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFIA -->
+  <section class="secao areia bloco" id="tipografia">
+    <div class="container">
+      <div class="cabeca-secao revelar">
+        <div class="sobretitulo">Tipografia</div>
+        <h2>Duas fontes, papéis claros</h2>
+        <p class="lead">Ambas são gratuitas no Google Fonts e funcionam no Canva, no Word e no site.</p>
+      </div>
+      <div class="tipos">
+        <div class="tipo revelar">
+          <div class="sobretitulo">Títulos e citações</div>
+          <h3 style="font-family:var(--f-texto);font-size:1.1rem">Fraunces</h3>
+          <div class="grande" style="font-family:var(--f-titulo)">Aa <em style="font-weight:400">Aa</em></div>
+          <p style="font-family:var(--f-titulo);font-size:1.3rem;color:var(--videira)">Uma família enraizada em <em>Cristo</em>.</p>
+          <p style="color:var(--texto-suave);font-size:.92rem">Serifada, calorosa e com personalidade. Use no peso Semibold para títulos e no itálico para versículos e palavras de destaque.</p>
+        </div>
+        <div class="tipo revelar">
+          <div class="sobretitulo">Textos e informações</div>
+          <h3 style="font-family:var(--f-texto);font-size:1.1rem">Open Sans</h3>
+          <div class="grande" style="font-family:var(--f-texto);font-weight:800">Aa <span style="font-weight:400">Aa</span></div>
+          <p style="font-size:1.05rem">Domingo, 19h30 · Culto de Adoração</p>
+          <p style="color:var(--texto-suave);font-size:.92rem">Muito legível em telas e impressos. É da mesma família visual do nome na logo, por isso conversa bem com ela. Use para textos, horários, botões e legendas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELEMENTOS -->
+  <section class="secao bloco" id="elementos">
+    <div class="container duas-colunas">
+      <div class="revelar">
+        <div class="sobretitulo">Elementos gráficos</div>
+        <h2>Anéis e o pequeno ponto</h2>
+        <p>Do desenho das uvas saem dois recursos simples:</p>
+        <ul class="prosa" style="padding-left:1.2em">
+          <li><strong>Anéis concêntricos</strong>, discretos, ao fundo de capas e posts. Lembram as uvas e criam profundidade sem disputar com o texto.</li>
+          <li><strong>O ponto-uva</strong>, um pequeno anel vermelho antes dos sobretítulos (veja “Elementos gráficos” acima). É a assinatura da marca em detalhes.</li>
+          <li><strong>Cantos arredondados</strong> em cartões e botões em forma de pílula: a marca é acolhedora, nunca rígida.</li>
+        </ul>
+      </div>
+      <div class="revelar" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="quadro-arte" style="aspect-ratio:1"><div class="aneis"><span></span><span></span><span></span></div></div>
+        <div class="quadro-arte" style="aspect-ratio:1;background:var(--pergaminho);border:1px solid var(--linha)"><div class="sobretitulo" style="margin:0">Sobretítulo</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOZ -->
+  <section class="secao escura bloco" id="voz">
+    <div class="container">
+      <div class="cabeca-secao revelar">
+        <div class="sobretitulo">Tom de voz</div>
+        <h2>Como a igreja fala</h2>
+      </div>
+      <div class="grade grade-3">
+        <div class="cartao revelar" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><h3 style="color:#fff">Acolhedora</h3><p style="color:#B6C4A8">Falamos com “você”, de forma próxima. “Que bom ter você aqui!” em vez de “Seja bem-vindo, prezado visitante”.</p></div>
+        <div class="cartao revelar" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><h3 style="color:#fff">Bíblica</h3><p style="color:#B6C4A8">A Escritura aparece com naturalidade, sempre com a referência. Versículos em itálico, na versão Almeida.</p></div>
+        <div class="cartao revelar" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><h3 style="color:#fff">Clara</h3><p style="color:#B6C4A8">Frases curtas, dia e horário sempre visíveis, nada de jargão. Quem nunca foi a uma igreja precisa entender.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APLICAÇÕES -->
+  <section class="secao bloco" id="aplicacoes">
+    <div class="container">
+      <div class="cabeca-secao revelar">
+        <div class="sobretitulo">Aplicações</div>
+        <h2>Exemplos para redes sociais</h2>
+        <p class="lead">Modelos de post (4:5) usando só cor, tipografia e os anéis. Funcionam com ou sem foto.</p>
+      </div>
+      <div class="posts">
+        <div class="post revelar" style="background:var(--videira-profunda)">
+          <div class="aneis canto"><span></span><span></span><span></span></div>
+          <div class="topo-post"><img src="/assets/img/simbolo-branco.png" alt="">Domingo</div>
+          <h4>Culto de <em>Adoração</em></h4>
+          <p>19h30 · Rua Teresa Tironi, 15</p>
+        </div>
+        <div class="post revelar" style="background:var(--uva)">
+          <div class="aneis canto"><span style="border-color:rgba(255,255,255,.2)"></span><span style="border-color:rgba(255,255,255,.15)"></span><span></span></div>
+          <div class="topo-post"><img src="/assets/img/simbolo-branco.png" alt="">Cantata de Natal</div>
+          <h4>Venha cantar <em>com a gente</em></h4>
+          <p>Inscrições abertas · ipchacara.org/natal2026</p>
+        </div>
+        <div class="post claro revelar">
+          <div class="topo-post"><img src="/assets/img/simbolo.png" alt="">Versículo</div>
+          <h4 style="font-size:1.5rem;font-weight:400;font-style:italic">“Eu sou a videira, vós, os ramos.”</h4>
+          <p style="color:var(--uva);font-weight:700;opacity:1">João 15.5</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+</body>
+</html>
