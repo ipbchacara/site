@@ -183,6 +183,33 @@ p { margin: 0 0 1em; }
 .pagina-topo .lead { color: #C9D6BD; margin: 0; }
 .pagina-topo .sobretitulo { color: #A9C77A; }
 .pagina-topo .simbolo-fundo { position: absolute; right: max(20px, calc(50% - 560px)); top: 50%; height: 150%; transform: translateY(-50%); opacity: .07; pointer-events: none; }
+.pagina-topo h1.slogan-topo { font-size: clamp(2.4rem, 6.2vw, 4.2rem); line-height: 1.05; max-width: 14ch; margin-bottom: .45em; }
+.pagina-topo h1.slogan-topo em { font-style: italic; font-weight: 400; color: #C9DD9A; }
+.trio-ideias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+.trio-ideias > div { background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 14px 12px; text-align: center; min-width: 0; }
+.trio-ideias strong { display: block; font-family: var(--f-titulo); font-size: 1.15rem; color: var(--videira); }
+.trio-ideias span { display: block; font-size: .8rem; color: var(--texto-suave); margin-top: 2px; }
+.legenda-cp { margin: 12px 0 0; font-size: .88rem; color: var(--texto-suave); text-align: center; }
+.legenda-cp strong { color: var(--folha); }
+.vida-diaria { margin-top: clamp(48px, 7vw, 80px); padding: clamp(28px, 4vw, 44px); background: var(--videira-profunda); border-radius: var(--raio-g); color: #E8EFE0; }
+.vida-diaria .sobretitulo { color: #A9C77A; }
+.vida-diaria h3 { color: #fff; font-family: var(--f-titulo); font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 .5em; }
+.vida-diaria p { color: #C9D6BD; font-size: 1.08rem; max-width: 720px; margin: 0; }
+.vida-diaria .lugares { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 24px 0 0; }
+.vida-diaria .lugares li { padding: .45rem 1rem; border: 1px solid rgba(201,221,154,.35); border-radius: 999px; font-size: .9rem; font-weight: 600; color: #DCE6D1; }
+
+/* Logo animada: folha, ramo (C P) e uvas, nas cores originais */
+.quadro-arte.quadro-claro { background: #fff; border: 1px solid var(--linha); }
+.quadro-claro .aneis span { border-color: rgba(63,96,5,.10); }
+.quadro-claro .aneis span:nth-child(3) { background: rgba(236,228,210,.35); }
+.quadro-arte .logo-viva { position: absolute; left: 50%; top: 50%; height: 64%; aspect-ratio: 529 / 971; transform: translate(-50%, -50%); cursor: pointer; overflow: visible; }
+.logo-viva .lv-caule, .logo-viva .lv-anel { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.logo-viva.anima .lv-folha { animation: lv-surge 1s ease-out both; }
+.logo-viva.anima .lv-caule { animation: lv-traco 1.7s .4s cubic-bezier(.45,0,.35,1) both; }
+.logo-viva.anima .lv-anel { animation: lv-traco .9s var(--d) cubic-bezier(.45,0,.35,1) both; }
+@keyframes lv-surge { from { opacity: 0; } }
+@keyframes lv-traco { from { stroke-dashoffset: 1; } }
+@media (prefers-reduced-motion: reduce) { .logo-viva.anima * { animation: none !important; } }
 
 /* ---------- Faixa de horários ---------- */
 .horarios { margin-top: -56px; position: relative; z-index: 2; }
@@ -267,6 +294,7 @@ a.cartao:hover { transform: translateY(-3px); box-shadow: var(--sombra); border-
 
 /* ---------- Chamada final ---------- */
 .chamada { text-align: center; }
+.secao.colada { padding-top: 0; }
 .chamada .grupo-btn { justify-content: center; margin-top: 8px; }
 
 /* ---------- Mapa / contato ---------- */
