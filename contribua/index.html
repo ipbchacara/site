@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contribua — Presbiteriana Chácara Parreiral</title>
+<meta name="description" content="Dízimos e ofertas para a Igreja Presbiteriana Chácara Parreiral: PIX, transferência ou no gazofilácio durante o culto.">
+<meta name="theme-color" content="#15240F">
+<link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main id="conteudo">
+  <section class="pagina-topo">
+    <img class="simbolo-fundo" src="/assets/img/simbolo-branco.png" alt="">
+    <div class="container">
+      <div class="sobretitulo">Dízimos e ofertas</div>
+      <h1>Contribua com alegria</h1>
+      <p class="lead">Ofertar é um ato de adoração e de gratidão a Deus por tudo o que ele nos dá.</p>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="container duas-colunas" style="align-items:start">
+      <div class="revelar prosa">
+        <div class="sobretitulo">Por que contribuímos</div>
+        <h2 style="margin-top:0">Gratidão, não obrigação</h2>
+        <p>Tudo o que temos vem de Deus. Quando devolvemos o dízimo e entregamos nossas ofertas, reconhecemos que ele é o Senhor da nossa vida e participamos da sua obra.</p>
+        <p>As contribuições sustentam o ministério pastoral, as atividades da igreja, a manutenção do templo, a ação social e o apoio a missões. O uso dos recursos é decidido pelo Conselho e prestado em contas à igreja.</p>
+        <blockquote>“Cada um contribua segundo tiver proposto no coração, não com tristeza ou por necessidade; porque Deus ama a quem dá com alegria.”<cite>2 Coríntios 9.7</cite></blockquote>
+      </div>
+
+      <div class="revelar" style="display:grid;gap:20px">
+        <div class="cartao-form">
+          <div class="sobretitulo">PIX</div>
+          <div class="pix">
+            <div class="pix-qr"><span class="a-definir">[QR Code do PIX]</span></div>
+            <div>
+              <h3 style="margin-bottom:.3em">Chave PIX (CNPJ)</h3>
+              <p style="color:var(--texto-suave);font-size:.95rem">Em nome de Igreja Presbiteriana Chácara Parreiral.</p>
+              <div class="chave"><span id="chave-pix" class="a-definir">[00.000.000/0001-00]</span><button class="btn btn-videira" type="button" style="padding:.5rem 1rem;font-size:.85rem" onclick="copiarPix(this)">Copiar</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="cartao">
+          <h3>Transferência bancária</h3>
+          <p><span class="a-definir">[Banco · Agência · Conta · CNPJ]</span></p>
+        </div>
+        <div class="cartao">
+          <h3>No culto</h3>
+          <p>Você também pode entregar seu dízimo ou oferta no gazofilácio durante os cultos de domingo.</p>
+        </div>
+        <p style="font-size:.88rem;color:var(--texto-suave);margin:0">Antes de transferir, confira se o nome do recebedor é o da igreja. Em caso de dúvida, fale com a tesouraria: <a href="mailto:secretaria@ipchacara.org">secretaria@ipchacara.org</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+  function copiarPix(botao) {
+    const texto = document.getElementById('chave-pix').textContent.trim();
+    const ok = () => { botao.textContent = 'Copiado!'; setTimeout(() => botao.textContent = 'Copiar', 2000); };
+    if (navigator.clipboard) navigator.clipboard.writeText(texto).then(ok).catch(() => {});
+    else { const t = document.createElement('textarea'); t.value = texto; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); ok(); }
+  }
+</script>
+</body>
+</html>

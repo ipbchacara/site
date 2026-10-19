@@ -3,104 +3,233 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Igreja Presbiteriana Chácara Parreiral</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background-color: #0f2209;
-    background-image: radial-gradient(ellipse at 20% 20%, #1a3d0a55 0%, transparent 60%),
-                      radial-gradient(ellipse at 80% 80%, #0a2205 0%, transparent 60%);
-    min-height: 100vh;
-    font-family: 'Lato', sans-serif;
-    color: #EAF9E1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .wrap {
-    text-align: center;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .logo {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
-    margin-bottom: 2rem;
-    animation: pulse 3s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-
-  .church-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #EAF9E1;
-    line-height: 1.3;
-    margin-bottom: 0.5rem;
-  }
-
-  .location {
-    font-size: 0.8rem;
-    color: #6a9a5a;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 2.5rem;
-  }
-
-  .divider {
-    width: 40px;
-    height: 1px;
-    background: #2d5a1b;
-    margin: 0 auto 2.5rem;
-  }
-
-  .construction {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #a8c89a;
-    margin-bottom: 0.75rem;
-  }
-
-  .construction-sub {
-    font-size: 0.85rem;
-    color: #6a9a5a;
-    line-height: 1.7;
-  }
-
-  .verse {
-    margin-top: 3rem;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 0.82rem;
-    color: #4a7a3a;
-    line-height: 1.7;
-  }
-</style>
+<title>Igreja Presbiteriana Chácara Parreiral — Serra/ES</title>
+<meta name="description" content="Igreja Presbiteriana Chácara Parreiral, em Serra/ES. Cultos aos domingos às 19h30, Escola Bíblica às 18h. Venha nos visitar!">
+<meta property="og:title" content="Igreja Presbiteriana Chácara Parreiral">
+<meta property="og:description" content="Uma família enraizada em Cristo, em Serra/ES. Venha nos visitar!">
+<meta property="og:image" content="https://ipchacara.org/assets/img/logo-vertical.png">
+<meta property="og:url" content="https://ipchacara.org/">
+<meta name="theme-color" content="#15240F">
+<link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/agenda.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Church",
+  "name": "Igreja Presbiteriana Chácara Parreiral",
+  "url": "https://ipchacara.org",
+  "email": "secretaria@ipchacara.org",
+  "logo": "https://ipchacara.org/assets/img/logo-vertical.png",
+  "address": { "@type": "PostalAddress", "streetAddress": "Rua Teresa Tironi, 15 - Guaraciaba", "addressLocality": "Serra", "addressRegion": "ES", "addressCountry": "BR" }
+}
+</script>
 </head>
 <body>
-<div class="wrap">
-  <img src="/Imagens/Logos/branco-vertical-vertical.png" alt="Logo IPBCP" class="logo">
-  <h1 class="church-name">Presbiteriana<br>Chácara Parreiral</h1>
-  <p class="location">Serra — Espírito Santo</p>
-  <div class="divider"></div>
-  <p class="construction">Site em construção</p>
-  <p class="construction-sub">Em breve, mais novidades por aqui.</p>
-  <p class="verse">"Amai-vos uns aos outros com amor fraternal." — Rm 12.10</p>
-</div>
+<div id="site-header"></div>
+
+<main id="conteudo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <div class="sobretitulo" style="color:#A9C77A">Igreja Presbiteriana · Serra/ES</div>
+        <h1>Uma família <em>enraizada</em> em Cristo.</h1>
+        <p class="lead">Somos uma comunidade que se reúne para adorar a Deus, ouvir a sua Palavra e viver o evangelho juntos, no bairro e na cidade. Você é muito bem-vindo aqui.</p>
+        <div class="grupo-btn">
+          <a class="btn btn-uva" href="#visita">Planeje sua visita</a>
+          <a class="btn btn-claro" href="/eventos">Ver agenda</a>
+        </div>
+        <blockquote class="hero-versiculo">
+          “Eu sou a videira, vós, os ramos. Quem permanece em mim, e eu, nele, esse dá muito fruto.”
+          <cite>João 15.5</cite>
+        </blockquote>
+      </div>
+      <div class="hero-arte" aria-hidden="true">
+        <div class="aneis"><span></span><span></span><span></span></div>
+        <img src="/assets/img/simbolo.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- HORÁRIOS -->
+  <section class="horarios" aria-label="Horários">
+    <div class="container">
+      <div class="horarios-grade">
+        <div class="horario"><div class="dia">Domingo</div><div class="hora">18h00</div><div class="nome">Escola Bíblica</div><div class="obs">Classes para todas as idades</div></div>
+        <div class="horario"><div class="dia">Domingo</div><div class="hora">19h30</div><div class="nome">Culto de Adoração</div><div class="obs">Venha com a família</div></div>
+        <div class="horario"><div class="dia">Terça</div><div class="hora">19h30</div><div class="nome">Reunião de Oração</div><div class="obs">Na igreja</div></div>
+        <div class="horario"><div class="dia">Quinta · quinzenal</div><div class="hora">19h30</div><div class="nome">PGDs</div><div class="obs">Pequenos grupos nas casas</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section class="secao">
+    <div class="container duas-colunas">
+      <div class="revelar">
+        <div class="quadro-arte">
+          <!-- Para usar uma foto: <img class="foto" src="/Imagens/fachada.jpg" alt="Fachada da igreja"> -->
+          <img class="simb" src="/assets/img/simbolo-branco.png" alt="">
+        </div>
+      </div>
+      <div class="revelar">
+        <div class="sobretitulo">Quem somos</div>
+        <h2>Ramos de uma mesma videira</h2>
+        <p class="lead">Somos uma igreja reformada, federada à Igreja Presbiteriana do Brasil. Cremos que a Bíblia é a Palavra de Deus e que a vida verdadeira está em permanecer em Cristo.</p>
+        <p>O cacho de uvas da nossa identidade lembra que não crescemos sozinhos: cada pessoa é parte de um mesmo corpo, alimentado pela mesma videira. Por isso valorizamos a pregação fiel, a comunhão nas casas e o cuidado uns com os outros.</p>
+        <div class="grupo-btn" style="margin-top:24px">
+          <a class="btn btn-videira" href="/sobre">Conheça nossa história</a>
+          <a class="btn btn-contorno" href="/cremos">Em que cremos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUE SAZONAL (troque ou remova este bloco conforme a época) -->
+  <section class="secao" style="padding-top:0">
+    <div class="container">
+      <div class="destaque revelar">
+        <div class="destaque-texto">
+          <div class="sobretitulo">Cantata de Natal 2026</div>
+          <h2>Venha cantar com a gente neste Natal</h2>
+          <p>As inscrições para o coral da Cantata estão abertas. Não é preciso ter experiência: basta vontade de louvar a Deus e compromisso com os ensaios.</p>
+          <a class="btn btn-claro" href="/natal2026">Quero me inscrever</a>
+        </div>
+        <div class="destaque-arte" aria-hidden="true">
+          <div class="aneis"><span></span><span></span><span></span></div>
+          <span class="estrela">✶</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIMEIRA VISITA -->
+  <section class="secao areia" id="visita">
+    <div class="container">
+      <div class="cabeca-secao centro revelar">
+        <div class="sobretitulo">Primeira vez?</div>
+        <h2>O que esperar da sua visita</h2>
+        <p class="lead">Sabemos que chegar a uma igreja nova pode deixar a gente sem jeito. Queremos que você se sinta em casa desde o primeiro domingo.</p>
+      </div>
+      <div class="grade grade-3">
+        <div class="cartao revelar">
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h3>Uma recepção calorosa</h3>
+          <p>Nossa equipe de recepção estará na porta para te receber, tirar dúvidas e te ajudar a encontrar um lugar.</p>
+        </div>
+        <div class="cartao revelar">
+          <div class="icone uva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h3>Um culto centrado na Palavra</h3>
+          <p>Cânticos e hinos, oração e uma pregação bíblica. O culto dura em média 1h30. Venha vestido como se sentir à vontade.</p>
+        </div>
+        <div class="cartao revelar">
+          <div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+          <h3>Espaço para a família</h3>
+          <p>Antes do culto, a Escola Bíblica tem classes para crianças, jovens e adultos. Todos são bem-vindos.</p>
+        </div>
+      </div>
+      <div class="centro revelar" style="margin-top:40px">
+        <a class="btn btn-uva" href="/visitante">Avise que você vem</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÓXIMOS EVENTOS -->
+  <section class="secao">
+    <div class="container duas-colunas" style="align-items:start">
+      <div class="revelar">
+        <div class="sobretitulo">Agenda</div>
+        <h2>Próximos encontros</h2>
+        <p class="lead">Nossa programação regular e os eventos especiais das próximas semanas.</p>
+        <a class="btn btn-contorno" href="/eventos" style="margin-top:12px">Ver agenda completa</a>
+      </div>
+      <div class="eventos-lista revelar" id="proximos" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- MINISTÉRIOS -->
+  <section class="secao escura">
+    <div class="container">
+      <div class="cabeca-secao revelar" style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap">
+        <div>
+          <div class="sobretitulo">Ministérios</div>
+          <h2 style="margin:0">Um lugar para você servir e crescer</h2>
+        </div>
+        <a class="btn btn-claro" href="/ministerios">Todos os ministérios</a>
+      </div>
+      <div class="grade grade-4">
+        <a class="cartao revelar" href="/ministerios#pgds" style="background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)">
+          <h3 style="color:#fff">PGDs</h3><p style="color:#B6C4A8">Pequenos grupos nas casas para estudar a Bíblia, orar e cuidar uns dos outros.</p><span class="mais" style="color:#F2A7AE">Saiba mais →</span>
+        </a>
+        <a class="cartao revelar" href="/ministerios#ebd" style="background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)">
+          <h3 style="color:#fff">Escola Bíblica</h3><p style="color:#B6C4A8">Ensino das Escrituras para todas as idades, todo domingo às 18h.</p><span class="mais" style="color:#F2A7AE">Saiba mais →</span>
+        </a>
+        <a class="cartao revelar" href="/ministerios#sociedades" style="background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)">
+          <h3 style="color:#fff">Sociedades internas</h3><p style="color:#B6C4A8">Crianças, adolescentes, jovens, homens e mulheres em comunhão e serviço.</p><span class="mais" style="color:#F2A7AE">Saiba mais →</span>
+        </a>
+        <a class="cartao revelar" href="/ministerios#louvor" style="background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)">
+          <h3 style="color:#fff">Música e louvor</h3><p style="color:#B6C4A8">Conduzindo a igreja no canto congregacional, no coral e na Cantata.</p><span class="mais" style="color:#F2A7AE">Saiba mais →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section class="secao">
+    <div class="container duas-colunas">
+      <div class="revelar">
+        <div class="sobretitulo">Como chegar</div>
+        <h2>Venha nos visitar</h2>
+        <ul class="info-lista">
+          <li><div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><strong>Endereço</strong><span>Rua Teresa Tironi, 15 — Guaraciaba<br>Serra — ES</span></div></li>
+          <li><div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><strong>Domingos</strong><span>Escola Bíblica às 18h · Culto às 19h30</span></div></li>
+          <li><div class="icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><strong>E-mail</strong><a href="mailto:secretaria@ipchacara.org">secretaria@ipchacara.org</a></div></li>
+        </ul>
+        <a class="btn btn-videira" href="https://www.google.com/maps/search/?api=1&query=Rua+Teresa+Tironi%2C+15+-+Guaraciaba%2C+Serra+-+ES" target="_blank" rel="noopener">Traçar rota</a>
+      </div>
+      <div class="mapa revelar">
+        <iframe title="Mapa da Igreja Presbiteriana Chácara Parreiral" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Rua+Teresa+Tironi,+15+-+Guaraciaba,+Serra+-+ES&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAMADA FINAL -->
+  <section class="secao areia chamada">
+    <div class="container estreito revelar">
+      <div class="sobretitulo">Queremos te conhecer</div>
+      <h2>Esteve conosco ou quer conversar?</h2>
+      <p class="lead">Deixe seu contato ou um pedido de oração. Nossos pastores e presbíteros terão alegria em falar com você.</p>
+      <div class="grupo-btn">
+        <a class="btn btn-uva" href="/visitante">Deixar meu contato</a>
+        <a class="btn btn-contorno" href="/contato#oracao">Pedido de oração</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const MESES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+    const DIAS = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+    const alvo = document.getElementById('proximos');
+    const lista = proximosEventos(5);
+    alvo.innerHTML = lista.map(e => `
+      <${e.link ? `a href="${e.link}"` : 'div'} class="evento-linha" style="text-decoration:none;color:inherit">
+        <div class="data-bloco"><span class="d">${e.quando.getDate()}</span><span class="m">${MESES[e.quando.getMonth()]}</span></div>
+        <div><h3>${e.titulo}</h3><div class="meta">${DIAS[e.quando.getDay()]} · ${e.hora}${e.sub ? ' · ' + e.sub : ''}</div></div>
+        <span class="selo ${e.tipo}">${ROTULO_TIPO[e.tipo] || e.selo}</span>
+      </${e.link ? 'a' : 'div'}>`).join('');
+  });
+</script>
 </body>
 </html>
