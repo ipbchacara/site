@@ -63,6 +63,7 @@
             <div class="campo">
               <label for="o-tel">Telefone / WhatsApp <span class="opcional">(opcional)</span></label>
               <input type="tel" id="o-tel" autocomplete="tel" placeholder="(27) 9 0000-0000">
+              <p class="msg-erro" id="o-tel-erro">Para entrarmos em contato, informe seu telefone.</p>
             </div>
             <div class="campo">
               <label for="o-email">E-mail <span class="opcional">(opcional)</span></label>
@@ -109,6 +110,11 @@
       $(erro).classList.toggle('mostrar', vazio);
       if (vazio) ok = false;
     });
+    // Quem pede contato precisa deixar ao menos o telefone.
+    const semTel = $('o-contato').checked && !$('o-tel').value.trim();
+    $('o-tel').classList.toggle('erro', semTel);
+    $('o-tel-erro').classList.toggle('mostrar', semTel);
+    if (semTel) ok = false;
     if (!ok) return;
 
     const sigilo = document.querySelector('input[name="sigilo"]:checked').value;
