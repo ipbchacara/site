@@ -103,7 +103,7 @@
               <div class="marcas-rodape">
                 <a href="/" aria-label="Página inicial"><img class="logo-rodape" src="/assets/img/logo-vertical-branco.png" alt="Presbiteriana Chácara Parreiral" width="162" height="104"></a>
                 <span class="divisor" aria-hidden="true"></span>
-                <a class="logo-ipb" href="https://www.ipb.org.br" target="_blank" rel="noopener" title="Site oficial da Igreja Presbiteriana do Brasil"><img src="/assets/img/logo-ipb-branco.png" alt="Igreja Presbiteriana do Brasil" width="174" height="56"></a>
+                <a class="logo-ipb" href="https://www.ipb.org.br" target="_blank" rel="noopener" title="Site oficial da Igreja Presbiteriana do Brasil"><img src="/assets/img/logo-ipb-vertical-branco.png" alt="Igreja Presbiteriana do Brasil" width="103" height="72"></a>
               </div>
               <p class="slogan">${IGREJA.slogan}</p>
               <div class="redes">${redes}</div>
