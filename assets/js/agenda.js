@@ -5,7 +5,7 @@
 
 // Programação fixa. dia: 0 = domingo, 1 = segunda ... 6 = sábado
 const PROGRAMACAO_SEMANAL = [
-  { dia: 0, titulo: 'Escola Bíblica Dominical', hora: '18h00', tipo: 'escola', selo: 'Semanal' },
+  { dia: 0, titulo: 'Escola Bíblica Dominical', hora: '18h00', tipo: 'escola', selo: 'Semanal', sub: 'Jovens e adultos: Catecismo Maior', link: '/ministerios#ebd' },
   { dia: 0, titulo: 'Culto de Adoração',        hora: '19h30', tipo: 'culto',  selo: 'Semanal' },
   { dia: 2, titulo: 'Reunião de Oração',        hora: '19h30', tipo: 'oracao', selo: 'Semanal' },
 ];
