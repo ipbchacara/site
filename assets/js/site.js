@@ -117,7 +117,7 @@
               <ul>
                 <li><a href="/visitante">Sou visitante</a></li>
                 <li><a href="/contribua">Dízimos e ofertas</a></li>
-                <li><a href="/contato#oracao">Pedido de oração</a></li>
+                <li><a href="/oracao/">Pedido de oração</a></li>
                 <li><a href="/contato">Fale conosco</a></li>
               </ul>
             </div>

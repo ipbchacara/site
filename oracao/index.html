@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido de oração — Presbiteriana Chácara Parreiral</title>
+<meta name="description" content="Envie seu pedido de oração à Igreja Presbiteriana Chácara Parreiral. Oramos juntos toda terça, às 19h30.">
+<meta name="theme-color" content="#15240F">
+<link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<main id="conteudo">
+  <section class="pagina-topo">
+    <img class="simbolo-fundo" src="/assets/img/simbolo-branco.png" alt="">
+    <div class="container">
+      <div class="sobretitulo">Pedido de oração</div>
+      <h1>Podemos orar por você?</h1>
+      <p class="lead">Conte-nos pelo que você precisa de oração. Seu pedido será recebido com carinho e levado a Deus.</p>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="container duas-colunas" style="align-items:start">
+      <div class="revelar prosa">
+        <div class="sobretitulo">Orando uns pelos outros</div>
+        <h2 style="margin-top:0">Ninguém precisa carregar o fardo sozinho</h2>
+        <p>Doença, luto, desemprego, conflitos em casa, decisões difíceis ou um motivo de gratidão: todo pedido é bem-vindo. Os pastores e presbíteros recebem cada um deles e oram por você.</p>
+        <p>Se você permitir, o pedido também é apresentado na Reunião de Oração, às terças, às 19h30, onde a igreja ora junto. Se preferir, ele fica só com a liderança.</p>
+        <blockquote>“Orai sem cessar.”<cite>1 Tessalonicenses 5.17</cite></blockquote>
+        <p>E se quiser conversar ou receber uma visita, é só marcar no formulário que entraremos em contato.</p>
+      </div>
+
+      <div class="revelar" id="pedido" style="scroll-margin-top:calc(var(--header-h) + 24px)">
+        <div class="cartao-form" id="cartao-form">
+          <div class="sobretitulo">Pedido de oração</div>
+          <h2 style="font-size:1.7rem">Escreva seu pedido</h2>
+          <p style="color:var(--texto-suave)">Seu pedido chega direto à secretaria da igreja.</p>
+          <form id="form-oracao" novalidate>
+            <div class="campo">
+              <label for="o-nome">Seu nome <span class="obrigatorio">*</span></label>
+              <input type="text" id="o-nome" required autocomplete="name" placeholder="Pode ser só o primeiro nome">
+              <p class="msg-erro" id="o-nome-erro">Por favor, informe seu nome.</p>
+            </div>
+            <div class="campo">
+              <label for="o-msg">Pelo que podemos orar? <span class="obrigatorio">*</span></label>
+              <textarea id="o-msg" required placeholder="Escreva aqui seu pedido..."></textarea>
+              <p class="msg-erro" id="o-msg-erro">Escreva seu pedido de oração.</p>
+            </div>
+            <div class="campo">
+              <span class="rotulo">Quem pode saber deste pedido?</span>
+              <div class="opcoes">
+                <label><input type="radio" name="sigilo" value="Pode ser compartilhado na Reunião de Oração" checked><span>A igreja, na reunião de oração</span></label>
+                <label><input type="radio" name="sigilo" value="Somente pastores e presbíteros (sigiloso)"><span>Só pastores e presbíteros</span></label>
+              </div>
+            </div>
+            <div class="campo">
+              <label for="o-tel">Telefone / WhatsApp <span class="opcional">(opcional)</span></label>
+              <input type="tel" id="o-tel" autocomplete="tel" placeholder="(27) 9 0000-0000">
+            </div>
+            <div class="campo">
+              <label for="o-email">E-mail <span class="opcional">(opcional)</span></label>
+              <input type="email" id="o-email" autocomplete="email" placeholder="voce@email.com">
+            </div>
+            <div class="campo">
+              <label class="caixa-check"><input type="checkbox" id="o-contato"> Gostaria que um pastor ou presbítero entrasse em contato comigo.</label>
+            </div>
+            <div class="sr-only" aria-hidden="true">
+              <label for="o-site">Não preencha</label>
+              <input type="text" id="o-site" tabindex="-1" autocomplete="off">
+            </div>
+            <button class="btn btn-uva" type="submit" id="o-enviar">Enviar pedido</button>
+            <p class="msg-erro" id="o-envio-erro" role="alert">Não conseguimos enviar agora. Tente de novo em instantes ou escreva para <a href="mailto:secretaria@ipchacara.org">secretaria@ipchacara.org</a>.</p>
+          </form>
+        </div>
+
+        <div class="cartao-form sucesso" id="o-sucesso" role="status">
+          <div class="icone uva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h2>Pedido recebido!</h2>
+          <p class="lead" style="margin:0 auto 1em">Obrigado por confiar seu pedido a nós. Vamos orar por você.</p>
+          <p style="font-family:var(--f-titulo);font-style:italic;color:var(--texto-suave)">“Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós.” — 1Pe 5.7</p>
+          <div class="grupo-btn" style="justify-content:center;margin-top:24px"><a class="btn btn-contorno" href="/ministerios/#oracao">Reunião de Oração</a><a class="btn btn-contorno" href="/">Voltar ao início</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+  // Usa o mesmo Google Apps Script do formulário de contato (código em _apps-script/contato.gs).
+  const CONTATO_URL = 'https://script.google.com/macros/s/AKfycby68Ds9xAg-11fUQ1uiwK5xO1VmxnRX1U-OIqqroEaiAeMSN5U2nyUA5OKWd4wPS_P3ZQ/exec';
+
+  const $ = id => document.getElementById(id);
+
+  $('form-oracao').addEventListener('submit', function (e) {
+    e.preventDefault();
+    let ok = true;
+    [[$('o-nome'), 'o-nome-erro'], [$('o-msg'), 'o-msg-erro']].forEach(([campo, erro]) => {
+      const vazio = !campo.value.trim();
+      campo.classList.toggle('erro', vazio);
+      $(erro).classList.toggle('mostrar', vazio);
+      if (vazio) ok = false;
+    });
+    if (!ok) return;
+
+    const sigilo = document.querySelector('input[name="sigilo"]:checked').value;
+    const linhas = ['Compartilhar: ' + sigilo];
+    if ($('o-contato').checked) linhas.push('Deseja contato de um pastor ou presbítero: sim');
+    linhas.push('', $('o-msg').value.trim());
+
+    const dados = {
+      nome: $('o-nome').value.trim(),
+      assunto: 'Pedido de oração',
+      telefone: $('o-tel').value.trim(),
+      email: $('o-email').value.trim(),
+      mensagem: linhas.join('\n'),
+      site: $('o-site').value
+    };
+
+    const botao = $('o-enviar');
+    botao.disabled = true;
+    botao.textContent = 'Enviando...';
+    $('o-envio-erro').classList.remove('mostrar');
+
+    // text/plain evita a checagem prévia de CORS, que o Apps Script não responde.
+    fetch(CONTATO_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(dados) })
+      .then(r => r.json())
+      .then(r => {
+        if (!r.ok) throw new Error(r.erro);
+        $('cartao-form').hidden = true;
+        $('o-sucesso').classList.add('mostrar');
+        $('pedido').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      })
+      .catch(() => {
+        botao.disabled = false;
+        botao.textContent = 'Enviar pedido';
+        $('o-envio-erro').classList.add('mostrar');
+      });
+  });
+</script>
+</body>
+</html>
