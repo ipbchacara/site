@@ -42,10 +42,10 @@
       </div>
 
       <div class="revelar" id="oracao" style="scroll-margin-top:calc(var(--header-h) + 24px)">
-        <div class="cartao-form">
+        <div class="cartao-form" id="cartao-form">
           <div class="sobretitulo">Mensagem ou pedido de oração</div>
           <h2 style="font-size:1.7rem">Escreva para nós</h2>
-          <p style="color:var(--texto-suave)">Ao enviar, seu aplicativo de e-mail será aberto com a mensagem pronta para a secretaria.</p>
+          <p style="color:var(--texto-suave)">Sua mensagem chega direto à secretaria da igreja.</p>
           <form id="form-contato" novalidate>
             <div class="campo">
               <label for="c-nome">Seu nome <span class="obrigatorio">*</span></label>
@@ -65,12 +65,29 @@
               <input type="tel" id="c-tel" autocomplete="tel" placeholder="(27) 9 0000-0000">
             </div>
             <div class="campo">
+              <label for="c-email">E-mail <span class="opcional">(opcional, para respondermos)</span></label>
+              <input type="email" id="c-email" autocomplete="email" placeholder="voce@email.com">
+            </div>
+            <div class="campo">
               <label for="c-msg">Mensagem <span class="obrigatorio">*</span></label>
               <textarea id="c-msg" required placeholder="Escreva aqui..."></textarea>
               <p class="msg-erro" id="c-msg-erro">Escreva sua mensagem.</p>
             </div>
-            <button class="btn btn-uva" type="submit">Enviar mensagem</button>
+            <div class="sr-only" aria-hidden="true">
+              <label for="c-site">Não preencha</label>
+              <input type="text" id="c-site" tabindex="-1" autocomplete="off">
+            </div>
+            <button class="btn btn-uva" type="submit" id="c-enviar">Enviar mensagem</button>
+            <p class="msg-erro" id="c-envio-erro" role="alert">Não conseguimos enviar agora. Tente de novo em instantes ou escreva para <a href="mailto:secretaria@ipchacara.org">secretaria@ipchacara.org</a>.</p>
           </form>
+        </div>
+
+        <div class="cartao-form sucesso" id="c-sucesso" role="status">
+          <div class="icone uva"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h2>Mensagem enviada!</h2>
+          <p class="lead" style="margin:0 auto 1em">Obrigado por escrever. A secretaria vai receber sua mensagem e, se você deixou um contato, vamos responder em breve.</p>
+          <p style="font-family:var(--f-titulo);font-style:italic;color:var(--texto-suave)">“Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós.” — 1Pe 5.7</p>
+          <div class="grupo-btn" style="justify-content:center;margin-top:24px"><a class="btn btn-contorno" href="/">Voltar ao início</a></div>
         </div>
       </div>
     </div>
@@ -80,22 +97,58 @@
 <div id="site-footer"></div>
 
 <script>
-  document.getElementById('form-contato').addEventListener('submit', function (e) {
+  // Endereço do Google Apps Script que envia a mensagem por e-mail (código em _apps-script/contato.gs).
+  // Enquanto estiver vazio, o formulário abre o aplicativo de e-mail da pessoa.
+  const CONTATO_URL = 'https://script.google.com/macros/s/AKfycby68Ds9xAg-11fUQ1uiwK5xO1VmxnRX1U-OIqqroEaiAeMSN5U2nyUA5OKWd4wPS_P3ZQ/exec';
+  const DESTINO = 'secretaria@ipchacara.org';
+
+  const $ = id => document.getElementById(id);
+
+  $('form-contato').addEventListener('submit', function (e) {
     e.preventDefault();
-    const nome = document.getElementById('c-nome');
-    const msg = document.getElementById('c-msg');
     let ok = true;
-    [[nome, 'c-nome-erro'], [msg, 'c-msg-erro']].forEach(([campo, erro]) => {
+    [[$('c-nome'), 'c-nome-erro'], [$('c-msg'), 'c-msg-erro']].forEach(([campo, erro]) => {
       const vazio = !campo.value.trim();
       campo.classList.toggle('erro', vazio);
-      document.getElementById(erro).classList.toggle('mostrar', vazio);
+      $(erro).classList.toggle('mostrar', vazio);
       if (vazio) ok = false;
     });
     if (!ok) return;
-    const assunto = document.querySelector('input[name="assunto"]:checked').value;
-    const tel = document.getElementById('c-tel').value.trim();
-    const corpo = `Nome: ${nome.value.trim()}\n${tel ? 'Telefone: ' + tel + '\n' : ''}\n${msg.value.trim()}`;
-    window.location.href = `mailto:secretaria@ipchacara.org?subject=${encodeURIComponent(assunto + ' — site')}&body=${encodeURIComponent(corpo)}`;
+
+    const dados = {
+      nome: $('c-nome').value.trim(),
+      assunto: document.querySelector('input[name="assunto"]:checked').value,
+      telefone: $('c-tel').value.trim(),
+      email: $('c-email').value.trim(),
+      mensagem: $('c-msg').value.trim(),
+      site: $('c-site').value
+    };
+
+    if (!CONTATO_URL) {
+      const corpo = `Nome: ${dados.nome}\n${dados.telefone ? 'Telefone: ' + dados.telefone + '\n' : ''}${dados.email ? 'E-mail: ' + dados.email + '\n' : ''}\n${dados.mensagem}`;
+      window.location.href = `mailto:${DESTINO}?subject=${encodeURIComponent(dados.assunto + ' — site')}&body=${encodeURIComponent(corpo)}`;
+      return;
+    }
+
+    const botao = $('c-enviar');
+    botao.disabled = true;
+    botao.textContent = 'Enviando...';
+    $('c-envio-erro').classList.remove('mostrar');
+
+    // text/plain evita a checagem prévia de CORS, que o Apps Script não responde.
+    fetch(CONTATO_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(dados) })
+      .then(r => r.json())
+      .then(r => {
+        if (!r.ok) throw new Error(r.erro);
+        $('cartao-form').hidden = true;
+        $('c-sucesso').classList.add('mostrar');
+        $('oracao').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      })
+      .catch(() => {
+        botao.disabled = false;
+        botao.textContent = 'Enviar mensagem';
+        $('c-envio-erro').classList.add('mostrar');
+      });
   });
 </script>
 </body>

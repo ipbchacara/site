@@ -15,7 +15,7 @@ Site institucional publicado em **https://ipchacara.org** pelo GitHub Pages.
 | `/eventos`     | `eventos/index.html`       | Agenda (semana e mês) |
 | `/visitante`   | `visitante/index.html`     | Cadastro de visitantes (grava na planilha via Google Apps Script) |
 | `/contribua`   | `contribua/index.html`     | Dízimos e ofertas (PIX da igreja sede, QR Codes em `assets/img/pix-*.png`) |
-| `/contato`     | `contato/index.html`       | Endereço, mapa, mensagem e pedido de oração |
+| `/contato`     | `contato/index.html`       | Endereço, mapa, mensagem e pedido de oração (envia e-mail à secretaria via Google Apps Script, código em `_apps-script/contato.gs`) |
 | `/natal2026`   | `natal2026/index.html`     | Inscrição de coristas da Cantata (Google Forms) |
 | `/identidade`  | `identidade/index.html`    | Guia de identidade visual (fora do menu) |
 
