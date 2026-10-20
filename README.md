@@ -17,7 +17,7 @@ Site institucional publicado em **https://ipchacara.org** pelo GitHub Pages.
 | `/contribua`   | `contribua/index.html`     | Dízimos e ofertas (PIX da igreja sede, QR Codes em `assets/img/pix-*.png`) |
 | `/oracao`      | `oracao/index.html`        | Pedido de oração (mesmo Apps Script do contato, assunto "Pedido de oração") |
 | `/contato`     | `contato/index.html`       | Endereço, mapa, mensagem e pedido de oração (envia e-mail à secretaria via Google Apps Script, código em `_apps-script/contato.gs`) |
-| `/natal2026`   | `natal2026/index.html`     | Inscrição de coristas da Cantata (Google Forms) |
+| `/natal2026`   | `natal2026/index.html`     | Inscrição de coristas da Cantata (Google Forms). Inscrições encerradas; sem links no site |
 | `/identidade`  | `identidade/index.html`    | Guia de identidade visual (fora do menu) |
 
 ## Tarefas do dia a dia
@@ -36,7 +36,26 @@ O evento aparece sozinho na agenda e nos "Próximos encontros" da página inicia
 
 **Mudar o menu:** lista `MENU` em `assets/js/site.js`.
 
-**Trocar o destaque da página inicial** (hoje, a Cantata): bloco `DESTAQUE SAZONAL` em `index.html`.
+**Destaque da página inicial** (hoje, nenhum): no lugar do comentário `DESTAQUE SAZONAL` em `index.html`, cole o bloco abaixo e troque os textos e o link.
+
+```html
+<section class="secao" style="padding-top:0">
+  <div class="container">
+    <div class="destaque revelar">
+      <div class="destaque-texto">
+        <div class="sobretitulo">Sobretítulo</div>
+        <h2>Título do destaque</h2>
+        <p>Texto curto.</p>
+        <a class="btn btn-claro" href="/link">Botão</a>
+      </div>
+      <div class="destaque-arte" aria-hidden="true">
+        <div class="aneis"><span></span><span></span><span></span></div>
+        <span class="estrela">✶</span>
+      </div>
+    </div>
+  </div>
+</section>
+```
 
 **PDFs dos Símbolos de Fé:** ficam em `assets/docs/` (Confissão, Catecismo Maior e Breve Catecismo) e são linkados pelos cartões da página `/cremos`. Para trocar um documento, substitua o arquivo mantendo o mesmo nome.
 
