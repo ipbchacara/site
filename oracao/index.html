@@ -44,6 +44,9 @@
           <p style="color:var(--texto-suave)">Seu pedido chega direto à secretaria da igreja.</p>
           <form id="form-oracao" novalidate>
             <div class="campo">
+              <label class="caixa-check"><input type="checkbox" id="o-anonimo"> Prefiro não me identificar (pedido anônimo).</label>
+            </div>
+            <div class="campo" id="o-bloco-nome">
               <label for="o-nome">Seu nome <span class="obrigatorio">*</span></label>
               <input type="text" id="o-nome" required autocomplete="name" placeholder="Pode ser só o primeiro nome">
               <p class="msg-erro" id="o-nome-erro">Por favor, informe seu nome.</p>
@@ -60,6 +63,7 @@
                 <label><input type="radio" name="sigilo" value="Somente pastores e presbíteros (sigiloso)"><span>Só pastores e presbíteros</span></label>
               </div>
             </div>
+            <div id="o-bloco-contato">
             <div class="campo">
               <label for="o-tel">Telefone / WhatsApp <span class="opcional">(opcional)</span></label>
               <input type="tel" id="o-tel" autocomplete="tel" placeholder="(27) 9 0000-0000">
@@ -71,6 +75,7 @@
             </div>
             <div class="campo">
               <label class="caixa-check"><input type="checkbox" id="o-contato"> Gostaria que um pastor ou presbítero entrasse em contato comigo.</label>
+            </div>
             </div>
             <div class="sr-only" aria-hidden="true">
               <label for="o-site">Não preencha</label>
@@ -101,17 +106,25 @@
 
   const $ = id => document.getElementById(id);
 
+  // Pedido anônimo: esconde nome e dados de contato.
+  $('o-anonimo').addEventListener('change', function () {
+    $('o-bloco-nome').hidden = this.checked;
+    $('o-bloco-contato').hidden = this.checked;
+  });
+
   $('form-oracao').addEventListener('submit', function (e) {
     e.preventDefault();
+    const anonimo = $('o-anonimo').checked;
     let ok = true;
-    [[$('o-nome'), 'o-nome-erro'], [$('o-msg'), 'o-msg-erro']].forEach(([campo, erro]) => {
+    const obrigatorios = anonimo ? [[$('o-msg'), 'o-msg-erro']] : [[$('o-nome'), 'o-nome-erro'], [$('o-msg'), 'o-msg-erro']];
+    obrigatorios.forEach(([campo, erro]) => {
       const vazio = !campo.value.trim();
       campo.classList.toggle('erro', vazio);
       $(erro).classList.toggle('mostrar', vazio);
       if (vazio) ok = false;
     });
     // Quem pede contato precisa deixar ao menos o telefone.
-    const semTel = $('o-contato').checked && !$('o-tel').value.trim();
+    const semTel = !anonimo && $('o-contato').checked && !$('o-tel').value.trim();
     $('o-tel').classList.toggle('erro', semTel);
     $('o-tel-erro').classList.toggle('mostrar', semTel);
     if (semTel) ok = false;
@@ -119,14 +132,15 @@
 
     const sigilo = document.querySelector('input[name="sigilo"]:checked').value;
     const linhas = ['Compartilhar: ' + sigilo];
-    if ($('o-contato').checked) linhas.push('Deseja contato de um pastor ou presbítero: sim');
+    if (anonimo) linhas.push('Pedido anônimo');
+    else if ($('o-contato').checked) linhas.push('Deseja contato de um pastor ou presbítero: sim');
     linhas.push('', $('o-msg').value.trim());
 
     const dados = {
-      nome: $('o-nome').value.trim(),
+      nome: anonimo ? 'Anônimo' : $('o-nome').value.trim(),
       assunto: 'Pedido de oração',
-      telefone: $('o-tel').value.trim(),
-      email: $('o-email').value.trim(),
+      telefone: anonimo ? '' : $('o-tel').value.trim(),
+      email: anonimo ? '' : $('o-email').value.trim(),
       mensagem: linhas.join('\n'),
       site: $('o-site').value
     };
