@@ -19,6 +19,7 @@ Site institucional publicado em **https://ipchacara.org** pelo GitHub Pages.
 | `/contato`     | `contato/index.html`       | Endereço, mapa, mensagem e pedido de oração (envia e-mail à secretaria via Google Apps Script, código em `_apps-script/contato.gs`) |
 | `/natal2026`   | `natal2026/index.html`     | Inscrição de coristas da Cantata (Google Forms). Inscrições encerradas; sem links no site |
 | `/identidade`  | `identidade/index.html`    | Guia de identidade visual (fora do menu) |
+| `/marca`       | `marca/index.html`         | Download do kit da marca e do manual (fora do menu, noindex). Versão pública do kit: sem capas com lema e sem instalador de fontes |
 
 ## Tarefas do dia a dia
 
@@ -83,7 +84,7 @@ assets/css/site.css   estilos de todo o site
 assets/js/site.js     cabeçalho, menu, rodapé e dados de contato
 assets/js/agenda.js   programação e eventos especiais
 assets/img/           logos (SVG) e imagens usadas no site
-assets/marca/         logos para download (svg/png/pdf), linkadas em /identidade
+assets/marca/         logos para download (svg/png/pdf), linkadas em /identidade; kit .zip e manual PDF, linkados em /marca
 Imagens/              favicon e arquivos antigos (logos em PNG, artes de eventos)
 404.html              página de "não encontrado"
 CNAME                 domínio ipchacara.org (não apagar)
