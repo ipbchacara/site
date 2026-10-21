@@ -58,8 +58,7 @@
       <header class="topo">
         <div class="container topo-inner">
           <a class="marca" href="/" aria-label="Página inicial — ${IGREJA.nome}">
-            <img src="/assets/img/simbolo.png" alt="" width="25" height="46">
-            <span class="marca-texto"><strong>Presbiteriana</strong><span>Chácara Parreiral</span></span>
+            <img src="/assets/img/logo-horizontal-colorida.svg" alt="" width="162" height="46">
           </a>
           <button class="menu-botao" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">${ICONES.menu}</button>
           <nav class="menu" id="menu-principal" aria-label="Menu principal">
@@ -101,7 +100,7 @@
           <div class="rodape-grade">
             <div>
               <div class="marcas-rodape">
-                <a href="/" aria-label="Página inicial"><img class="logo-rodape" src="/assets/img/logo-vertical-branco.png" alt="Presbiteriana Chácara Parreiral" width="162" height="104"></a>
+                <a href="/" aria-label="Página inicial"><img class="logo-rodape" src="/assets/img/logo-vertical-branca.svg" alt="Presbiteriana Chácara Parreiral" width="160" height="104"></a>
                 <span class="divisor" aria-hidden="true"></span>
                 <a class="logo-ipb" href="https://www.ipb.org.br" target="_blank" rel="noopener" title="Site oficial da Igreja Presbiteriana do Brasil"><img src="/assets/img/logo-ipb-vertical-branco.png" alt="Igreja Presbiteriana do Brasil" width="103" height="72"></a>
               </div>
