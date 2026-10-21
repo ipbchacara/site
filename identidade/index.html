@@ -18,13 +18,23 @@
   .indice a { color: #DCE6D1; text-decoration: none; font-size: .88rem; font-weight: 600; padding: .4rem .9rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; }
   .indice a:hover { background: #fff; color: var(--videira); }
   .bloco { scroll-margin-top: calc(var(--header-h) + 24px); }
-  .logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .formas { display: grid; gap: 36px; }
+  .forma { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+  .forma h3 { margin: 0 0 6px; }
+  .forma p { margin: 0; font-size: .92rem; color: var(--texto-suave); }
+  .logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .logos > *, .cores > *, .posts > * { min-width: 0; }
-  .logo-caixa { border-radius: var(--raio); border: 1px solid var(--linha); aspect-ratio: 1; display: grid; place-items: center; padding: 28px; position: relative; }
-  .logo-caixa img { position: absolute; left: 14%; top: 14%; width: 72% !important; height: 62% !important; object-fit: contain; }
-  .logo-caixa small { position: absolute; left: 12px; bottom: 10px; font-size: .75rem; color: var(--texto-suave); }
+  .logo-caixa { margin: 0; border-radius: var(--raio); border: 1px solid var(--linha); aspect-ratio: 4/3; position: relative; background: #fff; }
+  .logo-caixa img { position: absolute; left: 14%; top: 12%; width: 72%; height: 60%; object-fit: contain; }
+  .logo-caixa figcaption { position: absolute; left: 12px; right: 10px; bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: .75rem; }
+  .logo-caixa small { font-size: inherit; color: var(--texto-suave); }
+  .logo-caixa .baixar { display: flex; gap: 10px; }
+  .logo-caixa .baixar a { font-weight: 700; }
   .logo-caixa.escuro small { color: #8FA87A; }
-  .logo-caixa a { position: absolute; right: 10px; bottom: 8px; font-size: .75rem; font-weight: 700; }
+  .logo-caixa.escuro .baixar a { color: #C9DD9A; }
+  .logo-caixa.vermelho small { color: #FFD9DC; }
+  .logo-caixa.vermelho .baixar a { color: #fff; }
+  .formatos { margin-top: 32px; font-size: .92rem; color: var(--texto-suave); }
   .escuro { background: var(--videira-profunda); border-color: transparent; }
   .vermelho { background: var(--uva); border-color: transparent; }
   .cores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -53,8 +63,8 @@
   .post.claro { background: var(--pergaminho); color: var(--videira); border: 1px solid var(--linha); }
   .post.claro h4 { color: var(--videira); }
   .post .aneis.canto { inset: auto -30% -30% auto; width: 90%; aspect-ratio: 1; }
-  @media (max-width: 960px) { .logos, .cores { grid-template-columns: repeat(2, 1fr); } .posts { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 640px) { .tipos, .regras, .posts { grid-template-columns: 1fr; } .tipo .grande { font-size: 3.4rem; } }
+  @media (max-width: 960px) { .cores { grid-template-columns: repeat(2, 1fr); } .posts { grid-template-columns: 1fr 1fr; } .forma { grid-template-columns: 1fr; gap: 14px; } }
+  @media (max-width: 640px) { .tipos, .regras, .posts, .logos { grid-template-columns: 1fr; } .logo-caixa { aspect-ratio: 16/9; } .tipo .grande { font-size: 3.4rem; } }
 </style>
 </head>
 <body>
@@ -62,7 +72,7 @@
 
 <main id="conteudo">
   <section class="pagina-topo">
-    <img class="simbolo-fundo" src="/assets/img/simbolo-branco.png" alt="">
+    <img class="simbolo-fundo" src="/assets/img/simbolo-branca.svg" alt="">
     <div class="container">
       <div class="sobretitulo">Guia de marca · proposta v1</div>
       <h1>Identidade visual</h1>
@@ -86,7 +96,7 @@
       <div class="revelar">
         <div class="quadro-arte" style="aspect-ratio:1">
           <div class="aneis"><span></span><span></span><span></span></div>
-          <img class="simb" src="/assets/img/simbolo-branco.png" alt="Símbolo da igreja: cacho de uvas com ramo">
+          <img class="simb" src="/assets/img/simbolo-branca.svg" alt="Símbolo da igreja: cacho de uvas com ramo">
         </div>
       </div>
     </div>
@@ -98,13 +108,33 @@
       <div class="cabeca-secao revelar">
         <div class="sobretitulo">Logo</div>
         <h2>Versões da marca</h2>
-        <p class="lead">Use a versão colorida sempre que possível. Em fundos escuros ou sobre fotos, use a versão branca. A versão só com o símbolo serve para espaços pequenos: avatar de redes sociais, ícone do site, carimbos.</p>
+        <p class="lead">A marca tem três formas: vertical, horizontal e só o símbolo. Use a versão colorida sempre que possível. Em fundos escuros ou sobre fotos, use a branca. A preta é para impressão em uma cor só: carimbo, gravação, fotocópia.</p>
       </div>
-      <div class="logos">
-        <div class="logo-caixa revelar" style="background:#fff"><img src="/assets/img/logo-vertical.png" alt="Logo colorida"><small>Principal</small><a href="/Imagens/Logos/original-vertical.png" download>PNG</a></div>
-        <div class="logo-caixa escuro revelar"><img src="/assets/img/logo-vertical-branco.png" alt="Logo branca"><small>Negativa</small><a href="/Imagens/Logos/branco-vertical-vertical.png" download style="color:#C9DD9A">PNG</a></div>
-        <div class="logo-caixa revelar" style="background:#fff"><img src="/assets/img/simbolo.png" alt="Símbolo colorido" style="height:80%"><small>Símbolo</small><a href="/Imagens/Logos/logotipo.png" download>PNG</a></div>
-        <div class="logo-caixa vermelho revelar"><img src="/assets/img/simbolo-branco.png" alt="Símbolo branco" style="height:80%"><small style="color:#FFD9DC">Símbolo negativo</small><a href="/Imagens/Logos/logotipo-branco.png" download style="color:#fff">PNG</a></div>
+      <div class="formas">
+        <div class="forma revelar">
+          <div><h3>Vertical</h3><p>Símbolo em cima, nome embaixo. É a forma principal: capas, cartazes, convites e redes sociais.</p></div>
+          <div class="logos">
+            <figure class="logo-caixa"><img src="/assets/marca/svg/logo-vertical-colorida.svg" alt="Logo vertical colorida"><figcaption><small>Colorida</small><span class="baixar"><a href="/assets/marca/svg/logo-vertical-colorida.svg" download>SVG</a><a href="/assets/marca/png/logo-vertical-colorida.png" download>PNG</a><a href="/assets/marca/pdf/logo-vertical-colorida.pdf" download>PDF</a></span></figcaption></figure>
+            <figure class="logo-caixa escuro"><img src="/assets/marca/svg/logo-vertical-branca.svg" alt="Logo vertical branca"><figcaption><small>Branca</small><span class="baixar"><a href="/assets/marca/svg/logo-vertical-branca.svg" download>SVG</a><a href="/assets/marca/png/logo-vertical-branca.png" download>PNG</a><a href="/assets/marca/pdf/logo-vertical-branca.pdf" download>PDF</a></span></figcaption></figure>
+            <figure class="logo-caixa"><img src="/assets/marca/svg/logo-vertical-preta.svg" alt="Logo vertical preta"><figcaption><small>Preta</small><span class="baixar"><a href="/assets/marca/svg/logo-vertical-preta.svg" download>SVG</a><a href="/assets/marca/png/logo-vertical-preta.png" download>PNG</a><a href="/assets/marca/pdf/logo-vertical-preta.pdf" download>PDF</a></span></figcaption></figure>
+          </div>
+        </div>
+        <div class="forma revelar">
+          <div><h3>Horizontal</h3><p>Símbolo à esquerda, nome à direita. Para espaços baixos e largos: cabeçalhos, faixas, rodapés e assinatura de e-mail.</p></div>
+          <div class="logos">
+            <figure class="logo-caixa"><img src="/assets/marca/svg/logo-horizontal-colorida.svg" alt="Logo horizontal colorida"><figcaption><small>Colorida</small><span class="baixar"><a href="/assets/marca/svg/logo-horizontal-colorida.svg" download>SVG</a><a href="/assets/marca/png/logo-horizontal-colorida.png" download>PNG</a><a href="/assets/marca/pdf/logo-horizontal-colorida.pdf" download>PDF</a></span></figcaption></figure>
+            <figure class="logo-caixa escuro"><img src="/assets/marca/svg/logo-horizontal-branca.svg" alt="Logo horizontal branca"><figcaption><small>Branca</small><span class="baixar"><a href="/assets/marca/svg/logo-horizontal-branca.svg" download>SVG</a><a href="/assets/marca/png/logo-horizontal-branca.png" download>PNG</a><a href="/assets/marca/pdf/logo-horizontal-branca.pdf" download>PDF</a></span></figcaption></figure>
+            <figure class="logo-caixa"><img src="/assets/marca/svg/logo-horizontal-preta.svg" alt="Logo horizontal preta"><figcaption><small>Preta</small><span class="baixar"><a href="/assets/marca/svg/logo-horizontal-preta.svg" download>SVG</a><a href="/assets/marca/png/logo-horizontal-preta.png" download>PNG</a><a href="/assets/marca/pdf/logo-horizontal-preta.pdf" download>PDF</a></span></figcaption></figure>
+          </div>
+        </div>
+        <div class="forma revelar">
+          <div><h3>Símbolo</h3><p>Só o cacho, para espaços pequenos: avatar de redes sociais, ícone do site, carimbos.</p></div>
+          <div class="logos">
+            <figure class="logo-caixa"><img src="/assets/marca/svg/simbolo-colorida.svg" alt="Símbolo colorido"><figcaption><small>Colorida</small><span class="baixar"><a href="/assets/marca/svg/simbolo-colorida.svg" download>SVG</a><a href="/assets/marca/png/simbolo-colorida.png" download>PNG</a><a href="/assets/marca/pdf/simbolo-colorida.pdf" download>PDF</a></span></figcaption></figure>
+            <figure class="logo-caixa vermelho"><img src="/assets/marca/svg/simbolo-branca.svg" alt="Símbolo branco"><figcaption><small>Branca</small><span class="baixar"><a href="/assets/marca/svg/simbolo-branca.svg" download>SVG</a><a href="/assets/marca/png/simbolo-branca.png" download>PNG</a><a href="/assets/marca/pdf/simbolo-branca.pdf" download>PDF</a></span></figcaption></figure>
+            <figure class="logo-caixa"><img src="/assets/marca/svg/simbolo-preta.svg" alt="Símbolo preto"><figcaption><small>Preta</small><span class="baixar"><a href="/assets/marca/svg/simbolo-preta.svg" download>SVG</a><a href="/assets/marca/png/simbolo-preta.png" download>PNG</a><a href="/assets/marca/pdf/simbolo-preta.pdf" download>PDF</a></span></figcaption></figure>
+          </div>
+        </div>
       </div>
       <div class="regras revelar" style="margin-top:40px">
         <div class="cartao sim"><h3>Faça</h3><ul>
@@ -118,7 +148,7 @@
           <li>Colocar a versão colorida sobre fotos ou fundos com muita informação.</li>
         </ul></div>
       </div>
-      <p class="revelar" style="margin-top:28px;font-size:.92rem;color:var(--texto-suave)"><strong>Próximo passo recomendado:</strong> redesenhar a logo em vetor (SVG/PDF) e criar uma versão horizontal (símbolo à esquerda, nome à direita) para cabeçalhos e faixas. Hoje o arquivo só existe em PNG.</p>
+      <p class="revelar formatos"><strong>Qual arquivo baixar?</strong> <strong>PNG</strong> (fundo transparente) para Word, PowerPoint, Canva e redes sociais. <strong>SVG</strong> para o site e para quem trabalha com design (Illustrator, Inkscape, Figma). <strong>PDF</strong> é o vetor para mandar à gráfica: faixas, placas, camisetas e adesivos, em qualquer tamanho. A versão branca tem fundo transparente, então parece vazia quando aberta sobre fundo branco.</p>
     </div>
   </section>
 
@@ -170,9 +200,10 @@
           <h3 style="font-family:var(--f-texto);font-size:1.1rem">Open Sans</h3>
           <div class="grande" style="font-family:var(--f-texto);font-weight:800">Aa <span style="font-weight:400">Aa</span></div>
           <p style="font-size:1.05rem">Domingo, 19h30 · Culto de Adoração</p>
-          <p style="color:var(--texto-suave);font-size:.92rem">Muito legível em telas e impressos. É da mesma família visual do nome na logo, por isso conversa bem com ela. Use para textos, horários, botões e legendas.</p>
+          <p style="color:var(--texto-suave);font-size:.92rem">Muito legível em telas e impressos, e conversa bem com o nome na logo. Use para textos, horários, botões e legendas.</p>
         </div>
       </div>
+      <p class="revelar formatos"><strong>E o nome na logo?</strong> “Presbiteriana” e “Chácara Parreiral” foram desenhados com a Segoe UI (Bold e Regular) e convertidos em curvas: fazem parte do desenho da logo, não são texto. Não redigite o nome da logo em nenhuma fonte; use sempre os arquivos acima. E não use a Segoe UI em textos: para isso existem a Fraunces e a Open Sans.</p>
     </div>
   </section>
 
@@ -186,6 +217,7 @@
         <ul class="prosa" style="padding-left:1.2em">
           <li><strong>Anéis concêntricos</strong>, discretos, ao fundo de capas e posts. Lembram as uvas e criam profundidade sem disputar com o texto.</li>
           <li><strong>O ponto-uva</strong>, um pequeno anel vermelho antes dos sobretítulos (veja “Elementos gráficos” acima). É a assinatura da marca em detalhes.</li>
+          <li><strong>A uva e a folha como marcadores.</strong> No modelo de apresentação, o anel vermelho da uva e a folha verde do ramo substituem os marcadores comuns de lista e tópico.</li>
           <li><strong>Cantos arredondados</strong> em cartões e botões em forma de pílula: a marca é acolhedora, nunca rígida.</li>
         </ul>
       </div>
@@ -222,18 +254,18 @@
       <div class="posts">
         <div class="post revelar" style="background:var(--videira-profunda)">
           <div class="aneis canto"><span></span><span></span><span></span></div>
-          <div class="topo-post"><img src="/assets/img/simbolo-branco.png" alt="">Domingo</div>
+          <div class="topo-post"><img src="/assets/img/simbolo-branca.svg" alt="">Domingo</div>
           <h4>Culto de <em>Adoração</em></h4>
           <p>19h30 · Rua Teresa Tironi, 15</p>
         </div>
         <div class="post revelar" style="background:var(--uva)">
           <div class="aneis canto"><span style="border-color:rgba(255,255,255,.2)"></span><span style="border-color:rgba(255,255,255,.15)"></span><span></span></div>
-          <div class="topo-post"><img src="/assets/img/simbolo-branco.png" alt="">Cantata de Natal</div>
+          <div class="topo-post"><img src="/assets/img/simbolo-branca.svg" alt="">Cantata de Natal</div>
           <h4>Venha cantar <em>com a gente</em></h4>
           <p>Inscrições abertas · ipchacara.org/natal2026</p>
         </div>
         <div class="post claro revelar">
-          <div class="topo-post"><img src="/assets/img/simbolo.png" alt="">Versículo</div>
+          <div class="topo-post"><img src="/assets/img/simbolo-colorida.svg" alt="">Versículo</div>
           <h4 style="font-size:1.5rem;font-weight:400;font-style:italic">“Eu sou a videira, vós, os ramos.”</h4>
           <p style="color:var(--uva);font-weight:700;opacity:1">João 15.5</p>
         </div>

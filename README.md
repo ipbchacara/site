@@ -65,7 +65,7 @@ O evento aparece sozinho na agenda e nos "Próximos encontros" da página inicia
 
 - [ ] História da igreja e liderança (pastor, presbíteros e diáconos): o layout está pronto em `_rascunhos/sobre-historia-e-lideranca.html`, com instruções para voltar à página `/sobre`
 - [ ] WhatsApp, Instagram e YouTube — `assets/js/site.js`
-- [ ] Logo em vetor (SVG/PDF) e versão horizontal
+- [x] Logo em vetor (SVG/PDF) e versão horizontal
 
 A pasta `_rascunhos/` não é publicada pelo GitHub Pages (pastas que começam com `_` são ignoradas).
 
@@ -74,7 +74,7 @@ A pasta `_rascunhos/` não é publicada pelo GitHub Pages (pastas que começam c
 Cores, fontes e regras de uso estão em `/identidade`. Resumo:
 
 - Vermelho-uva `#BE1E2D`, verde-folha `#3F6005`, verde-videira `#253D1B`, verde-profundo `#15240F`, pergaminho `#F7F3EA`
-- Fontes: **Fraunces** (títulos) e **Open Sans** (textos), ambas do Google Fonts
+- Fontes: **Fraunces** (títulos) e **Open Sans** (textos), ambas do Google Fonts. O nome na logo é Segoe UI convertida em curvas (só no desenho da logo, não em textos)
 
 ## Estrutura
 
@@ -82,8 +82,9 @@ Cores, fontes e regras de uso estão em `/identidade`. Resumo:
 assets/css/site.css   estilos de todo o site
 assets/js/site.js     cabeçalho, menu, rodapé e dados de contato
 assets/js/agenda.js   programação e eventos especiais
-assets/img/           logos recortadas para uso no site
-Imagens/              arquivos originais (logos, artes de eventos)
+assets/img/           logos (SVG) e imagens usadas no site
+assets/marca/         logos para download (svg/png/pdf), linkadas em /identidade
+Imagens/              favicon e arquivos antigos (logos em PNG, artes de eventos)
 404.html              página de "não encontrado"
 CNAME                 domínio ipchacara.org (não apagar)
 ```

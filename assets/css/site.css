@@ -111,11 +111,8 @@ p { margin: 0 0 1em; }
 }
 .topo.rolou { border-bottom-color: var(--linha); box-shadow: 0 4px 20px rgba(21,36,15,.06); }
 .topo-inner { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--videira); }
-.marca img { height: 46px; width: auto; }
-.marca-texto { display: flex; flex-direction: column; line-height: 1; }
-.marca-texto strong { font-family: var(--f-texto); font-weight: 800; font-size: 1.12rem; letter-spacing: -.01em; }
-.marca-texto span { font-size: .82rem; margin-top: 3px; }
+.marca { display: flex; flex-shrink: 0; align-items: center; gap: 12px; text-decoration: none; color: var(--videira); }
+.marca img { height: 46px; width: auto; display: block; }
 .menu { display: flex; align-items: center; gap: 4px; }
 .menu a { font-size: .9rem; font-weight: 600; color: var(--videira); text-decoration: none; padding: .5rem .7rem; border-radius: 8px; position: relative; }
 .menu a:hover { color: var(--uva); }
