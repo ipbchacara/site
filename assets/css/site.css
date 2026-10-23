@@ -199,13 +199,18 @@ p { margin: 0 0 1em; }
 .quadro-arte.quadro-claro { background: #fff; border: 1px solid var(--linha); }
 .quadro-claro .aneis span { border-color: rgba(63,96,5,.10); }
 .quadro-claro .aneis span:nth-child(3) { background: rgba(236,228,210,.35); }
-.quadro-arte .logo-viva { position: absolute; left: 50%; top: 50%; height: 64%; aspect-ratio: 529 / 971; transform: translate(-50%, -50%); cursor: pointer; overflow: visible; }
-.logo-viva .lv-caule, .logo-viva .lv-anel { stroke-dasharray: 1; stroke-dashoffset: 0; }
-.logo-viva.anima .lv-folha { animation: lv-surge 1s ease-out both; }
-.logo-viva.anima .lv-caule { animation: lv-traco 1.7s .4s cubic-bezier(.45,0,.35,1) both; }
-.logo-viva.anima .lv-anel { animation: lv-traco .9s var(--d) cubic-bezier(.45,0,.35,1) both; }
-@keyframes lv-surge { from { opacity: 0; } }
-@keyframes lv-traco { from { stroke-dashoffset: 1; } }
+.quadro-arte .logo-viva { position: absolute; left: 50%; top: 50%; height: 64%; aspect-ratio: 514 / 960; transform: translate(-50%, -50%); cursor: pointer; overflow: visible; }
+.logo-viva .lv-caule, .logo-viva .lv-anel { stroke-dasharray: 1 2; stroke-dashoffset: 0; }
+.logo-viva .lv-folha { transform-box: view-box; transform-origin: 0 0; }
+.logo-viva.anima .lv-folha { animation: lv-brota 1.1s cubic-bezier(.3,1.25,.5,1) both; }
+.logo-viva.anima .lv-c { animation: lv-traco .65s .55s cubic-bezier(.45,0,1,1) both; }
+.logo-viva.anima .lv-p { animation: lv-traco .85s 1.2s linear both; }
+.logo-viva.anima .lv-pe { animation: lv-traco .22s 2.05s cubic-bezier(0,0,.4,1) both; }
+.logo-viva.anima .lv-anel { animation: lv-traco .75s var(--d) cubic-bezier(.4,0,.3,1) both; }
+.logo-viva.anima .lv-final { animation: lv-oculta 4.3s; }
+@keyframes lv-oculta { from, to { opacity: 0; } }
+@keyframes lv-brota { from { transform: rotate(28deg) scale(.08); opacity: 0; } 30% { opacity: 1; } }
+@keyframes lv-traco { from { stroke-dashoffset: 1.05; } }
 @media (prefers-reduced-motion: reduce) { .logo-viva.anima * { animation: none !important; } }
 
 /* ---------- Faixa de horários ---------- */
