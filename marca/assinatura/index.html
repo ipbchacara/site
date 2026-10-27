@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Página fora dos menus, para acesso direto (ipchacara.org/marca/assinatura) por quem usa e-mail da igreja -->
+<meta name="robots" content="noindex, nofollow">
+<title>Assinatura de e-mail — Presbiteriana Chácara Parreiral</title>
+<link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --uva: #BE1E2D; --folha: #3F6005; --videira: #253D1B; --videira-profunda: #15240F; --pergaminho: #F7F3EA; --trigo: #C9A24A; --texto: #1F2A1B; --texto-suave: #5A6354; --linha: #DDD4C0 }
+  * { box-sizing: border-box }
+  body { margin: 0; background: var(--pergaminho); color: var(--texto); font-family: 'Open Sans', 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.5 }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 40px 16px 64px }
+  .sobretitulo { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--uva) }
+  h1 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(28px, 4vw, 40px); color: var(--videira-profunda); margin: 10px 0 6px; line-height: 1.15 }
+  h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 18px; color: var(--videira-profunda); margin: 0 0 14px }
+  .lead { color: var(--texto-suave); max-width: 42em; margin: 0 0 28px }
+  .grid { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 24px; align-items: start }
+  .card { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 22px }
+  label { display: block; font-size: 13px; font-weight: 600; margin: 0 0 4px }
+  label small { font-weight: 400; color: var(--texto-suave) }
+  input { width: 100%; font: inherit; font-size: 15px; padding: 9px 11px; border: 1.5px solid var(--linha); border-radius: 8px; margin-bottom: 14px; background: #fff; color: var(--texto) }
+  input:focus { outline: 2px solid var(--folha); outline-offset: 1px; border-color: transparent }
+  .preview { background: #fff; border: 1px solid var(--linha); border-radius: 14px; overflow: hidden }
+  .preview-bar { display: flex; gap: 6px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--linha); font-size: 12px; color: var(--texto-suave) }
+  .preview-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--linha) }
+  .preview-body { padding: 26px 28px 30px; overflow-x: auto }
+  .msg { color: var(--texto-suave); margin: 0 0 22px; font-size: 15px }
+  .acoes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px }
+  button { font: inherit; font-weight: 600; font-size: 15px; border-radius: 999px; padding: 10px 20px; cursor: pointer; border: 1.5px solid var(--linha); background: #fff; color: var(--texto) }
+  button.primario { background: var(--folha); border-color: var(--folha); color: #fff }
+  button:focus-visible { outline: 2px solid var(--trigo); outline-offset: 3px }
+  .aviso { font-size: 14px; color: var(--folha); min-height: 1.5em; margin-top: 10px }
+  .passos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px }
+  .passos ol { margin: 0; padding-left: 18px; font-size: 14px; color: var(--texto-suave) }
+  .passos li { margin-bottom: 4px }
+  textarea { width: 100%; height: 140px; font-family: Consolas, monospace; font-size: 12px; border: 1px solid var(--linha); border-radius: 8px; padding: 10px; margin-top: 12px; display: none }
+  @media (max-width: 860px) { .grid, .passos { grid-template-columns: 1fr } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="sobretitulo">Kit da marca</div>
+  <h1>Assinatura de e-mail</h1>
+  <p class="lead">Preencha seus dados, copie a assinatura e cole nas configurações do seu e-mail. A logo animada já está hospedada no site da igreja.</p>
+
+  <div class="grid">
+    <form class="card" id="form" autocomplete="off">
+      <h2>Seus dados</h2>
+      <label for="nome">Nome</label>
+      <input id="nome" value="Nome Sobrenome">
+      <label for="cargo">Cargo ou função</label>
+      <input id="cargo" value="Secretaria">
+      <label for="celular">Celular / WhatsApp <small>(opcional)</small></label>
+      <input id="celular" placeholder="(27) 99999-9999">
+      <label for="email">E-mail</label>
+      <input id="email" value="secretaria@ipchacara.org">
+    </form>
+
+    <div>
+      <div class="preview">
+        <div class="preview-bar"><i></i><i></i><i></i><span style="margin-left:8px">Nova mensagem</span></div>
+        <div class="preview-body">
+          <p class="msg">Graça e paz! Segue em anexo a programação do mês.<br><br>Um abraço,</p>
+          <div id="assinatura"></div>
+        </div>
+      </div>
+      <div class="acoes">
+        <button class="primario" type="button" id="copiar">Copiar assinatura</button>
+        <button type="button" id="copiarHtml">Copiar código HTML</button>
+      </div>
+      <div class="aviso" id="aviso" role="status"></div>
+      <textarea id="codigo" readonly aria-label="Código HTML da assinatura"></textarea>
+    </div>
+  </div>
+
+  <div class="passos">
+    <div class="card"><h2>Gmail</h2><ol><li>Configurações (engrenagem) › Ver todas as configurações.</li><li>Aba Geral › Assinatura › Criar nova.</li><li>Cole com Ctrl+V e salve no fim da página.</li></ol></div>
+    <div class="card"><h2>Outlook (web e novo Outlook)</h2><ol><li>Configurações › Contas › Assinaturas.</li><li>Nova assinatura, cole com Ctrl+V.</li><li>Defina como padrão para novas mensagens e respostas.</li></ol></div>
+    <div class="card"><h2>Outlook clássico (Windows)</h2><ol><li>Arquivo › Opções › Email › Assinaturas.</li><li>Novo, cole com Ctrl+V e salve.</li><li>Ele mostra a logo parada (1º quadro do GIF), o que é esperado.</li></ol></div>
+  </div>
+</div>
+
+<script>
+  const SITE = 'https://ipchacara.org';
+  const LOGO = SITE + '/assets/marca/email/ipchacara-assinatura.gif';
+  const LOGO_LOCAL = '../../assets/marca/email/ipchacara-assinatura.gif';
+  const AVISO_LEGAL = 'AVISO DE CONFIDENCIALIDADE: Esta mensagem e seus anexos podem conter informações confidenciais e são destinados exclusivamente ao(s) destinatário(s) indicado(s). Se você não for o destinatário, fica notificado de que a leitura, o uso, a cópia, a divulgação ou a distribuição deste conteúdo são proibidos. Caso a tenha recebido por engano, avise o remetente e apague-a, com seus anexos, de seus sistemas. Os dados pessoais aqui contidos são tratados conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).';
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const digitos = (s) => s.replace(/\D/g, '');
+
+  function montar(d, logo) {
+    const a = 'color:#3F6005;text-decoration:none';
+    const linhas = [];
+    linhas.push((d.celular ? `<a href="https://wa.me/55${digitos(d.celular)}" style="${a}">${esc(d.celular)}</a> &nbsp;·&nbsp; ` : '')
+      + `<a href="mailto:${esc(d.email)}" style="${a}">${esc(d.email)}</a>`
+      + ` &nbsp;·&nbsp; <a href="${SITE}" style="${a}">ipchacara.org</a>`);
+    linhas.push(`<span style="color:#5A6354">Rua Teresa Tironi, 15 · Guaraciaba · Serra/ES</span>`);
+    linhas.push(`<span style="color:#BE1E2D;font-size:14px">&#9679;</span> <span style="color:#253D1B;font-weight:bold">Cultos:</span> <span style="color:#5A6354">domingo às 19h30 · oração às terças, 19h30</span>`);
+    return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:'Open Sans','Segoe UI',Arial,Helvetica,sans-serif;color:#1F2A1B;font-size:13px;line-height:1.5;max-width:520px">
+<tr><td style="padding:0 0 10px 0"><span style="font-size:16px;font-weight:bold;color:#253D1B">${esc(d.nome)}</span>${d.cargo ? `<br><span style="color:#5A6354">${esc(d.cargo)}</span>` : ''}</td></tr>
+<tr><td style="padding:0 0 10px 0"><a href="${SITE}" style="text-decoration:none"><img src="${logo}" width="230" height="69" alt="Presbiteriana Chácara Parreiral" style="display:block;border:0;width:230px;height:69px"></a></td></tr>
+<tr><td style="border-top:2px solid #3F6005;padding:8px 0 0 0;font-size:12px;line-height:1.7">${linhas.join('<br>')}</td></tr>
+<tr><td style="padding:14px 0 0 0;font-size:10px;line-height:1.45;color:#8A9184">${AVISO_LEGAL}</td></tr>
+</table>`;
+  }
+
+  const campos = ['nome', 'cargo', 'celular', 'email'];
+  const dados = () => Object.fromEntries(campos.map((c) => [c, document.getElementById(c).value.trim()]));
+  const alvo = document.getElementById('assinatura');
+  function atualizar() {
+    alvo.innerHTML = montar(dados(), LOGO);
+    const img = alvo.querySelector('img');
+    // antes da publicação do site, mostra o arquivo local na pré-visualização
+    img.onerror = () => { img.onerror = null; img.src = LOGO_LOCAL; };
+    document.getElementById('codigo').value = montar(dados(), LOGO);
+  }
+  campos.forEach((c) => document.getElementById(c).addEventListener('input', atualizar));
+  atualizar();
+
+  const aviso = (t) => { const el = document.getElementById('aviso'); el.textContent = t; clearTimeout(aviso.t); aviso.t = setTimeout(() => (el.textContent = ''), 4000); };
+  document.getElementById('copiar').addEventListener('click', async () => {
+    const html = montar(dados(), LOGO);
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([alvo.innerText], { type: 'text/plain' }) })]);
+      aviso('Assinatura copiada. Cole nas configurações do seu e-mail.');
+    } catch {
+      // navegador sem ClipboardItem: seleciona a pré-visualização para Ctrl+C
+      // a cópia precisa levar o endereço público da logo, não o arquivo local
+      const img = alvo.querySelector('img'); img.onerror = null; img.setAttribute('src', LOGO);
+      const sel = getSelection(); const rng = document.createRange(); rng.selectNodeContents(alvo); sel.removeAllRanges(); sel.addRange(rng);
+      const ok = document.execCommand && document.execCommand('copy');
+      aviso(ok ? 'Assinatura copiada. Cole nas configurações do seu e-mail.' : 'Assinatura selecionada. Pressione Ctrl+C para copiar.');
+    }
+  });
+  document.getElementById('copiarHtml').addEventListener('click', async () => {
+    const ta = document.getElementById('codigo'); ta.style.display = 'block'; ta.select();
+    try { await navigator.clipboard.writeText(ta.value); aviso('Código HTML copiado.'); } catch { aviso('Código selecionado. Pressione Ctrl+C.'); }
+  });
+</script>
+</body>
+</html>
