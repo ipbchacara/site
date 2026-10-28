@@ -160,7 +160,54 @@
     itens.forEach(el => { el.addEventListener('transitionend', concluir); obs.observe(el); });
   }
 
-  function iniciar() { montarCabecalho(); montarRodape(); revelar(); }
+  // ── ANIMAÇÕES AO APARECER ──────────────────────────────
+  // Marca os elementos com .prep e chama fn quando cada um entra na tela.
+  // Com "reduzir movimento" (ou sem IntersectionObserver) nada é escondido.
+  const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function aoAparecer(seletor, fn) {
+    const els = document.querySelectorAll(seletor);
+    if (!els.length || quieto || !('IntersectionObserver' in window)) return;
+    els.forEach(el => el.classList.add('prep'));
+    const obs = new IntersectionObserver(entradas => {
+      entradas.filter(e => e.isIntersecting).forEach((e, i) => { obs.unobserve(e.target); fn(e.target, i); });
+    }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => obs.observe(el));
+  }
+
+  // Conta de zero até o número do elemento, mantendo os zeros à esquerda (01, 02...)
+  function contar(el, atraso) {
+    const texto = el.textContent.trim(), alvo = parseInt(texto, 10);
+    if (isNaN(alvo)) return;
+    let inicio = null;
+    const passo = t => {
+      if (inicio === null) inicio = t + atraso;
+      const p = Math.max(0, Math.min(1, (t - inicio) / 700));
+      el.textContent = String(Math.round(alvo * (1 - Math.pow(1 - p, 3)))).padStart(texto.length, '0');
+      if (p < 1) requestAnimationFrame(passo);
+    };
+    requestAnimationFrame(passo);
+  }
+
+  function animacoes() {
+    // Pilares: entram da esquerda, um após o outro, e o número conta até o valor
+    aoAparecer('.pilar', (el, i) => {
+      el.style.setProperty('--atraso', i * 0.12 + 's');
+      el.classList.add('em-cena');
+      const num = el.querySelector('.num');
+      if (num) contar(num, i * 120 + 150);
+    });
+    // Quadros com símbolo ou foto: aproximam devagar ao aparecer
+    aoAparecer('.quadro-arte', el => el.classList.add('em-cena'));
+    // Horários: cada caractere da hora surge em sequência
+    aoAparecer('.horario .hora', el => {
+      const texto = el.textContent;
+      el.innerHTML = `<span class="sr-only">${texto}</span><span aria-hidden="true">` +
+        [...texto].map((c, i) => `<span class="digito" style="--c:${i}">${c}</span>`).join('') + '</span>';
+      el.classList.add('em-cena');
+    });
+  }
+
+  function iniciar() { montarCabecalho(); montarRodape(); revelar(); animacoes(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);
   else iniciar();
 
