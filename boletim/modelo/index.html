@@ -48,7 +48,7 @@
         <div class="rv-edicao">Nº 0<span>Mês e ano</span></div>
       </div>
       <div class="rv-chamada">
-        <div class="sobretitulo">Carta do pastor · Tema do mês</div>
+        <div class="sobretitulo">Tema do mês</div>
         <h2>Título da carta do <em>pastor</em></h2>
         <p>Uma frase de apoio que convida a ler a edição, em até duas linhas.</p>
       </div>
@@ -132,11 +132,10 @@
     <div class="container duas-colunas" style="align-items:start">
       <div class="revelar">
         <div class="rv-rubrica"><span class="n">03</span><div class="sobretitulo">Na Palavra</div><span class="rv-tipo">Fixa</span></div>
-        <h2>No púlpito e na Escola Bíblica</h2>
-        <h3 style="margin-top:1.2em">Série de sermões</h3>
-        <p>Nome da série, livro ou textos pregados no mês.</p>
-        <h3>Escola Bíblica</h3>
-        <p>O que cada classe está estudando.</p>
+        <!-- O título sai do assunto do mês (em dezembro: "Deus feito homem"), nunca "sermões e EBD" -->
+        <h2>Um título que nasce do que estamos estudando</h2>
+        <p class="lead">Uma frase que liga a pregação, a Escola Bíblica e a pergunta do mês.</p>
+        <p>Um texto corrido, sem subtítulos: o que tem sido pregado aos domingos, o que as classes da Escola Bíblica estão estudando e por que a pergunta do Catecismo, ao lado, conversa com isso.</p>
       </div>
       <div class="rv-catecismo revelar">
         <div class="sobretitulo">Pergunta para o mês</div>
@@ -200,6 +199,15 @@
         <div class="rv-foto" data-legenda="Foto 3"></div>
       </div>
       <p class="rv-galeria-legenda revelar">Legenda: data, local e quem participou.</p>
+
+      <!-- Quando houve mais de um evento no mês: o principal fica na galeria acima e os outros entram aqui,
+           um cartão para cada. Sem evento principal, use só os cartões (apague a galeria e o h2 vira "O mês que passou"). -->
+      <h3 class="rv-tambem revelar">Também aconteceu</h3>
+      <div class="rv-ocorridos revelar">
+        <article class="rv-ocorrido"><div class="rv-foto" data-legenda="Foto"></div><div><span class="quando">Dia 00</span><h4>Outro evento</h4><p>Duas ou três linhas sobre o que aconteceu.</p></div></article>
+        <article class="rv-ocorrido"><div class="rv-foto" data-legenda="Foto"></div><div><span class="quando">Dia 00</span><h4>Outro evento</h4><p>Duas ou três linhas sobre o que aconteceu.</p></div></article>
+        <article class="rv-ocorrido"><div class="rv-foto" data-legenda="Foto"></div><div><span class="quando">Dia 00</span><h4>Outro evento</h4><p>Duas ou três linhas sobre o que aconteceu.</p></div></article>
+      </div>
     </div>
   </section>
 
