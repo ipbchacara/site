@@ -31,6 +31,8 @@ Site institucional publicado em **https://ipchacara.org** pelo GitHub Pages.
 
 O evento aparece sozinho na agenda e nos "Próximos encontros" da página inicial.
 
+Campos opcionais: `pauta: ['…', '…']` mostra uma lista numerada só em `/eventos` (útil para assembleias), e `substitui: 'Culto de Adoração'` tira da agenda o item semanal daquele dia (útil quando a cantata ocupa o horário do culto).
+
 **Mudar horários fixos:** `PROGRAMACAO_SEMANAL` no mesmo arquivo. Na página inicial, atualize também a faixa de horários (`index.html`, bloco `HORÁRIOS`).
 
 **Mudar e-mail, WhatsApp, Instagram ou YouTube:** objeto `IGREJA` no início de `assets/js/site.js`. Rede social vazia (`''`) não aparece no site.

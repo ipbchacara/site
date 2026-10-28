@@ -45,6 +45,8 @@
   .item h3 { font-size: 1.05rem; margin: 0 0 2px; }
   .item .meta { font-size: .88rem; color: var(--texto-suave); }
   .item a { font-weight: 700; font-size: .88rem; }
+  .item .pauta { font-size: .88rem; color: var(--texto); margin: 8px 0 0; padding-left: 1.3em; }
+  .item .pauta li + li { margin-top: 3px; }
   .vazio { text-align: center; padding: 32px 16px; color: var(--texto-suave); font-style: italic; }
   .cab-mes { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 6px; }
   .cab-mes div { text-align: center; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--texto-suave); }
@@ -169,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!evs.length) { alvo.innerHTML = `<p class="titulo-dia">${txt}</p><div class="vazio">Nenhuma programação neste dia.</div>`; return; }
     alvo.innerHTML = `<p class="titulo-dia">${txt}</p>` + evs.map(e => `
       <div class="item"><span class="barra" style="background:${COR[e.tipo]}"></span>
-        <div><h3>${e.titulo}</h3><div class="meta">${e.hora}${e.sub ? ' · ' + e.sub : ''}${e.link ? ` · <a href="${e.link}">Saiba mais</a>` : ''}</div></div>
+        <div><h3>${e.titulo}</h3><div class="meta">${e.hora}${e.sub ? ' · ' + e.sub : ''}${e.link ? ` · <a href="${e.link}">Saiba mais</a>` : ''}</div>${e.pauta ? `<ol class="pauta">${e.pauta.map(p => `<li>${p}</li>`).join('')}</ol>` : ''}</div>
         <span class="selo ${e.tipo}">${e.selo}</span></div>`).join('');
   }
 

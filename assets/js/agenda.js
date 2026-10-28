@@ -13,7 +13,17 @@ const PROGRAMACAO_SEMANAL = [
 // Eventos especiais. Formato da data: 'AAAA-MM-DD'.
 // Exemplo:
 //   { data: '2026-12-20', titulo: 'Cantata de Natal', hora: '19h30', tipo: 'especial', selo: 'Especial', sub: 'Aberta à comunidade', link: '/natal2026' },
+// Campos opcionais:
+//   pauta: ['item 1', 'item 2']    lista numerada, mostrada só na página /eventos
+//   substitui: 'Culto de Adoração'  tira da agenda, nesse dia, o item semanal com esse título
 const EVENTOS_ESPECIAIS = [
+  { data: '2026-11-08', titulo: 'Assembleia Extraordinária', hora: '8h30', sub: 'Na igreja Sede (IPJC)',
+    pauta: [
+      'Aprovação, ou não, da compra do terreno em Santa Maria de Jetibá para a construção do templo da congregação',
+      'Aprovação, ou não, de empréstimo junto à Junta Patrimonial da IPB para a construção do templo da congregação em Santa Maria de Jetibá',
+      'Proposta de título de diácono emérito ao irmão Ismael Silva',
+    ] },
+  { data: '2026-12-13', titulo: 'Cantata de Natal “Santo pra Sempre”', hora: '19h30', sub: 'No nosso templo · Aberta à comunidade: traga um convidado', substitui: 'Culto de Adoração' },
 ];
 
 const ROTULO_TIPO = { culto: 'Culto', escola: 'Escola Bíblica', oracao: 'Oração', especial: 'Especial' };
@@ -23,10 +33,14 @@ function dataISO(d) {
 }
 
 function eventosDoDia(data) {
-  const lista = PROGRAMACAO_SEMANAL.filter(e => e.dia === data.getDay()).map(e => ({ ...e }));
   const iso = dataISO(data);
-  EVENTOS_ESPECIAIS.forEach(e => { if (e.data === iso) lista.push({ tipo: 'especial', selo: 'Especial', ...e }); });
-  return lista.sort((a, b) => a.hora.localeCompare(b.hora));
+  const especiais = EVENTOS_ESPECIAIS.filter(e => e.data === iso);
+  const substituidos = especiais.map(e => e.substitui).filter(Boolean);
+  const lista = PROGRAMACAO_SEMANAL.filter(e => e.dia === data.getDay() && !substituidos.includes(e.titulo)).map(e => ({ ...e }));
+  especiais.forEach(e => lista.push({ tipo: 'especial', selo: 'Especial', ...e }));
+  // '8h30' antes de '18h00': compara em minutos, não como texto
+  const minutos = h => { const [hh, mm] = h.split('h').map(Number); return hh * 60 + (mm || 0); };
+  return lista.sort((a, b) => minutos(a.hora) - minutos(b.hora));
 }
 
 // Próximos N eventos a partir de hoje (especiais primeiro dentro do mesmo dia)
