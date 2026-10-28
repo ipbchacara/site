@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Boletim mensal (revista digital) — complementa o site.css.
+   Cada edição fica em /boletim/AAAA-MM/ e usa só estas classes.
+   Natal e datas festivas podem usar o trigo, conforme o manual da marca.
+   ========================================================================== */
+
+/* ---------- Capa ---------- */
+.rv-capa {
+  position: relative; overflow: hidden; isolation: isolate;
+  min-height: min(92vh, 860px); display: flex; flex-direction: column;
+  background: var(--videira-profunda); color: #fff;
+  border-top: 8px solid var(--uva);   /* faixa vermelha das capas */
+}
+.rv-capa::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(55% 70% at 88% 18%, rgba(110,143,46,.32), transparent 70%),
+              radial-gradient(60% 60% at 0% 100%, rgba(154,22,34,.55), transparent 70%);
+}
+.rv-capa .aneis { inset: auto; width: min(78vw, 720px); aspect-ratio: 1; right: max(-180px, -14vw); top: 50%; transform: translateY(-50%); z-index: -1; }
+.rv-capa .aneis span { border-color: rgba(201,162,74,.20); }
+.rv-capa .aneis span:nth-child(2) { border-color: rgba(201,162,74,.13); animation: respira 7s ease-in-out infinite alternate; }
+.rv-capa .container { flex: 1; display: flex; flex-direction: column; padding-top: clamp(28px, 4vw, 44px); padding-bottom: clamp(28px, 4vw, 44px); }
+
+.rv-cabeca { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; padding-bottom: 14px; border-bottom: 1px solid rgba(201,162,74,.35); }
+.rv-titulo { font-family: var(--f-titulo); font-weight: 600; font-size: clamp(3.4rem, 9vw, 6.2rem); line-height: .9; letter-spacing: -.02em; color: #fff; margin: 0; }
+.rv-titulo em { font-style: italic; font-weight: 400; color: var(--trigo); }
+.rv-edicao { font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #E7D3A0; text-align: right; }
+.rv-edicao span { display: block; color: #A9BB98; font-weight: 600; letter-spacing: .1em; margin-top: 2px; }
+
+.rv-chamada { margin-top: auto; padding-top: clamp(48px, 9vw, 110px); max-width: 680px; }
+.rv-chamada .sobretitulo { color: #E7D3A0; }
+.rv-chamada .sobretitulo::before { border-color: var(--trigo); }
+.rv-chamada h2 { color: #fff; font-size: clamp(2.6rem, 6.4vw, 4.6rem); line-height: 1.02; margin-bottom: .3em; }
+.rv-chamada h2 em { font-style: italic; font-weight: 400; color: #C9DD9A; }
+.rv-chamada p { color: #D3DEC8; font-size: 1.15rem; max-width: 520px; }
+
+.rv-linhas { list-style: none; padding: 0; margin: clamp(32px, 5vw, 56px) 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,.14); }
+.rv-linhas li { padding: 16px 20px 0 0; }
+.rv-linhas a { display: block; text-decoration: none; color: #fff; }
+.rv-linhas .n { font-family: var(--f-titulo); font-size: 1.5rem; color: var(--trigo); line-height: 1; }
+.rv-linhas strong { display: block; font-family: var(--f-titulo); font-weight: 600; font-size: 1.12rem; margin-top: 6px; }
+.rv-linhas span { display: block; font-size: .88rem; color: #A9BB98; }
+.rv-linhas a:hover strong { color: #F2A7AE; }
+
+.rv-rodape-capa { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 28px; }
+.rv-rodape-capa img { height: 44px; width: auto; }
+.rv-rodape-capa a { color: #DCE6D1; font-size: .88rem; font-weight: 600; text-decoration: none; }
+
+.rv-capa .rv-cabeca, .rv-capa .rv-chamada > *, .rv-capa .rv-linhas { animation: entra .9s var(--ease) both; }
+.rv-capa .rv-chamada > :nth-child(2) { animation-delay: .12s; }
+.rv-capa .rv-chamada > :nth-child(3) { animation-delay: .22s; }
+.rv-capa .rv-linhas { animation-delay: .34s; }
+
+@media (max-width: 760px) {
+  .rv-linhas { grid-template-columns: 1fr; }
+  .rv-linhas li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .rv-edicao { text-align: left; }
+  .rv-rodape-capa img { height: 36px; }
+}
+
+/* Aviso de edição de demonstração (tirar quando os textos forem definitivos) */
+.rv-aviso { background: #FFF4D6; color: #6B4E00; font-size: .88rem; text-align: center; padding: 10px 20px; border-bottom: 1px solid #F1DFA6; }
+
+/* ---------- Sumário ---------- */
+.rv-sumario { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-top: 2px solid var(--videira); }
+.rv-sumario a { display: grid; grid-template-columns: 40px 1fr; gap: 10px; padding: 16px 16px 16px 0; border-bottom: 1px solid var(--linha); text-decoration: none; color: var(--videira); transition: color .25s ease, padding-left .35s var(--ease); }
+.rv-sumario a:hover { color: var(--uva); padding-left: 6px; }
+.rv-sumario .n { font-family: var(--f-titulo); font-size: 1.3rem; color: var(--uva); line-height: 1.2; }
+.rv-sumario strong { display: block; font-family: var(--f-titulo); font-weight: 600; font-size: 1.08rem; line-height: 1.25; }
+.rv-sumario span:not(.n) { display: block; font-size: .85rem; color: var(--texto-suave); }
+
+/* ---------- Matéria ---------- */
+.rv-materia .rv-rubrica { display: flex; align-items: baseline; gap: 14px; margin-bottom: 10px; }
+.rv-rubrica .n { font-family: var(--f-titulo); font-size: 3.2rem; line-height: .8; color: var(--uva); font-weight: 400; }
+.rv-rubrica .sobretitulo { margin: 0; }
+.rv-materia h2 { max-width: 20ch; }
+
+/* Palavra pastoral: duas colunas no desktop, capitular na primeira letra */
+.rv-pastoral { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+.rv-pastoral .autor { display: flex; align-items: center; gap: 14px; margin-top: 24px; }
+.rv-pastoral .avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--areia); border: 3px solid #fff; box-shadow: var(--sombra); display: grid; place-items: center; overflow: hidden; flex: none; }
+.rv-pastoral .avatar img { width: 100%; height: 100%; object-fit: cover; }
+.rv-pastoral .avatar svg { width: 30px; height: 30px; color: #B9AE95; }
+.rv-pastoral .autor strong { display: block; color: var(--videira); }
+.rv-pastoral .autor span { font-size: .88rem; color: var(--texto-suave); }
+.rv-texto { font-size: 1.1rem; columns: 2 300px; column-gap: 40px; }
+.rv-texto p { break-inside: avoid-column; }
+.rv-texto > p:first-of-type::first-letter { float: left; font-family: var(--f-titulo); font-weight: 600; font-size: 4.4em; line-height: .82; margin: .06em .1em 0 0; color: var(--uva); }
+.rv-texto blockquote { break-inside: avoid; margin: 0 0 1em; padding: .9em 1.1em; background: #fff; border-left: 3px solid var(--uva); border-radius: 0 var(--raio) var(--raio) 0; font-family: var(--f-titulo); font-style: italic; font-size: 1.15rem; color: var(--videira); }
+.rv-texto blockquote cite { display: block; font-family: var(--f-texto); font-style: normal; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--texto-suave); margin-top: .4em; }
+.rv-destaque { font-family: var(--f-titulo); font-style: italic; font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.3; color: var(--videira); border-top: 2px solid var(--uva); padding-top: 18px; margin: 0; }
+@media (max-width: 860px) { .rv-pastoral { grid-template-columns: 1fr; } }
+
+/* ---------- Agenda do mês ---------- */
+.rv-semana { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+.rv-semana > div { background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 18px 20px; }
+.rv-semana .dia { font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--uva); }
+.rv-semana .hora { font-family: var(--f-titulo); font-size: 1.7rem; color: var(--videira); line-height: 1.15; }
+.rv-semana .nome { font-weight: 600; }
+@media (max-width: 760px) { .rv-semana { grid-template-columns: 1fr; } }
+
+/* ---------- O que estudamos ---------- */
+.rv-catecismo { background: var(--videira-profunda); color: #E8EFE0; border-radius: var(--raio-g); padding: clamp(24px, 4vw, 40px); position: relative; overflow: hidden; }
+.rv-catecismo .sobretitulo { color: #A9C77A; }
+.rv-catecismo .pergunta { font-family: var(--f-titulo); font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.25; color: #fff; margin: 0 0 .6em; }
+.rv-catecismo p { color: #C9D6BD; margin: 0; }
+.rv-catecismo .ref { margin-top: 14px; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: #8FA87A; }
+
+/* ---------- Plano de leitura ---------- */
+.rv-progresso { display: flex; align-items: center; gap: 14px; margin: 0 0 22px; font-size: .92rem; color: var(--texto-suave); }
+.rv-progresso .barra { flex: 1; max-width: 320px; height: 8px; border-radius: 99px; background: var(--linha); overflow: hidden; }
+.rv-progresso .barra i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--folha-clara), var(--folha)); border-radius: inherit; transition: width .6s var(--ease); }
+.rv-leitura { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.rv-leitura li { position: relative; }
+.rv-leitura label { display: grid; grid-template-columns: 44px 1fr 22px; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 10px 14px 10px 10px; cursor: pointer; height: 100%; transition: border-color .25s ease, background-color .25s ease, transform .3s var(--ease); }
+.rv-leitura label:hover { border-color: var(--folha-clara); transform: translateY(-2px); }
+.rv-leitura .d { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--areia); font-family: var(--f-titulo); font-size: 1.1rem; color: var(--videira); line-height: 1; }
+.rv-leitura .d small { display: block; font-family: var(--f-texto); font-size: .55rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-suave); }
+.rv-leitura strong { display: block; color: var(--videira); font-size: .98rem; }
+.rv-leitura span.t { display: block; font-size: .82rem; color: var(--texto-suave); line-height: 1.35; }
+.rv-leitura input { width: 20px; height: 20px; accent-color: var(--folha); margin: 0; }
+.rv-leitura li.hoje label { border-color: var(--uva); box-shadow: 0 0 0 3px rgba(190,30,45,.1); }
+.rv-leitura li.hoje .d { background: var(--uva); color: #fff; }
+.rv-leitura li.hoje .d small { color: #FBE0E2; }
+.rv-leitura li.natal .d { background: var(--trigo); color: #fff; }
+.rv-leitura li.natal .d small { color: #fff; }
+.rv-leitura input:checked ~ * { opacity: .55; }
+.rv-leitura label:has(input:checked) { background: #EEF2E3; border-color: transparent; }
+.rv-leitura label:has(input:checked) strong { text-decoration: line-through; text-decoration-color: var(--folha-clara); }
+.rv-leitura .grupo { grid-column: 1 / -1; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--folha); padding: 14px 0 2px; }
+.rv-leitura .grupo:first-child { padding-top: 0; }
+
+/* ---------- Conheça ---------- */
+.rv-conheca { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.rv-conheca .quadro-arte { aspect-ratio: 4 / 3.4; }
+.rv-fatos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 24px 0 0; }
+.rv-fatos div { background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 14px; text-align: center; }
+.rv-fatos strong { display: block; font-family: var(--f-titulo); font-size: 1.5rem; color: var(--uva); line-height: 1.1; }
+.rv-fatos span { font-size: .82rem; color: var(--texto-suave); }
+@media (max-width: 860px) { .rv-conheca { grid-template-columns: 1fr; } }
+
+/* ---------- Convite à oração ---------- */
+.rv-temas { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 22px 0 0; }
+.rv-temas li { padding: .5rem 1.05rem; border: 1px solid rgba(201,221,154,.35); border-radius: 999px; font-size: .92rem; font-weight: 600; color: #DCE6D1; }
+
+/* ---------- Expediente e compartilhar ---------- */
+.rv-final { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+.rv-expediente { font-size: .92rem; color: var(--texto-suave); border-top: 2px solid var(--videira); padding-top: 18px; }
+.rv-expediente dt { font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--folha); margin-top: 14px; }
+.rv-expediente dt:first-child { margin-top: 0; }
+.rv-expediente dd { margin: 2px 0 0; color: var(--texto); }
+@media (max-width: 860px) { .rv-final { grid-template-columns: 1fr; } }
+
+/* ---------- Acervo (/boletim) ---------- */
+.rv-acervo { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+.rv-acervo a { display: block; text-decoration: none; color: inherit; }
+.rv-acervo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--raio); box-shadow: var(--sombra); transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+.rv-acervo a:hover img { transform: translateY(-6px) rotate(-1deg); box-shadow: 0 18px 40px rgba(21,36,15,.18); }
+.rv-acervo strong { display: block; font-family: var(--f-titulo); font-size: 1.2rem; color: var(--videira); margin-top: 14px; }
+.rv-acervo span { font-size: .88rem; color: var(--texto-suave); }
+
+@media print {
+  #site-header, #site-footer, .rv-aviso, .rv-compartilhar { display: none !important; }
+  .revelar { opacity: 1 !important; transform: none !important; }
+}
