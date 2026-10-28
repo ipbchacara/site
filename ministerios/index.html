@@ -20,8 +20,8 @@
   .classes strong { display: block; color: var(--videira); }
   .classes span { font-size: .93rem; color: var(--texto-suave); }
   .sociedades { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 40px; }
-  .sociedade { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 22px 18px; text-decoration: none; color: inherit; transition: transform .2s, box-shadow .2s; }
-  .sociedade:hover { transform: translateY(-3px); box-shadow: var(--sombra); color: inherit; }
+  .sociedade { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 22px 18px; text-decoration: none; color: inherit; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+  .sociedade:hover { transform: translateY(-4px); box-shadow: var(--sombra); color: inherit; }
   .sociedade .mais { margin-top: auto; padding-top: 12px; font-weight: 700; font-size: .85rem; color: var(--uva); }
   .sociedade .sigla { font-family: var(--f-titulo); font-size: 1.7rem; color: var(--uva); line-height: 1; }
   .sociedade h3 { font-size: 1rem; margin: 8px 0 6px; font-family: var(--f-texto); font-weight: 700; }
@@ -54,7 +54,7 @@
     <img class="simbolo-fundo" src="/assets/img/simbolo-branca.svg" alt="">
     <div class="container">
       <div class="sobretitulo">Ministérios</div>
-      <h1>Cada ramo dá fruto</h1>
+      <h1>Cada ramo dá <em>fruto</em></h1>
       <p class="lead">Há um lugar para você crescer, ter comunhão e servir. Conheça como a igreja se organiza ao longo da semana.</p>
     </div>
   </section>

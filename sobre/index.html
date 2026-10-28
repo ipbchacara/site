@@ -222,5 +222,141 @@
     lados();
   })();
 </script>
+<script>
+  // Linha do tempo como ramo de videira: o caule cresce com a rolagem,
+  // folhas brotam pelo caminho e cada marco "frutifica" quando o ramo o alcança
+  (function () {
+    const linha = document.querySelector('.historia-linha');
+    if (!linha || !window.SVGElement) return;
+    const NS = 'http://www.w3.org/2000/svg';
+    const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const estreita = window.matchMedia('(max-width: 760px)');
+    const el = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+
+    const li = document.createElement('li');
+    li.className = 'ramo';
+    li.setAttribute('aria-hidden', 'true');
+    const svg = el('svg', {});
+    li.appendChild(svg);
+    linha.prepend(li);
+    linha.classList.add('com-ramo');
+
+    let caule, broto, folhas = [], marcos = [], amostras = [], total = 0, altura = 0;
+    let atual = 0, alvo = 0, rodando = false;
+
+    // Ponto de uma curva cúbica em t
+    const cubica = (p, t) => {
+      const u = 1 - t;
+      return [0, 1].map(k => u*u*u*p[0][k] + 3*u*u*t*p[1][k] + 3*u*t*t*p[2][k] + t*t*t*p[3][k]);
+    };
+
+    function montar() {
+      const W = linha.clientWidth;
+      altura = linha.offsetHeight;
+      const x = estreita.matches ? 11 : W / 2;
+      const onda = estreita.matches ? 8 : 22;
+      marcos = [...linha.querySelectorAll('.marco')].filter(m => !m.hidden).map(m => ({ m, y: m.offsetTop + 15 }));
+      const ancoras = [8, ...marcos.map(o => o.y), altura - 8];
+
+      svg.setAttribute('width', W);
+      svg.setAttribute('height', altura);
+      svg.setAttribute('viewBox', `0 0 ${W} ${altura}`);
+      svg.innerHTML = '';
+      const defs = el('defs', {});
+      const grad = el('linearGradient', { id: 'ramo-cor', gradientUnits: 'userSpaceOnUse', x1: 0, y1: 0, x2: 0, y2: altura });
+      grad.append(el('stop', { offset: 0, style: 'stop-color:var(--folha-clara)' }), el('stop', { offset: 1, style: 'stop-color:var(--folha)' }));
+      defs.appendChild(grad);
+      svg.appendChild(defs);
+
+      // Um "S" suave entre cada par de marcos, sempre passando pelo centro de cada marco
+      let d = `M${x} ${ancoras[0]}`;
+      folhas = [];
+      const grupoFolhas = el('g', {});
+      for (let i = 0; i < ancoras.length - 1; i++) {
+        const y1 = ancoras[i], y2 = ancoras[i + 1], h = y2 - y1;
+        if (h < 4) continue;
+        const s = i % 2 ? -1 : 1;
+        const p = [[x, y1], [x + s * onda, y1 + h / 3], [x - s * onda, y1 + h * 2 / 3], [x, y2]];
+        d += ` C${p[1][0]} ${p[1][1]} ${p[2][0]} ${p[2][1]} ${x} ${y2}`;
+        if (h < 60) continue;
+        // Folha na barriga da curva, apontando para fora (no celular, sempre para a direita)
+        const [fx, fy] = cubica(p, .28);
+        const lado = estreita.matches ? 1 : s;
+        const g = el('g', { transform: `translate(${fx} ${fy}) scale(${lado} 1) rotate(-28)` });
+        const folha = el('path', { class: 'folha-ramo' + (i % 2 ? ' par' : ''), d: 'M0 0C6-9 19-12 29-5C22 2 10 4 0 0Z' });
+        g.appendChild(folha);
+        grupoFolhas.appendChild(g);
+        folhas.push({ el: folha, y: fy });
+        // Gavinha enrolada do outro lado, um pouco mais abaixo (só no computador)
+        if (estreita.matches || h < 120) continue;
+        const [gx, gy] = cubica(p, .72);
+        const gg = el('g', { transform: `translate(${gx} ${gy}) scale(${-s} 1)` });
+        const gavinha = el('path', { class: 'gavinha', pathLength: 1, d: 'M0 0C7-1 14-6 14-12C14-17 8-18 7-14C6-11 10-10 11-12' });
+        gg.appendChild(gavinha);
+        grupoFolhas.appendChild(gg);
+        folhas.push({ el: gavinha, y: gy });
+      }
+      svg.appendChild(el('path', { class: 'trilho', d }));
+      caule = el('path', { class: 'caule', d });
+      svg.appendChild(caule);
+      svg.appendChild(grupoFolhas);
+      broto = el('circle', { class: 'broto', r: 4.5, cx: x, cy: ancoras[0] });
+      svg.appendChild(broto);
+
+      // Tabela comprimento → altura, para o caule parar exatamente na altura da rolagem
+      total = caule.getTotalLength();
+      caule.style.strokeDasharray = total;
+      amostras = [];
+      for (let l = 0; l <= total; l += 12) amostras.push([l, caule.getPointAtLength(l).y]);
+      amostras.push([total, altura]);
+      desenhar();
+    }
+
+    function comprimentoAte(y) {
+      let a = 0, b = amostras.length - 1;
+      if (y <= amostras[0][1]) return 0;
+      if (y >= amostras[b][1]) return total;
+      while (b - a > 1) { const m = (a + b) >> 1; amostras[m][1] < y ? a = m : b = m; }
+      const [l1, y1] = amostras[a], [l2, y2] = amostras[b];
+      return l1 + (l2 - l1) * (y - y1) / ((y2 - y1) || 1);
+    }
+
+    function desenhar() {
+      const l = comprimentoAte(atual);
+      caule.style.strokeDashoffset = total - l;
+      const ponta = caule.getPointAtLength(l);
+      broto.setAttribute('cx', ponta.x);
+      broto.setAttribute('cy', ponta.y);
+      broto.style.opacity = l > 2 && l < total - 2 ? 1 : 0;
+      folhas.forEach(f => f.el.classList.toggle('brotou', atual >= f.y));
+      marcos.forEach(o => o.m.classList.toggle('alcancado', atual >= o.y - 4));
+    }
+
+    function medirAlvo() {
+      const topo = linha.getBoundingClientRect().top;
+      alvo = Math.max(0, Math.min(altura, window.innerHeight * 0.68 - topo));
+      if (quieto) { atual = alvo; desenhar(); return; }
+      if (!rodando) { rodando = true; requestAnimationFrame(passo); }
+    }
+
+    // Aproxima suavemente da posição da rolagem, sem trancos
+    function passo() {
+      atual += (alvo - atual) * 0.12;
+      if (Math.abs(alvo - atual) < 0.5) { atual = alvo; rodando = false; }
+      desenhar();
+      if (rodando) requestAnimationFrame(passo);
+    }
+
+    montar();
+    medirAlvo();
+    window.addEventListener('scroll', medirAlvo, { passive: true });
+    window.addEventListener('resize', () => { montar(); medirAlvo(); });
+    // Ao abrir um trecho recolhido, a linha cresce: redesenha o ramo
+    if ('ResizeObserver' in window) {
+      let ultima = altura;
+      new ResizeObserver(() => { if (linha.offsetHeight !== ultima) { ultima = linha.offsetHeight; montar(); medirAlvo(); } }).observe(linha);
+    }
+  })();
+</script>
 </body>
 </html>

@@ -57,6 +57,15 @@
   .cel.fora { opacity: .35; }
   .cel .pils { display: contents; }
   .pilula { font-size: .66rem; font-weight: 700; color: #fff; border-radius: 4px; padding: 1px 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Movimento: troca de aba, dia e mês sem saltos */
+  .abas button, .dia-btn, .cel, .seta { transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .3s var(--ease); }
+  .dia-btn:active, .cel:active, .seta:active { transform: scale(.94); transition-duration: .1s; }
+  .painel:not([hidden]) { animation: surge .4s var(--ease) both; }
+  #eventos-dia > * { animation: surge .45s var(--ease) both; }
+  #eventos-dia > :nth-child(2) { animation-delay: .05s; }
+  #eventos-dia > :nth-child(3) { animation-delay: .1s; }
+  #eventos-dia > :nth-child(n+4) { animation-delay: .15s; }
+  .grade-mes .cel { animation: esmaece .35s ease both; }
   @media (max-width: 640px) {
     .cel { min-height: 54px; padding: 4px; }
     .pilula { font-size: 0; height: 6px; width: 6px; padding: 0; border-radius: 50%; display: inline-block; }
@@ -75,7 +84,7 @@
     <img class="simbolo-fundo" src="/assets/img/simbolo-branca.svg" alt="">
     <div class="container">
       <div class="sobretitulo">Agenda</div>
-      <h1>Nossa programação</h1>
+      <h1>Nossa <em>programação</em></h1>
       <p class="lead">“Oh! Como é bom e agradável viverem unidos os irmãos!” — Salmos 133.1</p>
     </div>
   </section>
