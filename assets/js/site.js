@@ -50,8 +50,8 @@
   function montarCabecalho() {
     const alvo = document.getElementById('site-header');
     if (!alvo) return;
-    const links = MENU.map(l =>
-      `<a href="${l.href}"${ativo(l.href) ? ' class="ativo" aria-current="page"' : ''}>${l.rotulo}</a>`
+    const links = MENU.map((l, i) =>
+      `<a href="${l.href}" style="--i:${i}"${ativo(l.href) ? ' class="ativo" aria-current="page"' : ''}>${l.rotulo}</a>`
     ).join('');
     alvo.innerHTML = `
       <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -63,7 +63,7 @@
           <button class="menu-botao" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">${ICONES.menu}</button>
           <nav class="menu" id="menu-principal" aria-label="Menu principal">
             ${links}
-            <a class="btn btn-uva" href="/visitante">Sou visitante</a>
+            <a class="btn btn-uva" href="/visitante" style="--i:${MENU.length}">Sou visitante</a>
           </nav>
         </div>
       </header>`;
@@ -77,6 +77,7 @@
       botao.setAttribute('aria-expanded', aberto);
       botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
       botao.innerHTML = aberto ? ICONES.fechar : ICONES.menu;
+      botao.classList.add('trocou');
     });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('aberto')) botao.click(); });
     const aoRolar = () => topo.classList.toggle('rolou', window.scrollY > 8);
@@ -136,13 +137,27 @@
   }
 
   // ── ANIMAÇÃO DE ENTRADA ────────────────────────────────
+  // Itens que entram na tela juntos aparecem em sequência. Terminada a entrada,
+  // a classe sai para o elemento voltar às próprias transições (hover dos cartões).
   function revelar() {
     const itens = document.querySelectorAll('.revelar');
     if (!('IntersectionObserver' in window)) { itens.forEach(el => el.classList.add('visivel')); return; }
+    const concluir = e => {
+      if (e.target !== e.currentTarget || e.propertyName !== 'transform') return;
+      const el = e.currentTarget;
+      el.removeEventListener('transitionend', concluir);
+      el.classList.remove('revelar', 'visivel');
+      el.style.removeProperty('--atraso');
+      el.style.transitionDelay = '';
+    };
     const obs = new IntersectionObserver(entradas => {
-      entradas.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); } });
+      entradas.filter(e => e.isIntersecting).forEach((e, i) => {
+        e.target.style.setProperty('--atraso', Math.min(i * 0.09, 0.45) + 's');
+        e.target.classList.add('visivel');
+        obs.unobserve(e.target);
+      });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    itens.forEach(el => obs.observe(el));
+    itens.forEach(el => { el.addEventListener('transitionend', concluir); obs.observe(el); });
   }
 
   function iniciar() { montarCabecalho(); montarRodape(); revelar(); }
