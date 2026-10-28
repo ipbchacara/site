@@ -22,6 +22,8 @@
   seções que entram no mês, renumerando (01, 02...) na ordem em que aparecem.
   As marcas "Fixa"/"Rotativa" (.rv-tipo) existem só neste modelo.
   Ordem sugerida: as fixas abrem, as rotativas vêm no meio, Orando juntos fecha.
+  Rubrica com a classe "nome": o nome da seção é o destaque (seções de referência).
+  Sem ela: o título do mês é o destaque e o nome fica pequeno (seções de matéria).
 -->
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="rv-topo">
@@ -88,7 +90,7 @@
   <section class="secao rv-materia" id="carta">
     <div class="container rv-pastoral">
       <div class="revelar">
-        <div class="rv-rubrica"><span class="n">01</span><div class="sobretitulo">Carta do pastor</div><span class="rv-tipo">Fixa</span></div>
+        <div class="rv-rubrica nome"><span class="n">01</span><div class="sobretitulo">Carta do pastor</div><span class="rv-tipo">Fixa</span></div>
         <h2>Título da carta</h2>
         <p class="rv-destaque">“Uma frase forte da carta, para chamar a leitura.”</p>
         <div class="autor">
@@ -109,7 +111,7 @@
   <section class="secao areia rv-materia" id="anote">
     <div class="container">
       <div class="revelar">
-        <div class="rv-rubrica"><span class="n">02</span><div class="sobretitulo">Anote aí</div><span class="rv-tipo">Fixa</span></div>
+        <div class="rv-rubrica nome"><span class="n">02</span><div class="sobretitulo">Anote aí</div><span class="rv-tipo">Fixa</span></div>
         <h2>O mês, semana a semana</h2>
         <p class="lead" style="margin-bottom:28px">A programação de sempre e as datas especiais.</p>
       </div>
@@ -149,7 +151,7 @@
   <section class="secao areia rv-materia" id="leia">
     <div class="container">
       <div class="revelar">
-        <div class="rv-rubrica"><span class="n">04</span><div class="sobretitulo">Leia comigo</div><span class="rv-tipo">Fixa</span></div>
+        <div class="rv-rubrica nome"><span class="n">04</span><div class="sobretitulo">Leia comigo</div><span class="rv-tipo">Fixa</span></div>
         <h2>Nome do plano do mês</h2>
         <p class="lead">Um texto por dia. Cada pessoa marca o que já leu, e a marcação fica guardada no aparelho.</p>
       </div>
@@ -214,7 +216,7 @@
   <section class="secao rv-materia" id="boas-vindas">
     <div class="container">
       <div class="revelar">
-        <div class="rv-rubrica"><span class="n">07</span><div class="sobretitulo">Boas-vindas</div><span class="rv-tipo rotativa">Rotativa</span></div>
+        <div class="rv-rubrica nome"><span class="n">07</span><div class="sobretitulo">Boas-vindas</div><span class="rv-tipo rotativa">Rotativa</span></div>
         <h2>Chegou gente na família</h2>
         <p class="lead" style="margin-bottom:28px">Quem foi recebido na igreja neste mês. Publique só com autorização de cada pessoa.</p>
       </div>
@@ -230,7 +232,7 @@
   <section class="secao areia rv-materia" id="juntos">
     <div class="container">
       <div class="revelar">
-        <div class="rv-rubrica"><span class="n">08</span><div class="sobretitulo">Juntos</div><span class="rv-tipo rotativa">Rotativa</span></div>
+        <div class="rv-rubrica nome"><span class="n">08</span><div class="sobretitulo">Juntos</div><span class="rv-tipo rotativa">Rotativa</span></div>
         <h2>As sociedades neste mês</h2>
         <p class="lead" style="margin-bottom:28px">O que cada sociedade interna e a Junta Diaconal estão preparando. Entram só as que tiverem notícia.</p>
       </div>
@@ -263,7 +265,7 @@
   <section class="secao areia rv-materia" id="em-casa">
     <div class="container">
       <div class="revelar">
-        <div class="rv-rubrica"><span class="n">10</span><div class="sobretitulo">Em casa</div><span class="rv-tipo rotativa">Rotativa</span></div>
+        <div class="rv-rubrica nome"><span class="n">10</span><div class="sobretitulo">Em casa</div><span class="rv-tipo rotativa">Rotativa</span></div>
         <h2>Culto em família, em 15 minutos</h2>
         <p class="lead" style="margin-bottom:28px">Um roteiro simples para fazer em casa, à mesa ou antes de dormir.</p>
       </div>
@@ -294,7 +296,7 @@
   <!-- 12 ORANDO JUNTOS (fixa): fecha a edição; só temas, nunca nomes de pessoas -->
   <section class="secao escura rv-materia" id="orando">
     <div class="container estreito centro revelar">
-      <div class="rv-rubrica" style="justify-content:center"><span class="n" style="color:#F2A7AE">12</span><div class="sobretitulo">Orando juntos</div><span class="rv-tipo">Fixa</span></div>
+      <div class="rv-rubrica nome" style="justify-content:center"><span class="n" style="color:#F2A7AE">12</span><div class="sobretitulo">Orando juntos</div><span class="rv-tipo">Fixa</span></div>
       <h2 style="max-width:none">Toda terça, às 19h30</h2>
       <p class="lead" style="color:#C9D6BD">Um versículo sobre oração e o convite para a reunião. Só temas fixos; pedidos com nome de pessoa ficam na reunião e no grupo.</p>
       <ul class="rv-temas" style="justify-content:center">
