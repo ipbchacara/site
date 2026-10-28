@@ -1,188 +1,88 @@
-# Cronograma do Instagram: dez/2026 a nov/2027
+# Cronograma do Instagram: dez/2026 a nov/2027 (versão para 1 pessoa)
 
-Plano de postagens do perfil da IPCP **além da programação normal** (avisos de culto, EBD e reunião de oração continuam como já são).
-O objetivo principal é **alcançar quem não é da igreja**: vizinhos de Guaraciaba e de Chácara Parreiral, famílias da Serra, gente que nunca entrou numa igreja evangélica ou que se afastou dela.
+Plano de postagens do perfil da IPCP **além da programação normal**, pensado para **uma pessoa só**, que tira **um dia por mês** para produzir e agendar tudo e depois só acompanha.
+O objetivo continua o mesmo: **alcançar quem não é da igreja**, como os vizinhos de Guaraciaba e de Chácara Parreiral e as famílias da Serra.
 
 > Pasta com `_` na frente: o GitHub Pages não publica este arquivo no site.
 
 ---
 
-## 1. Princípios (o filtro de toda postagem)
+## 1. Princípios
 
-1. **Fale com quem está de fora.** Antes de postar, pergunte: "um vizinho que nunca veio aqui entenderia e se interessaria?". Evite jargão ("irmãos", "glória", "culto de doutrina") sem explicar, como o site já faz com os quadros "O que é…?".
-2. **Sirva antes de convidar.** A maior parte das postagens deve ser útil ou bonita por si só (cuidado, reflexão, bairro, saúde, família). O convite vem por último e de forma natural.
-3. **O bairro é o assunto, não só o cenário.** Mostre pessoas, lugares e histórias de Guaraciaba e da Serra. Marque comércios, escolas e perfis locais: é assim que o post chega a quem não segue a igreja.
-4. **Cristo no centro, sem sermão no feed.** Uma ideia por post, texto curto, um versículo bem escolhido. Aprofundamento fica para o culto, a EBD e a conversa.
-5. **Sempre um próximo passo simples:** "manda no direct", "responde a caixinha", "salva pra ler depois", "traz alguém domingo", link para `ipchacara.org/visitante` ou `/oracao`.
-6. **Imagem de pessoas só com autorização** (por escrito para crianças e adolescentes, LGPD). Nos eventos, avise que haverá fotos e ofereça a pulseira/adesivo "prefiro não aparecer".
+1. **Constância vale mais que quantidade.** É melhor fazer 2 posts por semana o ano inteiro do que 5 por semana durante um mês.
+2. **Fale com quem está de fora.** Nada de jargão sem explicação. Pergunte sempre: "um vizinho entenderia?".
+3. **Sirva antes de convidar.** O post precisa ser útil ou bonito por si só. O convite vem no fim.
+4. **O bairro é o assunto.** Marque comércios, escolas e perfis locais e use a localização "Guaraciaba, Serra".
+5. **Imagem de pessoas só com autorização**, que deve ser por escrito no caso de crianças e adolescentes (LGPD).
 
-## 2. Ritmo semanal fixo
+## 2. Ritmo semanal (tudo agendável)
 
-| Dia | Formato | Conteúdo |
-|-----|---------|----------|
-| **Seg** | Post ou carrossel | **"Pra começar a semana"**: um versículo + 3 linhas de aplicação para a vida real (trabalho, trânsito, contas, filhos). Arte na identidade visual da igreja (`/identidade`). |
-| **Ter** | Stories | **"Oramos por você hoje"**: caixinha de pedidos de oração às 12h; à noite, stories da Reunião de Oração (19h30) dizendo "oramos pelos pedidos que chegaram" (sem expor nomes). |
-| **Qua** | Reels ou carrossel | **Série do mês** (ver calendário abaixo). |
-| **Qui** | Stories | Enquete/caixinha leve ligada à série ("Você já…?", "O que você acha de…?"). Gera conversa e dá pauta. |
-| **Sex** | Post ou Reels | **"Gente da Chácara"** ou conteúdo de comunidade (ver séries contínuas). |
-| **Sáb** | Stories | Convite para domingo: o que vai acontecer, quem vai pregar, "tem lugar pra você". Repostar convidados que marcarem a igreja. |
-| **Dom** | Stories | Bastidores leves (chegada, café, louvor). 1 frase da pregação no dia seguinte, como arte. |
+| Dia | O quê | Esforço |
+|-----|-------|---------|
+| **Terça** | **"Pra sua semana"**: arte com um versículo e 2 linhas de aplicação para a vida real. | Baixo: é sempre o mesmo modelo, troca só o texto. |
+| **Sexta** | **Post da semana**, em rodízio (tabela abaixo) ou uma data especial do mês. | Médio. |
+| **Sábado** | **Story de convite** para domingo ("Amanhã, 18h EBD e 19h30 culto. Tem lugar pra você."). | Baixo: um modelo fixo, trocando só o tema da semana. |
 
-Meta realista: **3 posts no feed por semana + stories quase diários**. Se a equipe for pequena, mantenha seg, qua e sex e deixe o resto para quando der.
+**Rodízio das sextas:**
 
-## 3. Séries contínuas (o ano todo)
+| Semana | Série | Ideia |
+|--------|-------|-------|
+| 1ª | **Gente da Chácara** | Perfil de alguém do bairro, que não precisa ser da igreja: o padeiro, a costureira, o professor. Foto, 2 perguntas e a marcação do perfil do comércio. Dá para fazer as entrevistas de vários meses numa tarde só. |
+| 2ª | **Dicionário de Crente** | Carrossel curto e bem-humorado explicando um termo (Ceia, Presbítero, Reverendo, Graça, Amém…). Reaproveita os quadros "O que é…?" da página `/sobre`. |
+| 3ª | **Pergunta Sincera** | Uma pergunta real de quem é de fora ("Precisa ser bom pra ir à igreja?", "Igreja só quer dinheiro?"), respondida num carrossel de texto. Se o pastor puder gravar, o vídeo de 60 s vira Reels. |
+| 4ª | **Serra / bairro** | Uma foto bonita, curiosidade ou história da Serra, ou um agradecimento a uma escola ou comércio. |
 
-| Série | Frequência | Ideia |
-|-------|------------|-------|
-| **Gente da Chácara** | 2x por mês (sexta) | Perfil de alguém do bairro que **não precisa ser da igreja**: o padeiro, a costureira, o professor da escola, o mototaxista, a líder comunitária. Foto, 3 perguntas ("o que você mais gosta no bairro?", "o que te dá esperança?"), marcação do perfil do comércio. Fecha com: "a IPCP agradece por você fazer parte da nossa vizinhança". É a série que mais aproxima a igreja da comunidade. |
-| **Pergunta Sincera** | 1x por mês | Caixinha "Pergunte qualquer coisa sobre Deus, Bíblia ou igreja, sem julgamento". O pastor/evangelista responde em Reels de até 60 s. Exemplos: "Precisa ser bom pra ir à igreja?", "Por que Deus permite o sofrimento?", "Igreja só quer dinheiro?". Responder com honestidade e respeito. |
-| **Dicionário de Crente** | 2x por mês | Carrossel bem-humorado explicando termos: "Ceia", "Presbítero", "Reverendo", "Graça", "Ebenézer", "Aleluia". Reaproveita os quadros "O que é…?" da página `/sobre`. Desarma o estranhamento de quem é de fora. |
-| **Hino tem História** | 1x por mês | A história real por trás de um hino (ex.: "Sou feliz com Jesus", escrito por Horatio Spafford após perder as filhas num naufrágio). Reels com trecho cantado pelo grupo de louvor. |
-| **Serra que a gente ama** | 1x por mês | Curiosidade, foto antiga ou lugar bonito da Serra/ES (Mestre Álvaro, praias, história local). Conteúdo compartilhável que coloca a igreja na conversa da cidade. |
-| **Mesa da Chácara** | Bimestral | Receita simples de alguém da igreja (bolo da SAF, café da UPH) com uma reflexão curta sobre hospitalidade. Termina em "vem tomar um café com a gente domingo, às 18h". |
-| **Saúde e cuidado** | Nos meses-campanha | Janeiro Branco, Maio Amarelo, Setembro Amarelo, Outubro Rosa, Novembro Azul: informação confiável, serviço público (onde fazer exame, CVV 188) e uma palavra de esperança. Nunca substituir orientação profissional. |
-| **Bastidores** | Livre | Montagem da cantata, limpeza do templo, ensaio, SAF preparando lanche. Humaniza e mostra que é uma comunidade de gente comum. |
+Quando o mês tiver uma data especial (seção 4), ela **ocupa a sexta da semana** ou entra como um post extra. **Total: cerca de 8 a 10 posts no feed por mês, mais 4 stories de convite.**
 
-## 4. Calendário mês a mês
+**Domingo (opcional, ao vivo):** 2 ou 3 stories do culto, se der. Uma boa saída é pedir a um jovem da igreja que faça isso. É a ajuda mais fácil de conseguir.
 
-Datas conferidas para 2026/2027. Itens em **negrito** são os "carros-chefes" do mês.
+## 3. O "dia de produção" do mês
 
-### Dezembro/2026: "Santo pra Sempre"
+Reserve **uma tarde (de 4 a 5 horas) na última semana do mês anterior**:
 
-Série de Advento: **"Esperando alguém"** (4 Reels, um por domingo de Advento, sobre esperas da vida real: o resultado do exame, o emprego, o filho que volta pra casa, a esperança de Natal).
+1. **Planejar (30 min):** abra este cronograma, veja as datas do mês seguinte e preencha a tabela: data, série, tema, versículo.
+2. **Escrever as legendas (1 h):** todas de uma vez, num documento só. *(Dá para pedir ao Claude: "escreva as legendas de janeiro seguindo o cronograma".)*
+3. **Fazer as artes (1 h 30):** no Canva, com **modelos fixos** criados uma única vez (um para "Pra sua semana", um para cada série e um para o story de convite), nas cores e fontes do kit da marca (`/marca`). Depois, é só duplicar e trocar o texto.
+4. **Agendar (1 h):** no Meta Business Suite (próxima seção).
+5. **Revisão:** mande os posts com conteúdo bíblico para o pastor dar uma olhada antes de agendar.
 
-| Data | Postagem |
-|------|----------|
-| 29/11 (dom) | Abertura da série "Esperando alguém" + contagem regressiva para a Cantata nos stories. |
-| 1º a 12/12 | **Convite da Cantata em camadas**: teaser com ensaio (bastidores), "conheça o coral" (carrossel com rostos e frases dos coristas), arte de convite para baixar e mandar no WhatsApp, Reels "por que fazemos cantata" (60 s). |
-| 08/12 (ter) | **Aniversário da Serra (470 anos)**: post "Feliz aniversário, Serra!" com foto de um lugar da cidade + oração pela cidade. Muito compartilhável. |
-| 13/12 (dom) | **Cantata de Natal "Santo pra Sempre"**, 19h30. É também o **Dia da Bíblia** (2º domingo de dezembro): post de manhã sobre o dia. Stories ao vivo na cantata; no dia seguinte, carrossel "como foi" + Reels com 30 s de um número. |
-| 15 a 23/12 | **"Natal de quem?"**: série curta em carrossel sobre os personagens do Natal (Maria, José, os pastores, os magos, Simeão), cada um com uma ligação com quem está de fora: "os primeiros a ouvir a notícia foram trabalhadores do turno da noite". |
-| 18/12 (sex) | **Ação "Natal na Rua"**: entrega de cartões com mensagem + brinde simples no comércio do bairro; post com fotos e marcações dos comerciantes. |
-| 24/12 (qui) | Post "Feliz Natal, vizinho!" com vídeo curto de membros de várias idades desejando feliz Natal. |
-| 25/12 (sex) | Mensagem de Natal (Lc 2.10–11) em arte limpa. |
-| 31/12 (qui) | **"O que 2026 te ensinou?"**: caixinha nos stories; respostas anônimas viram carrossel no dia 2/1. Post de Ano Novo: Lm 3.22–23 ("as misericórdias se renovam a cada manhã"). |
+**Durante o mês, 10 minutos por dia:** responder comentários e directs. Em eventos, tire fotos; o "como foi" sai alguns dias depois, quando der.
 
-### Janeiro/2027: recomeços
+## 4. Como agendar (de graça)
 
-| Data | Postagem |
-|------|----------|
-| 02/01 | Carrossel com as respostas da caixinha "O que 2026 te ensinou?". |
-| Todo o mês | **Janeiro Branco (saúde mental)**: 4 carrosséis "Ansiedade não é falta de fé", "Tudo bem pedir ajuda", "Descanso é bíblico", "Quando procurar um psicólogo" (com indicação de serviços públicos da Serra). |
-| **04 a 19/01** | **Desafio "Marcos em 16 dias"**: um capítulo por dia do Evangelho de Marcos. Arte diária nos stories com resumo de 3 linhas e uma pergunta. Convide quem nunca leu a Bíblia. Quem terminar recebe um marcador na igreja. |
-| Fim do mês | **Volta às aulas**: post de oração pelos professores e alunos das escolas do bairro (marcar as escolas). Se possível, **campanha de material escolar** para famílias do bairro, com post de prestação de contas. |
+1. **Converta o perfil em conta profissional** (Configurações › Tipo de conta › Mudar para conta profissional › "Criador de conteúdo" ou "Empresa"). É gratuito.
+2. **Use o Meta Business Suite** (`business.facebook.com` no computador, ou o app "Meta Business Suite" no celular). Nele você agenda **posts do feed, carrosséis, Reels e stories** com dia e hora. Pelo computador fica bem mais rápido agendar o mês inteiro.
+3. Opção simples: o próprio app do Instagram agenda posts do feed e Reels (antes de publicar: "Configurações avançadas" › "Agendar"). **Stories, só pelo Business Suite.**
+4. **O que não dá para agendar bem:** stories com figurinhas interativas (caixinha de perguntas, enquete) e a cobertura de eventos. Esses itens ficam para quando der, ao vivo.
+5. **Melhor horário para testar:** por volta das 12h ou das 19h. Depois de 2 ou 3 meses, confira em "Insights" quando os seus seguidores estão online e ajuste.
 
-### Fevereiro/2027: nossa história
+## 5. Calendário mês a mês (só o que é especial)
 
-| Data | Postagem |
-|------|----------|
-| Fev (todo) | **Série "12 anos em 12 fotos"**: a história da igreja em carrossel e Reels, do PG no apartamento (2015) ao templo em Guaraciaba. Material pronto na linha do tempo da página `/sobre`. Mostra que a igreja "nasceu numa sala de estar". |
-| 06 a 10/02 | **Carnaval (9/2)**: "Bloco do Descanso", post leve sobre descansar, para quem vai e para quem fica. Sem críticas a quem pula carnaval. Se houver retiro/acampamento, cobertura nos stories. |
-| 22/02 (seg) | **12 anos do primeiro PG** (22/02/2015): post "Tudo começou com um pequeno grupo numa sala…" + convite para conhecer um PG hoje. |
-| 25/02 (qui) | 9 anos da organização da congregação (25/02/2018). |
+Nos demais dias vale o ritmo da seção 2. As datas já foram conferidas para 2026/2027.
 
-### Março/2027: Páscoa
+| Mês | Datas especiais (posts extras ou que tomam a sexta) |
+|-----|------------------------------------------------------|
+| **Dez/26** | **01/12** anúncio da Cantata "Santo pra Sempre" · **08/12** aniversário da Serra (470 anos) · **11/12** convite final da Cantata, com arte para mandar no WhatsApp · **13/12** Dia da Bíblia e Cantata, 19h30 (story) · "como foi" nos dias seguintes, com fotos · **24/12** "Feliz Natal, vizinho!" · **31/12** Ano Novo (Lm 3.22–23) |
+| **Jan/27** | **Janeiro Branco:** 1 carrossel "Ansiedade não é falta de fé" (com indicação de serviços públicos de saúde mental) · fim do mês: oração pela volta às aulas, marcando as escolas do bairro |
+| **Fev/27** | **22/02** 12 anos do primeiro pequeno grupo: carrossel "Tudo começou numa sala de estar" (linha do tempo da página `/sobre`) · Carnaval (09/02): 1 post leve sobre descanso, opcional |
+| **Mar/27** | **08/03** Dia da Mulher (mulheres da Bíblia que surpreendem) · **09/03** 2 anos do templo em Guaraciaba, com fotos de antes e depois · **26/03** Sexta-feira Santa: arte sóbria, "Está consumado" · **28/03** Páscoa: "O túmulo está vazio" + convite |
+| **Abr/27** | 1 post "E agora?" sobre o que muda para quem crê na ressurreição, pensado para quem visitou na Páscoa · o resto do mês segue o ritmo normal |
+| **Mai/27** | **09/05** Dia das Mães, com um texto que acolha também quem perdeu a mãe · **23/05** "ES, terra que a gente ama" (Dia da Colonização), opcional |
+| **Jun/27** | **12/06** Dia dos Namorados (casal de longa data da igreja) · se a igreja fizer festa junina para o bairro: convite + "como foi" |
+| **Jul/27** | **20/07** Dia do Amigo ("marque aquele amigo", Pv 17.17) · se houver Escola Bíblica de Férias: convite às famílias do bairro |
+| **Ago/27** | **08/08** Dia dos Pais (incluir quem não teve pai presente, Sl 68.5) · **12/08** 168 anos da Igreja Presbiteriana do Brasil: "Quem são os presbiterianos?" |
+| **Set/27** | **Setembro Amarelo:** **10/09** post "Você não está sozinho" com o **CVV 188** + 1 carrossel "como ajudar um amigo". Linguagem cuidadosa: nunca tratar como "falta de fé". |
+| **Out/27** | **12/10** Dia das Crianças (fotos de infância dos membros: "adivinhe quem é") · **31/10** 510 anos da Reforma: "Por que somos protestantes?" (página `/cremos`) |
+| **Nov/27** | **Novembro Azul:** 1 post sobre a saúde do homem · **25/11** Dia de Ação de Graças · **28/11** começo do Advento, que abre o ciclo do Natal 2027 |
 
-| Data | Postagem |
-|------|----------|
-| 08/03 (seg) | **Dia da Mulher**: série "Elas" com 3 mulheres da comunidade (da igreja e do bairro) + carrossel sobre mulheres da Bíblia que surpreendem (Débora, Rute, Lídia, Maria Madalena, primeira testemunha da ressurreição). |
-| 09/03 (ter) | **2 anos do templo em Guaraciaba**: antes/depois da obra, agradecimento ao bairro "obrigado por nos receber". |
-| 15 a 27/03 | **Série de Páscoa "A semana que mudou tudo"**: um carrossel por dia da Semana Santa (entrada em Jerusalém, a ceia, o Getsêmani, a cruz, o silêncio do sábado). Linguagem narrativa, quase de série de TV. |
-| 26/03 (sex) | Sexta-feira Santa: arte sóbria, sem texto longo: "Está consumado" (Jo 19.30). |
-| **28/03 (dom)** | **Páscoa**: "O túmulo está vazio" + convite para o culto de Páscoa. Sugestão de **ação no bairro**: entrega de bombons com cartão "a melhor notícia do mundo" na véspera, com post das fotos. |
+## 6. Perfil e alcance (fazer uma vez)
 
-### Abril/2027: depois da Páscoa
+- **Bio:** "Igreja Presbiteriana em Guaraciaba, Serra/ES · Domingo: EBD 18h e culto 19h30 · Rua Teresa Tironi, 15", com link para `ipchacara.org`.
+- **Destaques fixos:** Visite-nos (endereço, horários, mapa), Quem somos, Oração.
+- **Hashtags (poucas):** `#Serra` `#SerraES` `#Guaraciaba` `#ChacaraParreiral`.
+- Quando o perfil estiver ativo, preencha o campo `instagram` em `assets/js/site.js` para o ícone aparecer no site.
+- **Uma vez por mês, no dia de produção:** veja nos "Insights" quais posts tiveram mais compartilhamentos e alcance entre quem não segue o perfil, e faça mais desse tipo.
 
-| Data | Postagem |
-|------|----------|
-| Todo o mês | **Série "E agora?"**: o que muda na vida de quem crê na ressurreição (medo da morte, luto, perdão, propósito). Ótima para quem visitou na Páscoa. |
-| 07/04 | Dia Mundial da Saúde: post sobre cuidar do corpo como presente de Deus + dica prática (caminhada, sono). |
-| 18 e 23/04 | Dia do Livro Infantil / Dia Mundial do Livro: **"Livros que marcaram a gente"**: membros indicam livros (cristãos e clássicos). Caixinha "qual livro marcou você?". |
+## 7. Banco de ideias (para quando houver ajuda)
 
-### Maio/2027: família e cidade
-
-| Data | Postagem |
-|------|----------|
-| Todo o mês | **Maio Amarelo (trânsito)**: 2 posts com dicas de segurança e oração pelos motoristas de app, motoboys e caminhoneiros da Serra (bom para "Gente da Chácara": entrevistar um motoboy do bairro). |
-| **09/05 (dom)** | **Dia das Mães**: série "Mãe é…" com depoimentos curtos em vídeo (incluir quem perdeu a mãe, mães atípicas, mães solo: o post precisa acolher, não só celebrar). Culto com homenagem e convite: "traga sua mãe". |
-| 16/05 (dom) | Pentecostes: carrossel "O que é Pentecostes?" (série Dicionário de Crente). |
-| 23/05 (dom) | **Dia da Colonização do Espírito Santo**: post "ES, terra que a gente ama" com curiosidades do estado. |
-
-### Junho/2027: amizade e alegria
-
-| Data | Postagem |
-|------|----------|
-| 05/06 | Dia do Meio Ambiente: "cuidar da criação" + mutirão de limpeza/plantio de mudas na rua da igreja, com antes/depois. |
-| **12/06 (sáb)** | **Dia dos Namorados**: Reels com casais de longa data da igreja ("40 anos juntos: o segredo?") + post para solteiros ("seu valor não depende de status de relacionamento"). Opção: **noite de casais** aberta à comunidade. |
-| Fim de junho | **"Arraiá da Chácara"**: festa caipira para o bairro (comidas típicas, brincadeiras, música, sem referências a santos). Divulgação 3 semanas antes, cobertura nos stories, carrossel "como foi". É um dos maiores eventos de portas abertas do ano. |
-
-### Julho/2027: férias
-
-| Data | Postagem |
-|------|----------|
-| **Férias escolares** | **Escola Bíblica de Férias (EBF)** para crianças do bairro: campanha de inscrição (formulário como o da cantata), vídeo-convite dos tios, cobertura diária com autorização dos pais. Ótima porta para famílias que nunca vieram. |
-| 20/07 | **Dia do Amigo**: "Marque o amigo que estava lá nos dias difíceis" + Pv 17.17. Post feito para ser compartilhado. |
-| 26/07 | **Dia dos Avós**: fotos de avós da comunidade com netos + "lição que aprendi com minha avó" (caixinha). |
-
-### Agosto/2027: pais e igreja
-
-| Data | Postagem |
-|------|----------|
-| **08/08 (dom)** | **Dia dos Pais**: série em vídeo "O que meu pai me ensinou" (incluir quem não teve pai presente: "Deus é Pai dos órfãos", Sl 68.5). Culto com convite "traga seu pai" e **café da manhã/lanche da UPH** aberto aos pais do bairro. |
-| 11/08 | Dia do Estudante: oração pelos vestibulandos e universitários; caixinha "o que você está estudando?". |
-| 12/08 (qui) | **Aniversário da Igreja Presbiteriana do Brasil (168 anos)**: carrossel "Quem são os presbiterianos?" (Simonton, 1859, o que cremos, link para `/cremos`). |
-
-### Setembro/2027: Setembro Amarelo
-
-| Data | Postagem |
-|------|----------|
-| **Todo o mês** | **Setembro Amarelo (valorização da vida)**: série "Você não está sozinho". Posts com sinais de alerta, como ajudar um amigo, **CVV 188** sempre visível, depoimento (autorizado) de alguém que passou por depressão. Convidar um psicólogo cristão para **live** ou roda de conversa aberta no templo. Linguagem cuidadosa: nunca detalhar métodos e nunca tratar como "falta de fé". |
-| 07/09 | Independência: post sobre liberdade verdadeira (Jo 8.36), sem tom político-partidário. |
-| 21–22/09 | Dia da Árvore / Primavera: **"Ramos da mesma videira"** (Jo 15), ligando ao nome Parreiral e à identidade visual. |
-
-### Outubro/2027: crianças e Reforma
-
-| Data | Postagem |
-|------|----------|
-| Todo o mês | **Outubro Rosa**: posts informativos + homenagem a mulheres que venceram o câncer (com autorização). Parceria possível com a UBS do bairro. |
-| **12/10 (ter)** | **Dia das Crianças**: **"Tarde das Crianças"** aberta ao bairro no sábado anterior (brinquedos, pipoca, história bíblica), com campanha de doação de brinquedos. Post do dia com fotos de infância dos membros ("adivinhe quem é"): alto engajamento. |
-| 15/10 | Dia do Professor: agradecimento aos professores das escolas do bairro, marcando as escolas. |
-| **31/10 (dom)** | **510 anos da Reforma Protestante**: série de 4 semanas "Reforma em 60 segundos" (Lutero, as 95 teses, as Cinco Solas, o que isso tem a ver com você). Reaproveita a página `/cremos`. Post do dia: "Por que somos protestantes?". |
-
-### Novembro/2027: gratidão
-
-| Data | Postagem |
-|------|----------|
-| Todo o mês | **Novembro Azul**: saúde do homem, com vídeo dos homens da UPH incentivando o exame ("homem que cuida da família também cuida de si"). |
-| Todo o mês | **Mural da Gratidão**: caixinha semanal "pelo que você é grato?"; respostas viram carrosséis e, no fim do mês, um painel físico no templo (foto para o feed). |
-| **25/11 (qui)** | **Dia de Ação de Graças**: post principal + culto ou jantar de Ação de Graças com convidados. Campanha de **cestas básicas** para famílias do bairro durante o mês, com prestação de contas. |
-| 28/11 (dom) | Início do Advento 2027: abre o ciclo de Natal do próximo ano. |
-
-## 5. Ações "fora da tela" que alimentam o perfil
-
-O Instagram alcança melhor quem não é da igreja quando mostra a igreja **fazendo algo pelo bairro**. Sugestões já distribuídas no calendário:
-
-- Natal na Rua (dez), Páscoa com bombons (mar), Arraiá da Chácara (jun), EBF (jul), Tarde das Crianças (out), cestas de Ação de Graças (nov).
-- Campanhas solidárias com prestação de contas pública (material escolar, brinquedos, cestas).
-- Rodas de conversa abertas sobre temas de vida (saúde mental em setembro, casamento em junho, luto).
-
-Em cada uma: **antes** (convite), **durante** (stories) e **depois** (carrossel "como foi" com agradecimento). Uma ação rende de 4 a 6 postagens.
-
-## 6. Boas práticas de alcance
-
-- **Reels de até 60 s** com legenda na tela (muita gente assiste sem som) e gancho nos 2 primeiros segundos.
-- **Marcar perfis locais** (comércio, escola, associação de moradores) e usar localização "Guaraciaba, Serra" e "Serra, Espírito Santo".
-- **Hashtags locais** (poucas): `#Serra` `#SerraES` `#Guaraciaba` `#ChacaraParreiral` `#ES`.
-- **Collab** com perfis da sede (IP Jardim Camburi) e de comércios parceiros em ações conjuntas.
-- **Responder todo comentário e direct em até 24 h**, com gentileza, inclusive críticas.
-- **Destaques fixos no perfil:** Visite-nos (endereço, horários, mapa), Quem somos, Oração, Cantata, Perguntas Sinceras, Gente da Chácara.
-- **Link na bio:** `ipchacara.org` (ou uma página com links para `/visitante`, `/oracao`, `/eventos`).
-- Quando o perfil estiver ativo, preencher o campo `instagram` em `assets/js/site.js` para o ícone aparecer no site.
-
-## 7. Planejamento e produção
-
-- **Reunião mensal de pauta** (última semana do mês anterior): fechar posts do mês seguinte e dividir tarefas.
-- **Banco de fotos** no Drive, organizado por mês/evento, com indicação de quem autorizou uso de imagem.
-- **Modelos no Canva** com cores e fontes do kit da marca (`/marca`), para qualquer voluntário produzir arte coerente.
-- **Revisão a quatro olhos**: todo post com conteúdo bíblico ou pastoral passa pelo pastor/evangelista antes de sair.
-- **Medir uma vez por mês**: alcance de não seguidores, compartilhamentos e directs recebidos importam mais que curtidas. Repetir o que funcionou.
+Ideias da versão completa, guardadas para quando houver mais gente na equipe: série de Advento em Reels, desafio "Marcos em 16 dias", "Hino tem História", "Mesa da Chácara" (receitas), "Natal na Rua", Páscoa com bombons no bairro, série de Páscoa diária, "Mural da Gratidão", caixinha semanal de pedidos de oração, rodas de conversa abertas sobre saúde mental.
