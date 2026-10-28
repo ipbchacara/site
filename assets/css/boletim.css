@@ -4,6 +4,23 @@
    Natal e datas festivas podem usar o trigo, conforme o manual da marca.
    ========================================================================== */
 
+/* ---------- Cabeçalho da revista: enxuto, no lugar do menu do site ---------- */
+.rv-so-curto { display: none; }
+.rv-topo { position: sticky; top: 0; z-index: 100; background: rgba(247,243,234,.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--linha); }
+.rv-topo-inner { height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.rv-topo-marca img { height: 38px; width: auto; }
+.rv-topo-nav { display: flex; align-items: center; gap: 18px; }
+.rv-topo-nav > a:not(.btn) { font-size: .9rem; font-weight: 600; color: var(--videira); text-decoration: none; }
+.rv-topo-nav > a:not(.btn):hover, .rv-topo-nav > a[aria-current] { color: var(--uva); }
+.rv-topo-nav .btn { padding: .5rem 1rem; font-size: .85rem; }
+@media (max-width: 480px) {
+  .rv-so-largo { display: none; }
+  .rv-so-curto { display: inline; }
+  .rv-topo-nav { gap: 12px; }
+  .rv-topo-marca img { height: 32px; }
+  .rv-topo-nav .btn { padding: .45rem .8rem; font-size: .8rem; }
+}
+
 /* ---------- Capa ---------- */
 .rv-capa {
   position: relative; overflow: hidden; isolation: isolate;
