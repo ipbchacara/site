@@ -532,7 +532,9 @@ a.cartao:hover .icone { transform: scale(1.08) rotate(-4deg); }
 
 /* Transição suave entre páginas (navegadores compatíveis) */
 @view-transition { navigation: auto; }
-#site-header { view-transition-name: cabecalho; }
+/* Na .topo (e não no #site-header): o nome cria um contexto de empilhamento,
+   e no invólucro sem z-index o menu mobile ficava por baixo do conteúdo */
+.topo { view-transition-name: cabecalho; }
 ::view-transition-old(root) { animation: .2s ease both vt-sai; }
 ::view-transition-new(root) { animation: .35s var(--ease) both vt-entra; }
 @keyframes vt-sai { to { opacity: 0; } }
