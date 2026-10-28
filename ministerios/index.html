@@ -23,7 +23,11 @@
   .sociedade { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 22px 18px; text-decoration: none; color: inherit; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
   .sociedade:hover { transform: translateY(-4px); box-shadow: var(--sombra); color: inherit; }
   .sociedade .mais { margin-top: auto; padding-top: 12px; font-weight: 700; font-size: .85rem; color: var(--uva); }
-  .sociedade .sigla { font-family: var(--f-titulo); font-size: 1.7rem; color: var(--uva); line-height: 1; }
+  .sociedade .logo-soc { height: 104px; display: grid; place-items: center; padding: 6px; margin: -4px -4px 10px; background: var(--pergaminho); border-radius: 10px; transition: background-color .3s ease; }
+  .sociedade .logo-soc img { max-height: 78px; max-width: 88%; width: auto; height: auto; transition: transform .5s var(--ease-mola); }
+  .sociedade .logo-soc img.vertical { max-height: 92px; }
+  .sociedade:hover .logo-soc { background: #EEF2E3; }
+  .sociedade:hover .logo-soc img { transform: scale(1.08) rotate(-3deg); }
   .sociedade h3 { font-size: 1rem; margin: 8px 0 6px; font-family: var(--f-texto); font-weight: 700; }
   .sociedade p { font-size: .9rem; color: var(--texto-suave); margin: 0; }
   @media (max-width: 960px) { .sociedades { grid-template-columns: repeat(2, 1fr); } }
@@ -133,11 +137,11 @@
         <p>Conheça a história e o propósito de cada uma.</p>
       </div>
       <div class="sociedades">
-        <a class="sociedade revelar" href="/sociedades/ucp/"><div class="sigla">UCP</div><h3>União de Crianças Presbiterianas</h3><p>Crianças de 6 a 11 anos.</p><span class="mais">Conheça →</span></a>
-        <a class="sociedade revelar" href="/sociedades/upa/"><div class="sigla">UPA</div><h3>União Presbiteriana de Adolescentes</h3><p>Adolescentes de 12 a 18 anos.</p><span class="mais">Conheça →</span></a>
-        <a class="sociedade revelar" href="/sociedades/ump/"><div class="sigla">UMP</div><h3>União de Mocidade Presbiteriana</h3><p>Jovens de 18 a 35 anos.</p><span class="mais">Conheça →</span></a>
-        <a class="sociedade revelar" href="/sociedades/saf/"><div class="sigla">SAF</div><h3>Sociedade Auxiliadora Feminina</h3><p>Mulheres servindo e cuidando.</p><span class="mais">Conheça →</span></a>
-        <a class="sociedade revelar" href="/sociedades/uph/"><div class="sigla">UPH</div><h3>União Presbiteriana de Homens</h3><p>Homens em comunhão e serviço.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/ucp/"><div class="logo-soc"><img src="/assets/img/sociedades/ucp.png" alt="Logo da UCP" width="395" height="225" loading="lazy"></div><h3>União de Crianças Presbiterianas</h3><p>Crianças de 6 a 11 anos.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/upa/"><div class="logo-soc"><img src="/assets/img/sociedades/upa.png" alt="Logo da UPA" width="281" height="240" loading="lazy"></div><h3>União Presbiteriana de Adolescentes</h3><p>Adolescentes de 12 a 18 anos.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/ump/"><div class="logo-soc"><img src="/assets/img/sociedades/ump.png" alt="Logo da UMP" width="135" height="240" loading="lazy" class="vertical"></div><h3>União de Mocidade Presbiteriana</h3><p>Jovens de 18 a 35 anos.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/saf/"><div class="logo-soc"><img src="/assets/img/sociedades/saf.png" alt="Logo da SAF" width="217" height="240" loading="lazy" class="vertical"></div><h3>Sociedade Auxiliadora Feminina</h3><p>Mulheres servindo e cuidando.</p><span class="mais">Conheça →</span></a>
+        <a class="sociedade revelar" href="/sociedades/uph/"><div class="logo-soc"><img src="/assets/img/sociedades/uph.png" alt="Logo da UPH" width="525" height="240" loading="lazy"></div><h3>União Presbiteriana de Homens</h3><p>Homens em comunhão e serviço.</p><span class="mais">Conheça →</span></a>
       </div>
     </div>
   </section>
