@@ -415,7 +415,13 @@ a.cartao:hover .icone { transform: scale(1.08) rotate(-4deg); }
 .sola .latim { font-family: var(--f-titulo); font-style: italic; color: var(--uva); font-size: 1.15rem; }
 .sola .pt { font-weight: 700; color: var(--videira); margin-top: 4px; }
 .sola p { font-size: .88rem; color: var(--texto-suave); margin: 10px 0 0; }
-@media (max-width: 960px) { .solas { grid-template-columns: repeat(2, 1fr); } .sola:last-child { grid-column: 1 / -1; } }
+@media (max-width: 960px) {
+  .solas { grid-template-columns: repeat(2, 1fr); perspective: none; }
+  .sola:last-child { grid-column: 1 / -1; }
+  /* No celular o giro 3D deixava cards invisíveis no Safari: entram como os demais */
+  .solas .sola.revelar { transform: translateY(26px); transform-origin: 50% 50%; }
+  .solas .sola.revelar.visivel { transform: none; }
+}
 
 /* Liderança */
 .pessoa { text-align: center; }
