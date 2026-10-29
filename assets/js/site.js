@@ -13,7 +13,7 @@
     cidade: 'Serra — ES',
     email: 'secretaria@ipchacara.org',
     whatsapp: '',   // ex.: '5527999999999'
-    instagram: 'https://instagram.com/ipbchacaraparreiral',
+    instagram: 'https://instagram.com/ipchacara',
     youtube: '',    // ex.: 'https://youtube.com/@ipchacara'
     mapa: 'https://www.google.com/maps/search/?api=1&query=Rua+Teresa+Tironi%2C+15+-+Guaraciaba%2C+Serra+-+ES'
   };
