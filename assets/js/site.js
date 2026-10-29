@@ -150,14 +150,24 @@
       el.style.removeProperty('--atraso');
       el.style.transitionDelay = '';
     };
+    // As Solas começam giradas quase de lado (uma fresta de poucos px), e o Safari
+    // do iPhone erra a interseção delas; por isso observa-se o bloco .solas inteiro.
+    const grupos = new Map();
+    itens.forEach(el => {
+      el.addEventListener('transitionend', concluir);
+      const alvo = el.closest('.solas') || el;
+      if (!grupos.has(alvo)) grupos.set(alvo, []);
+      grupos.get(alvo).push(el);
+    });
     const obs = new IntersectionObserver(entradas => {
-      entradas.filter(e => e.isIntersecting).forEach((e, i) => {
-        e.target.style.setProperty('--atraso', Math.min(i * 0.09, 0.45) + 's');
-        e.target.classList.add('visivel');
-        obs.unobserve(e.target);
-      });
+      entradas.filter(e => e.isIntersecting)
+        .flatMap(e => { obs.unobserve(e.target); return grupos.get(e.target); })
+        .forEach((el, i) => {
+          el.style.setProperty('--atraso', Math.min(i * 0.09, 0.45) + 's');
+          el.classList.add('visivel');
+        });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    itens.forEach(el => { el.addEventListener('transitionend', concluir); obs.observe(el); });
+    grupos.forEach((_, alvo) => obs.observe(alvo));
   }
 
   // ── ANIMAÇÕES AO APARECER ──────────────────────────────
