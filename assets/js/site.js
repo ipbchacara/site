@@ -119,6 +119,7 @@
                 <li><a href="/contribua">Dízimos e ofertas</a></li>
                 <li><a href="/oracao/">Pedido de oração</a></li>
                 <li><a href="/contato">Fale conosco</a></li>
+                <li><a href="https://multi.ipb.org.br/" target="_blank" rel="noopener">IPB Multi: rádio e vídeos</a></li>
               </ul>
             </div>
             <div>
