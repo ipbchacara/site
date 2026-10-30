@@ -18,6 +18,7 @@ Site institucional publicado em **https://ipchacara.org** pelo GitHub Pages.
 | `/oracao`      | `oracao/index.html`        | Pedido de oração (mesmo Apps Script do contato, assunto "Pedido de oração") |
 | `/contato`     | `contato/index.html`       | Endereço, mapa, mensagem e pedido de oração (envia e-mail à secretaria via Google Apps Script, código em `_apps-script/contato.gs`) |
 | `/natal2026`   | `natal2026/index.html`     | Inscrição de coristas da Cantata (Google Forms). Inscrições encerradas; sem links no site |
+| `/boletim`     | `boletim/index.html`       | Acervo da entre nós., a revista mensal (fora do menu, noindex). Cada edição em `boletim/AAAA-MM/`: `index.html` (revista), `email.html` (abrir, copiar e colar no Gmail) as capas `capa-grupo.png` (1080×1350, WhatsApp) e `capa-email.png` (1200×630) e as artes sem texto `arte-larga.png` / `arte-alta.png` (fundo da capa no site). Logo da revista em `assets/marca/entre-nos/`. Todas as seções, diagramadas com textos de exemplo, ficam em `boletim/modelo/` (copie de lá as que entram no mês). Estilos em `assets/css/boletim.css`; as capas saem de `_documentos/boletim/fonte/gerar-capas.ps1` |
 | `/identidade`  | `identidade/index.html`    | Guia de identidade visual (fora do menu) |
 | `/marca`       | `marca/index.html`         | Download do kit da marca e do manual (fora do menu, noindex). Versão pública do kit: sem capas com lema e sem instalador de fontes |
 
