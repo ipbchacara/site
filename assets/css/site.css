@@ -26,7 +26,7 @@
   --f-texto: 'Open Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
   /* Medidas */
-  --largura: 1180px;
+  --largura: 1360px;
   --raio: 14px;
   --raio-g: 22px;
   --sombra: 0 1px 2px rgba(21,36,15,.06), 0 8px 28px rgba(21,36,15,.08);
@@ -169,7 +169,7 @@ p { margin: 0 0 1em; }
               radial-gradient(50% 60% at 0% 100%, rgba(190,30,45,.22), transparent 70%);
 }
 .hero .container { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
-.hero h1 { color: #fff; margin-bottom: .35em; }
+.hero h1 { color: #fff; margin-bottom: .35em; max-width: 640px; }
 .hero h1 em { font-style: italic; font-weight: 400; color: #C9DD9A; }
 .hero .lead { color: #D3DEC8; font-size: 1.2rem; margin-bottom: 2rem; }
 .hero-versiculo { margin: 2.5rem 0 0;padding-left: 1rem; border-left: 2px solid var(--uva); color: #A9BB98; font-family: var(--f-titulo); font-style: italic; font-size: 1.02rem; max-width: 460px; }
