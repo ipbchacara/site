@@ -372,6 +372,30 @@ a.cartao:hover .icone { transform: scale(1.08) rotate(-4deg); }
 .destaque-arte .aneis span { border-color: rgba(255,255,255,.18); }
 .destaque-arte .estrela { font-family: var(--f-titulo); font-size: clamp(4rem, 10vw, 7rem); color: #fff; opacity: .95; position: relative; }
 @media (max-width: 760px) { .destaque { grid-template-columns: 1fr; } .destaque-arte { order: -1; min-height: 160px; } }
+/* Destaque com cartaz (ex.: Cantata de Natal): fundo madeira, cartaz inteiro à direita */
+.destaque.cartaz { background: #2A1E17; align-items: center; }
+.destaque.cartaz p { color: #E9DCC0; }
+.destaque.cartaz .sobretitulo { color: #E2BE86; }
+.destaque.cartaz .sobretitulo::before { border-color: #E2BE86; }
+.destaque.cartaz .destaque-arte { background: radial-gradient(70% 70% at 50% 50%, #5A3A2A, #2A1E17); padding: clamp(24px, 4vw, 40px); }
+/* Cartaz da Cantata em HTML/CSS (texto de verdade sobre a foto da manjedoura). Medidas em cqw = % da largura do cartaz */
+.cartaz-natal { container-type: inline-size; position: relative; display: flex; flex-direction: column; align-items: center; width: min(100%, 300px); aspect-ratio: 4 / 5; padding-top: 5.9cqw; border-radius: 12px; overflow: hidden; text-decoration: none; font-family: 'Poppins', sans-serif; color: #7A1F1F; background: #E9DCC0 url(/assets/img/natal-fundo.jpg) center bottom / cover no-repeat; box-shadow: 0 18px 40px rgba(0,0,0,.45); transition: transform .4s var(--ease); }
+.cartaz-natal:hover { transform: translateY(-4px) rotate(-1deg); }
+.cartaz-natal::after { content: ""; position: absolute; inset: auto 0 0; height: 31%; background: linear-gradient(rgba(42,30,23,0), rgba(42,30,23,.88) 45%, rgba(42,30,23,.97)); }
+.cn-logo { width: 27.8cqw; aspect-ratio: 1054 / 278; background: #7A1F1F; -webkit-mask: url(/assets/img/logo-ipjc.png) center / contain no-repeat; mask: url(/assets/img/logo-ipjc.png) center / contain no-repeat; }
+.cn-sobre { margin-top: 4.2cqw; font-size: 3.15cqw; letter-spacing: 1.3cqw; text-transform: uppercase; line-height: 1; padding-left: 1.3cqw; }
+.cn-titulo { display: flex; flex-direction: column; align-items: center; margin-top: 2cqw; line-height: .95; width: 100%; }
+.cn-titulo > span { background: linear-gradient(90deg, #7A1F1F 0%, #8E3A35 50%, #B87A6E 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-transform: uppercase; }
+.cn-santo { font-size: 17.2cqw; font-weight: 400; }
+.cn-pra { display: flex; align-items: center; gap: 3.7cqw; font-size: 10.4cqw; font-weight: 400; text-transform: none !important; width: 70.4cqw; margin: -1.6cqw 0 -1.2cqw; }
+.cn-pra i { flex: 1; height: max(1px, .28cqw); background: currentColor; background: linear-gradient(90deg, #7A1F1F, #B87A6E); }
+.cn-sempre { font-size: 15.7cqw; font-weight: 700; }
+.cn-data { position: absolute; z-index: 1; left: 0; right: 0; bottom: 9.5cqw; text-align: center; font-size: 4.4cqw; font-weight: 500; color: #F6EEDD; white-space: nowrap; }
+.cn-data b { font-weight: 700; color: #E2BE86; margin-right: .5em; }
+.destaque.cartaz .botoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-dourado { background: #E2BE86; color: #2A1E17; }
+.btn-dourado:hover { background: #F6EEDD; color: #2A1E17; }
+@media (max-width: 760px) { .cartaz-natal { width: min(75%, 260px); } }
 
 /* ---------- Chamada final ---------- */
 .chamada { text-align: center; }

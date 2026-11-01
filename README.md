@@ -41,7 +41,7 @@ Campos opcionais: `pauta: ['…', '…']` mostra uma lista numerada só em `/eve
 
 **Mudar o menu:** lista `MENU` em `assets/js/site.js`.
 
-**Destaque da página inicial** (hoje, nenhum): no lugar do comentário `DESTAQUE SAZONAL` em `index.html`, cole o bloco abaixo e troque os textos e o link.
+**Destaque da página inicial** (hoje: Cantata de Natal, até 13/12; o bloco some sozinho depois da data em `data-ate`. O cartaz é feito em HTML/CSS, classe `cartaz-natal`: para mudar data ou local, edite o texto no `index.html`): no lugar do comentário `DESTAQUE SAZONAL` em `index.html`, cole o bloco abaixo e troque os textos e o link.
 
 ```html
 <section class="secao" style="padding-top:0">
