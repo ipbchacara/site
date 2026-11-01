@@ -33,7 +33,7 @@ const EVENTOS_ESPECIAIS = [
     ] },
   { data: '2026-12-13', titulo: 'Cantata de Natal “Santo pra Sempre”', hora: '19h30', sub: 'No nosso templo · Aberta à comunidade: traga um convidado', substitui: 'Culto de Adoração',
     cancela: { 'Escola Bíblica Dominical': 'Excepcionalmente neste dia não haverá EBD, por causa da preparação do coral. Esperamos você na Cantata, às 19h30!' },
-    link: 'https://natal.ipjc.org.br/?ref=site-chacara', arte: '/assets/img/cantata-santo-pra-sempre.jpg', duracao: 60,
+    link: 'https://natal.ipjc.org.br/?ref=site-chacara', arte: '/assets/img/cantata-santo-pra-sempre.jpg?v=2', duracao: 60,
     resumo: {
       sobretitulo: 'O tema',
       titulo: 'O Santo deitado numa manjedoura',
