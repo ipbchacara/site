@@ -31,7 +31,7 @@ Site institucional publicado em **https://ipchacara.org** pelo GitHub Pages.
 
 O evento aparece sozinho na agenda e nos "Próximos encontros" da página inicial.
 
-Campos opcionais: `pauta: ['…', '…']` mostra uma lista numerada só em `/eventos` (útil para assembleias), e `substitui: 'Culto de Adoração'` tira da agenda o item semanal daquele dia (útil quando a cantata ocupa o horário do culto).
+Campos opcionais: `pauta: ['…', '…']` mostra uma lista numerada só em `/eventos` (útil para assembleias), e `substitui: 'Culto de Adoração'` tira da agenda o item semanal daquele dia (útil quando a cantata ocupa o horário do culto). Já `cancela: { 'Escola Bíblica Dominical': 'motivo' }` mantém o item semanal na agenda, riscado e com o motivo, e o tira da página inicial.
 
 Na página `/eventos`, todo evento especial ganha o botão **Adicionar à minha agenda** (no iPhone/iPad/Mac baixa o arquivo `.ics`, que abre o Calendário; nos outros aparelhos abre o Google Agenda). Com `resumo: { sobretitulo, titulo, texto: [...], info: [...] }`, o evento mostra a arte com um resumo ao lado e o botão "Saiba mais" embaixo. Campos opcionais para eles: `local: 'Nome, endereço'` (padrão: o nosso templo) e `duracao: 90` (minutos; padrão: 120). O lembrete fica 2 horas antes.
 
