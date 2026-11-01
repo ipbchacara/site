@@ -41,7 +41,7 @@ const EVENTOS_ESPECIAIS = [
         'Quando o anjo anunciou a Maria o nascimento de Jesus, disse: “o ente santo que há de nascer será chamado Filho de Deus” (Lucas 1.35). O Deus que os anjos chamam de “Santo, santo, santo” escolheu nascer em Belém, envolto em panos, deitado onde os animais comiam.',
         'A cantata percorre esse plano de Deus: das promessas dos profetas ao anúncio a Maria, até a noite em que a promessa se cumpriu.',
       ],
-      info: ['Entrada gratuita', 'Cerca de 1 hora', 'Crianças são bem-vindas'],
+      info: ['Entrada gratuita', 'Cerca de 1 hora', 'Para toda a família'],
     } },
 ];
 
