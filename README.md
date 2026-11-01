@@ -33,6 +33,8 @@ O evento aparece sozinho na agenda e nos "Próximos encontros" da página inicia
 
 Campos opcionais: `pauta: ['…', '…']` mostra uma lista numerada só em `/eventos` (útil para assembleias), e `substitui: 'Culto de Adoração'` tira da agenda o item semanal daquele dia (útil quando a cantata ocupa o horário do culto).
 
+Na página `/eventos`, todo evento especial ganha os botões **Adicionar à minha agenda** (Google Agenda e arquivo `.ics` para iPhone/Outlook). Campos opcionais para eles: `local: 'Nome, endereço'` (padrão: o nosso templo) e `duracao: 90` (minutos; padrão: 120). O lembrete fica 2 horas antes.
+
 `arte: '/assets/img/arquivo.jpg'` mostra a arte do evento em `/eventos` (clicável quando há `link`). Link para outro site (`https://...`) abre em nova aba.
 
 **Mudar horários fixos:** `PROGRAMACAO_SEMANAL` no mesmo arquivo. Na página inicial, atualize também a faixa de horários (`index.html`, bloco `HORÁRIOS`).
