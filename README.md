@@ -33,13 +33,15 @@ O evento aparece sozinho na agenda e nos "Próximos encontros" da página inicia
 
 Campos opcionais: `pauta: ['…', '…']` mostra uma lista numerada só em `/eventos` (útil para assembleias), e `substitui: 'Culto de Adoração'` tira da agenda o item semanal daquele dia (útil quando a cantata ocupa o horário do culto).
 
+`arte: '/assets/img/arquivo.jpg'` mostra a arte do evento em `/eventos` (clicável quando há `link`). Link para outro site (`https://...`) abre em nova aba.
+
 **Mudar horários fixos:** `PROGRAMACAO_SEMANAL` no mesmo arquivo. Na página inicial, atualize também a faixa de horários (`index.html`, bloco `HORÁRIOS`).
 
 **Mudar e-mail, WhatsApp, Instagram ou YouTube:** objeto `IGREJA` no início de `assets/js/site.js`. Rede social vazia (`''`) não aparece no site.
 
 **Mudar o menu:** lista `MENU` em `assets/js/site.js`.
 
-**Destaque da página inicial** (hoje, nenhum): no lugar do comentário `DESTAQUE SAZONAL` em `index.html`, cole o bloco abaixo e troque os textos e o link.
+**Destaque da página inicial** (hoje: Cantata de Natal, até 13/12; o bloco some sozinho depois da data em `data-ate`. O cartaz é feito em HTML/CSS, classe `cartaz-natal`: para mudar data ou local, edite o texto no `index.html`): no lugar do comentário `DESTAQUE SAZONAL` em `index.html`, cole o bloco abaixo e troque os textos e o link.
 
 ```html
 <section class="secao" style="padding-top:0">

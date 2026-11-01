@@ -13,10 +13,10 @@
 <link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=3">
 <script src="/assets/js/site.js?v=2" defer></script>
-<script src="/assets/js/agenda.js" defer></script>
+<script src="/assets/js/agenda.js?v=3" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,7 +89,39 @@
     </div>
   </section>
 
-  <!-- DESTAQUE SAZONAL: nenhum no momento. Para criar um, use o bloco do exemplo no README. -->
+  <!-- DESTAQUE SAZONAL: Cantata de Natal. Some sozinho depois da data em data-ate.
+       Para trocar por outro destaque, use o bloco do exemplo no README. -->
+  <section class="secao" style="padding-top:0" data-ate="2026-12-13">
+    <div class="container">
+      <div class="destaque cartaz revelar">
+        <div class="destaque-texto">
+          <div class="sobretitulo">Cantata de Natal · 13 de dezembro, 19h30</div>
+          <h2>Santo pra Sempre</h2>
+          <p>No domingo, 13 de dezembro, o culto da noite dá lugar à Cantata de Natal no nosso templo. É aberta à comunidade: venha e traga alguém com você!</p>
+          <div class="botoes">
+            <a class="btn btn-dourado" href="https://natal.ipjc.org.br/?ref=chacara-destaque" target="_blank" rel="noopener">Conheça a Cantata</a>
+            <a class="btn btn-claro" href="/eventos">Ver na agenda</a>
+          </div>
+        </div>
+        <div class="destaque-arte">
+          <!-- Cartaz feito em HTML/CSS: para mudar data ou local, edite o texto abaixo -->
+          <a class="cartaz-natal" href="https://natal.ipjc.org.br/?ref=chacara-destaque" target="_blank" rel="noopener" aria-label="Cantata de Natal Santo pra Sempre: 13 de dezembro, Chácara Parreiral, 19h30">
+            <span class="cn-logo"></span>
+            <span class="cn-sobre">Cantata de Natal</span>
+            <span class="cn-titulo"><span class="cn-santo">Santo</span><span class="cn-pra"><i></i>pra<i></i></span><span class="cn-sempre">Sempre</span></span>
+            <span class="cn-data"><b>13/12</b> Chácara Parreiral · 19h30</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Esconde destaques vencidos: data-ate="AAAA-MM-DD" é o último dia em que aparecem
+    document.querySelectorAll('[data-ate]').forEach(function (el) {
+      var p = el.dataset.ate.split('-').map(Number);
+      if (new Date() > new Date(p[0], p[1] - 1, p[2], 23, 59, 59)) el.remove();
+    });
+  </script>
 
   <!-- PRIMEIRA VISITA -->
   <section class="secao areia" id="visita">
@@ -206,7 +238,7 @@
     const alvo = document.getElementById('proximos');
     const lista = proximosEventos(5);
     alvo.innerHTML = lista.map(e => `
-      <${e.link ? `a href="${e.link}"` : 'div'} class="evento-linha" style="text-decoration:none;color:inherit">
+      <${e.link ? `a ${attrsLink(e.link)}` : 'div'} class="evento-linha" style="text-decoration:none;color:inherit">
         <div class="data-bloco"><span class="d">${e.quando.getDate()}</span><span class="m">${MESES[e.quando.getMonth()]}</span></div>
         <div><h3>${e.titulo}</h3><div class="meta">${DIAS[e.quando.getDay()]} · ${e.hora}${e.sub ? ' · ' + e.sub : ''}</div></div>
         <span class="selo ${e.tipo}">${ROTULO_TIPO[e.tipo] || e.selo}</span>

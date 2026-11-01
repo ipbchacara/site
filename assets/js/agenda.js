@@ -16,6 +16,8 @@ const PROGRAMACAO_SEMANAL = [
 // Campos opcionais:
 //   pauta: ['item 1', 'item 2']    lista numerada, mostrada só na página /eventos
 //   substitui: 'Culto de Adoração'  tira da agenda, nesse dia, o item semanal com esse título
+//   arte: '/assets/img/arquivo.jpg' imagem do evento, mostrada só na página /eventos (clicável se houver link)
+//   link: endereço de outro site (https://...) abre em nova aba
 const EVENTOS_ESPECIAIS = [
   { data: '2026-11-08', titulo: 'Assembleia Extraordinária', hora: '8h30', sub: 'Na igreja Sede (IPJC)',
     pauta: [
@@ -23,8 +25,14 @@ const EVENTOS_ESPECIAIS = [
       'Aprovação, ou não, de empréstimo junto à Junta Patrimonial da IPB para a construção do templo da congregação em Santa Maria de Jetibá',
       'Proposta de título de diácono emérito ao irmão Ismael Silva',
     ] },
-  { data: '2026-12-13', titulo: 'Cantata de Natal “Santo pra Sempre”', hora: '19h30', sub: 'No nosso templo · Aberta à comunidade: traga um convidado', substitui: 'Culto de Adoração' },
+  { data: '2026-12-13', titulo: 'Cantata de Natal “Santo pra Sempre”', hora: '19h30', sub: 'No nosso templo · Aberta à comunidade: traga um convidado', substitui: 'Culto de Adoração',
+    link: 'https://natal.ipjc.org.br/?ref=site-chacara', arte: '/assets/img/cantata-santo-pra-sempre.jpg' },
 ];
+
+// Atributos do link: endereços de outros sites abrem em nova aba
+function attrsLink(link) {
+  return /^https?:\/\//.test(link) ? `href="${link}" target="_blank" rel="noopener"` : `href="${link}"`;
+}
 
 const ROTULO_TIPO = { culto: 'Culto', escola: 'Escola Bíblica', oracao: 'Oração', especial: 'Especial' };
 
