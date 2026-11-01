@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css?v=4">
 <script src="/assets/js/site.js?v=2" defer></script>
-<script src="/assets/js/agenda.js?v=4" defer></script>
+<script src="/assets/js/agenda.js?v=5" defer></script>
 <style>
   :root { --c-culto: #BE1E2D; --c-escola: #2E6A9E; --c-oracao: #3F6005; --c-especial: #D9822B; }
   .agenda-wrap { max-width: 920px; margin: 0 auto; }
@@ -49,6 +49,10 @@
   .item .pauta li + li { margin-top: 3px; }
   .item .arte { display: block; width: min(100%, 280px); margin-top: 12px; border-radius: 10px; box-shadow: 0 6px 18px rgba(21,36,15,.12); }
   .item a:has(> .arte) { display: inline-block; }
+  .add-agenda { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 10px; font-size: .84rem; color: var(--texto-suave); }
+  .add-agenda a { display: inline-flex; align-items: center; gap: 5px; padding: .3rem .75rem; border: 1px solid var(--linha); border-radius: 999px; background: #fff; text-decoration: none; color: var(--videira); }
+  .add-agenda a:hover { background: var(--videira); border-color: var(--videira); color: #fff; }
+  .add-agenda svg { width: 15px; height: 15px; }
   .vazio { text-align: center; padding: 32px 16px; color: var(--texto-suave); font-style: italic; }
   .cab-mes { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 6px; }
   .cab-mes div { text-align: center; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--texto-suave); }
@@ -172,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
     renderDia();
   }
 
+  const ICONE_CAL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>';
   function renderDia() {
     const evs = eventosDoDia(diaSel);
     let txt = diaSel.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
@@ -180,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!evs.length) { alvo.innerHTML = `<p class="titulo-dia">${txt}</p><div class="vazio">Nenhuma programação neste dia.</div>`; return; }
     alvo.innerHTML = `<p class="titulo-dia">${txt}</p>` + evs.map(e => `
       <div class="item"><span class="barra" style="background:${COR[e.tipo]}"></span>
-        <div><h3>${e.titulo}</h3><div class="meta">${e.hora}${e.sub ? ' · ' + e.sub : ''}${e.link ? ` · <a ${attrsLink(e.link)}>Saiba mais</a>` : ''}</div>${e.pauta ? `<ol class="pauta">${e.pauta.map(p => `<li>${p}</li>`).join('')}</ol>` : ''}${e.arte ? (e.link ? `<a ${attrsLink(e.link)}><img class="arte" src="${e.arte}" alt="Arte: ${e.titulo}" loading="lazy"></a>` : `<img class="arte" src="${e.arte}" alt="Arte: ${e.titulo}" loading="lazy">`) : ''}</div>
+        <div><h3>${e.titulo}</h3><div class="meta">${e.hora}${e.sub ? ' · ' + e.sub : ''}${e.link ? ` · <a ${attrsLink(e.link)}>Saiba mais</a>` : ''}</div>${e.pauta ? `<ol class="pauta">${e.pauta.map(p => `<li>${p}</li>`).join('')}</ol>` : ''}${e.tipo === 'especial' ? `<div class="add-agenda"><span>Adicionar à minha agenda:</span><a href="${linkGoogleAgenda(e, diaSel)}" target="_blank" rel="noopener">${ICONE_CAL} Google Agenda</a><a href="${linkArquivoAgenda(e, diaSel)}" download="${e.titulo.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '')}.ics">${ICONE_CAL} iPhone / Outlook</a></div>` : ''}${e.arte ? (e.link ? `<a ${attrsLink(e.link)}><img class="arte" src="${e.arte}" alt="Arte: ${e.titulo}" loading="lazy"></a>` : `<img class="arte" src="${e.arte}" alt="Arte: ${e.titulo}" loading="lazy">`) : ''}</div>
         <span class="selo ${e.tipo}">${e.selo}</span></div>`).join('');
   }
 

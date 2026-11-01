@@ -18,8 +18,10 @@ const PROGRAMACAO_SEMANAL = [
 //   substitui: 'Culto de Adoração'  tira da agenda, nesse dia, o item semanal com esse título
 //   arte: '/assets/img/arquivo.jpg' imagem do evento, mostrada só na página /eventos (clicável se houver link)
 //   link: endereço de outro site (https://...) abre em nova aba
+//   local: 'Nome, endereço'          lugar do evento no "Adicionar à agenda" (padrão: o nosso templo)
+//   duracao: 90                      minutos, para o "Adicionar à agenda" (padrão: 120)
 const EVENTOS_ESPECIAIS = [
-  { data: '2026-11-08', titulo: 'Assembleia Extraordinária', hora: '8h30', sub: 'Na igreja Sede (IPJC)',
+  { data: '2026-11-08', titulo: 'Assembleia Extraordinária', hora: '8h30', sub: 'Na igreja Sede (IPJC)', local: 'Igreja Presbiteriana em Jardim Camburi (Sede), Vitória - ES',
     pauta: [
       'Aprovação, ou não, da compra do terreno em Santa Maria de Jetibá para a construção do templo da congregação',
       'Aprovação, ou não, de empréstimo junto à Junta Patrimonial da IPB para a construção do templo da congregação em Santa Maria de Jetibá',
@@ -32,6 +34,52 @@ const EVENTOS_ESPECIAIS = [
 // Atributos do link: endereços de outros sites abrem em nova aba
 function attrsLink(link) {
   return /^https?:\/\//.test(link) ? `href="${link}" target="_blank" rel="noopener"` : `href="${link}"`;
+}
+
+// ── Adicionar à agenda do celular ─────────────────────────
+const LOCAL_PADRAO = 'Igreja Presbiteriana Chácara Parreiral, Rua Teresa Tironi, 15 - Guaraciaba, Serra - ES';
+
+// Horário "de parede" de Brasília guardado nos campos UTC de um Date (não depende do fuso do aparelho)
+function horariosAgenda(e, data) {
+  const [hh, mm] = e.hora.split('h').map(Number);
+  const ini = new Date(Date.UTC(data.getFullYear(), data.getMonth(), data.getDate(), hh, mm || 0));
+  const fim = new Date(ini.getTime() + (e.duracao || 120) * 60000);
+  return { ini, fim };
+}
+const fmtAgenda = (d, z) => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, '0') + String(d.getUTCDate()).padStart(2, '0')
+  + 'T' + String(d.getUTCHours()).padStart(2, '0') + String(d.getUTCMinutes()).padStart(2, '0') + '00' + (z ? 'Z' : '');
+
+// Link do Google Agenda (abre o app no Android)
+function linkGoogleAgenda(e, data) {
+  const { ini, fim } = horariosAgenda(e, data);
+  const url = e.link && /^https?:/.test(e.link) ? e.link : '';
+  return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent(e.titulo)
+    + '&dates=' + fmtAgenda(ini) + '/' + fmtAgenda(fim) + '&ctz=America/Sao_Paulo'
+    + '&details=' + encodeURIComponent([e.sub, url].filter(Boolean).join('\n\n'))
+    + '&location=' + encodeURIComponent(e.local || LOCAL_PADRAO);
+}
+
+// Arquivo .ics (iPhone, Outlook e outros apps de agenda). Brasília é UTC-3 o ano todo.
+function linkArquivoAgenda(e, data) {
+  const { ini, fim } = horariosAgenda(e, data);
+  const utc = d => new Date(d.getTime() + 3 * 3600000);
+  const esc = t => String(t).replace(/\\/g, '\\\\').replace(/([,;])/g, '\\$1').replace(/\n/g, '\\n');
+  const url = e.link && /^https?:/.test(e.link) ? e.link : '';
+  const linhas = [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//IP Chacara Parreiral//Agenda//PT', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    'UID:' + dataISO(data) + '-' + e.titulo.normalize('NFD').toLowerCase().replace(/[^a-z0-9]+/g, '-') + '@ipchacara.org',
+    'DTSTAMP:' + fmtAgenda(new Date(), true),
+    'DTSTART:' + fmtAgenda(utc(ini), true), 'DTEND:' + fmtAgenda(utc(fim), true),
+    'SUMMARY:' + esc(e.titulo),
+    'DESCRIPTION:' + esc([e.sub, url].filter(Boolean).join('\n\n')),
+    'LOCATION:' + esc(e.local || LOCAL_PADRAO),
+    url ? 'URL:' + url : '',
+    'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + esc(e.titulo), 'TRIGGER:-PT2H', 'END:VALARM',
+    'END:VEVENT', 'END:VCALENDAR'
+  ].filter(Boolean);
+  return URL.createObjectURL(new Blob([linhas.join('\r\n')], { type: 'text/calendar;charset=utf-8' }));
 }
 
 const ROTULO_TIPO = { culto: 'Culto', escola: 'Escola Bíblica', oracao: 'Oração', especial: 'Especial' };
