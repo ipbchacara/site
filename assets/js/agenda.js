@@ -16,6 +16,8 @@ const PROGRAMACAO_SEMANAL = [
 // Campos opcionais:
 //   pauta: ['item 1', 'item 2']    lista numerada, mostrada só na página /eventos
 //   substitui: 'Culto de Adoração'  tira da agenda, nesse dia, o item semanal com esse título
+//   cancela: { 'Escola Bíblica Dominical': 'motivo' }
+//                                    mantém o item semanal em /eventos, riscado e com o motivo; some da página inicial
 //   arte: '/assets/img/arquivo.jpg' imagem do evento, mostrada só na página /eventos (clicável se houver link)
 //   link: endereço de outro site (https://...) abre em nova aba
 //   local: 'Nome, endereço'          lugar do evento no "Adicionar à agenda" (padrão: o nosso templo)
@@ -30,6 +32,7 @@ const EVENTOS_ESPECIAIS = [
       'Proposta de título de diácono emérito ao irmão Ismael Silva',
     ] },
   { data: '2026-12-13', titulo: 'Cantata de Natal “Santo pra Sempre”', hora: '19h30', sub: 'No nosso templo · Aberta à comunidade: traga um convidado', substitui: 'Culto de Adoração',
+    cancela: { 'Escola Bíblica Dominical': 'Não haverá EBD neste dia: preparação do coral para a Cantata' },
     link: 'https://natal.ipjc.org.br/?ref=site-chacara', arte: '/assets/img/cantata-santo-pra-sempre.jpg', duracao: 60,
     resumo: {
       sobretitulo: 'O tema',
@@ -103,7 +106,9 @@ function eventosDoDia(data) {
   const iso = dataISO(data);
   const especiais = EVENTOS_ESPECIAIS.filter(e => e.data === iso);
   const substituidos = especiais.map(e => e.substitui).filter(Boolean);
-  const lista = PROGRAMACAO_SEMANAL.filter(e => e.dia === data.getDay() && !substituidos.includes(e.titulo)).map(e => ({ ...e }));
+  const cancelados = Object.assign({}, ...especiais.map(e => e.cancela || {}));
+  const lista = PROGRAMACAO_SEMANAL.filter(e => e.dia === data.getDay() && !substituidos.includes(e.titulo))
+    .map(e => cancelados[e.titulo] ? { ...e, cancelado: cancelados[e.titulo] } : { ...e });
   especiais.forEach(e => lista.push({ tipo: 'especial', selo: 'Especial', ...e }));
   // '8h30' antes de '18h00': compara em minutos, não como texto
   const minutos = h => { const [hh, mm] = h.split('h').map(Number); return hh * 60 + (mm || 0); };
@@ -116,7 +121,7 @@ function proximosEventos(qtd, diasMax) {
   const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
   for (let i = 0; i < (diasMax || 60) && res.length < qtd; i++) {
     const d = new Date(hoje); d.setDate(hoje.getDate() + i);
-    eventosDoDia(d).forEach(e => { if (res.length < qtd) res.push({ ...e, quando: d }); });
+    eventosDoDia(d).filter(e => !e.cancelado).forEach(e => { if (res.length < qtd) res.push({ ...e, quando: d }); });
   }
   return res;
 }
