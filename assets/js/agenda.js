@@ -20,6 +20,8 @@ const PROGRAMACAO_SEMANAL = [
 //   link: endereço de outro site (https://...) abre em nova aba
 //   local: 'Nome, endereço'          lugar do evento no "Adicionar à agenda" (padrão: o nosso templo)
 //   duracao: 90                      minutos, para o "Adicionar à agenda" (padrão: 120)
+//   resumo: { sobretitulo, titulo, texto: ['parágrafo', ...], info: ['etiqueta', ...] }
+//                                    mostra a arte com um resumo ao lado e o botão "Saiba mais" embaixo (só em /eventos)
 const EVENTOS_ESPECIAIS = [
   { data: '2026-11-08', titulo: 'Assembleia Extraordinária', hora: '8h30', sub: 'Na igreja Sede (IPJC)', local: 'Igreja Presbiteriana em Jardim Camburi (Sede), Vitória - ES',
     pauta: [
@@ -28,7 +30,16 @@ const EVENTOS_ESPECIAIS = [
       'Proposta de título de diácono emérito ao irmão Ismael Silva',
     ] },
   { data: '2026-12-13', titulo: 'Cantata de Natal “Santo pra Sempre”', hora: '19h30', sub: 'No nosso templo · Aberta à comunidade: traga um convidado', substitui: 'Culto de Adoração',
-    link: 'https://natal.ipjc.org.br/?ref=site-chacara', arte: '/assets/img/cantata-santo-pra-sempre.jpg' },
+    link: 'https://natal.ipjc.org.br/?ref=site-chacara', arte: '/assets/img/cantata-santo-pra-sempre.jpg', duracao: 60,
+    resumo: {
+      sobretitulo: 'O tema',
+      titulo: 'O Santo deitado numa manjedoura',
+      texto: [
+        'Quando o anjo anunciou a Maria o nascimento de Jesus, disse: “o ente santo que há de nascer será chamado Filho de Deus” (Lucas 1.35). O Deus que os anjos chamam de “Santo, santo, santo” escolheu nascer em Belém, envolto em panos, deitado onde os animais comiam.',
+        'A cantata percorre esse plano de Deus: das promessas dos profetas ao anúncio a Maria, até a noite em que a promessa se cumpriu.',
+      ],
+      info: ['Entrada gratuita', 'Cerca de 1 hora', 'Crianças são bem-vindas'],
+    } },
 ];
 
 // Atributos do link: endereços de outros sites abrem em nova aba
