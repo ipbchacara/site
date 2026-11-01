@@ -10,9 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=3">
+<link rel="stylesheet" href="/assets/css/site.css?v=4">
 <script src="/assets/js/site.js?v=2" defer></script>
-<script src="/assets/js/agenda.js?v=3" defer></script>
+<script src="/assets/js/agenda.js?v=4" defer></script>
 <style>
   :root { --c-culto: #BE1E2D; --c-escola: #2E6A9E; --c-oracao: #3F6005; --c-especial: #D9822B; }
   .agenda-wrap { max-width: 920px; margin: 0 auto; }
@@ -143,6 +143,13 @@ document.addEventListener('DOMContentLoaded', function () {
   let inicioSemana = new Date(hoje); inicioSemana.setDate(hoje.getDate() - hoje.getDay());
   let mesAtual = new Date(hoje.getFullYear(), hoje.getMonth(), 1);
   let diaSel = new Date(hoje);
+  // Link direto para um dia: /eventos?dia=AAAA-MM-DD
+  const diaLink = (new URLSearchParams(location.search).get('dia') || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (diaLink) {
+    diaSel = new Date(+diaLink[1], +diaLink[2] - 1, +diaLink[3]);
+    inicioSemana = new Date(diaSel); inicioSemana.setDate(diaSel.getDate() - diaSel.getDay());
+    mesAtual = new Date(diaSel.getFullYear(), diaSel.getMonth(), 1);
+  }
 
   const mesmoDia = (a, b) => a.toDateString() === b.toDateString();
   const curto = d => d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short' }).replace('.', '');
