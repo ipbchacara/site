@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=5">
+<link rel="stylesheet" href="/assets/css/site.css?v=6">
 <script src="/assets/js/site.js?v=2" defer></script>
-<script src="/assets/js/agenda.js?v=11" defer></script>
+<script src="/assets/js/agenda.js?v=12" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,27 +67,61 @@
     </div>
   </section>
 
-  <!-- DESTAQUE SAZONAL: Cantata de Natal. Some sozinho depois da data em data-ate.
-       Para trocar por outro destaque, use o bloco do exemplo no README. -->
-  <section class="secao" style="padding-bottom:0" data-ate="2026-12-13">
+  <!-- DESTAQUES DA PÁGINA INICIAL: carrossel. Cada slide (.carrossel-slide) some sozinho depois da data em data-ate.
+       Para incluir um destaque, copie um slide e troque textos e links. Com um slide só, as setas e bolinhas somem. -->
+  <section class="secao" style="padding-bottom:0" id="destaques">
     <div class="container">
-      <div class="destaque cartaz revelar">
-        <div class="destaque-texto">
-          <div class="sobretitulo">Cantata de Natal · 13 de dezembro, 19h30</div>
-          <h2>Santo pra Sempre</h2>
-          <p>Neste Natal, queremos celebrar com você! No domingo, 13 de dezembro, às 19h30, o nosso coral apresenta a Cantata “Santo pra Sempre”, uma noite de música contando a história do Natal. A entrada é gratuita e a programação é para toda a família. Traga também seus amigos!</p>
-          <div class="botoes">
-            <a class="btn btn-dourado" href="https://natal.ipjc.org.br/?ref=chacara-destaque" target="_blank" rel="noopener">Conheça a Cantata</a>
-            <a class="btn btn-claro" href="/eventos?dia=2026-12-13">Ver na agenda</a>
+      <div class="carrossel revelar" role="region" aria-roledescription="carrossel" aria-label="Destaques">
+        <div class="carrossel-janela">
+          <div class="carrossel-trilho">
+
+            <!-- Domingo Feliz, 2ª edição -->
+            <div class="carrossel-slide" data-ate="2026-11-08" role="group" aria-roledescription="slide">
+              <div class="destaque festa">
+                <div class="destaque-texto">
+                  <div class="sobretitulo">Domingo Feliz · 8 de novembro, 9h</div>
+                  <h2>Uma manhã de festa para toda a família</h2>
+                  <p>No domingo, 8 de novembro, a partir das 9h, abrimos as portas para a 2ª edição do Domingo Feliz: café da manhã, história, brincadeiras, almoço e um brinde especial para as crianças. A entrada é gratuita. Venha com sua família e traga os vizinhos!</p>
+                  <div class="botoes">
+                    <a class="btn btn-branco" href="/eventos?dia=2026-11-08">Ver na agenda</a>
+                    <a class="btn btn-claro" href="https://share.google/Zyz6tsCCchU8Y2XDF" target="_blank" rel="noopener">Como chegar</a>
+                  </div>
+                </div>
+                <div class="destaque-arte">
+                  <a class="cartaz-img" href="/eventos?dia=2026-11-08"><img src="/assets/img/domingo-feliz-2026.jpg" alt="Cartaz do Domingo Feliz, 2ª edição: 8 de novembro, 9h. Café da manhã, história, brincadeiras, almoço e brinde especial. Entrada gratuita." width="900" height="1273" loading="lazy"></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cantata de Natal -->
+            <div class="carrossel-slide" data-ate="2026-12-13" role="group" aria-roledescription="slide">
+              <div class="destaque cartaz">
+                <div class="destaque-texto">
+                  <div class="sobretitulo">Cantata de Natal · 13 de dezembro, 19h30</div>
+                  <h2>Santo pra Sempre</h2>
+                  <p>Neste Natal, queremos celebrar com você! No domingo, 13 de dezembro, às 19h30, o nosso coral apresenta a Cantata “Santo pra Sempre”, uma noite de música contando a história do Natal. A entrada é gratuita e a programação é para toda a família. Traga também seus amigos!</p>
+                  <div class="botoes">
+                    <a class="btn btn-dourado" href="https://natal.ipjc.org.br/?ref=chacara-destaque" target="_blank" rel="noopener">Conheça a Cantata</a>
+                    <a class="btn btn-claro" href="/eventos?dia=2026-12-13">Ver na agenda</a>
+                  </div>
+                </div>
+                <div class="destaque-arte">
+                  <!-- Cartaz feito em HTML/CSS (data e local ficam no texto ao lado) -->
+                  <a class="cartaz-natal" href="https://natal.ipjc.org.br/?ref=chacara-destaque" target="_blank" rel="noopener" aria-label="Cantata de Natal Santo pra Sempre">
+                    <span class="cn-logo"></span>
+                    <span class="cn-sobre">Cantata de Natal</span>
+                    <span class="cn-titulo"><span class="cn-santo">Santo</span><span class="cn-pra"><i></i>pra<i></i></span><span class="cn-sempre">Sempre</span></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-        <div class="destaque-arte">
-          <!-- Cartaz feito em HTML/CSS (data e local ficam no texto ao lado) -->
-          <a class="cartaz-natal" href="https://natal.ipjc.org.br/?ref=chacara-destaque" target="_blank" rel="noopener" aria-label="Cantata de Natal Santo pra Sempre">
-            <span class="cn-logo"></span>
-            <span class="cn-sobre">Cantata de Natal</span>
-            <span class="cn-titulo"><span class="cn-santo">Santo</span><span class="cn-pra"><i></i>pra<i></i></span><span class="cn-sempre">Sempre</span></span>
-          </a>
+        <div class="carrossel-controles">
+          <button type="button" class="carrossel-seta" data-dir="-1" aria-label="Destaque anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <div class="carrossel-pontos"></div>
+          <button type="button" class="carrossel-seta" data-dir="1" aria-label="Próximo destaque"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </div>
     </div>
@@ -98,6 +132,56 @@
       var p = el.dataset.ate.split('-').map(Number);
       if (new Date() > new Date(p[0], p[1] - 1, p[2], 23, 59, 59)) el.remove();
     });
+
+    // Carrossel de destaques: avança sozinho a cada 7 s, pausa com o mouse em cima ou foco dentro,
+    // aceita setas, bolinhas e arrastar no celular. Sem slides, a seção some; com um, os controles somem.
+    (function () {
+      var sec = document.getElementById('destaques');
+      if (!sec) return;
+      var car = sec.querySelector('.carrossel'), trilho = car.querySelector('.carrossel-trilho');
+      var slides = [].slice.call(car.querySelectorAll('.carrossel-slide'));
+      if (!slides.length) { sec.remove(); return; }
+      if (slides.length === 1) { car.classList.add('unico'); return; }
+
+      var pontos = car.querySelector('.carrossel-pontos'), atual = 0, timer = null, pausado = false, parado = false;
+      var semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      slides.forEach(function (s, i) {
+        s.setAttribute('aria-label', (i + 1) + ' de ' + slides.length);
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Mostrar destaque ' + (i + 1));
+        b.onclick = function () { ir(i); parar(); };
+        pontos.appendChild(b);
+      });
+      var botoes = [].slice.call(pontos.children);
+
+      function ir(i) {
+        atual = (i + slides.length) % slides.length;
+        trilho.style.transform = 'translateX(' + (-100 * atual) + '%)';
+        slides.forEach(function (s, j) { s.inert = j !== atual; s.setAttribute('aria-hidden', j !== atual); });
+        botoes.forEach(function (b, j) { b.setAttribute('aria-current', j === atual); });
+      }
+      function iniciar() { clearInterval(timer); if (!semMovimento && !parado) timer = setInterval(function () { if (!pausado && !document.hidden) ir(atual + 1); }, 7000); }
+      function parar() { parado = true; clearInterval(timer); } // quem mexe no carrossel assume o controle
+
+      car.querySelectorAll('.carrossel-seta').forEach(function (b) {
+        b.onclick = function () { ir(atual + Number(b.dataset.dir)); parar(); };
+      });
+      car.addEventListener('mouseenter', function () { pausado = true; });
+      car.addEventListener('mouseleave', function () { pausado = false; });
+      car.addEventListener('focusin', function () { pausado = true; });
+      car.addEventListener('focusout', function () { pausado = false; });
+
+      var x0 = null;
+      trilho.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      trilho.addEventListener('touchend', function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0; x0 = null;
+        if (Math.abs(dx) > 50) { ir(atual + (dx < 0 ? 1 : -1)); parar(); }
+      });
+
+      ir(0); iniciar();
+    })();
   </script>
 
   <!-- QUEM SOMOS -->
