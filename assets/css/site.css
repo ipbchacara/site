@@ -394,6 +394,31 @@ a.cartao:hover .icone { transform: scale(1.08) rotate(-4deg); }
 .btn-dourado { background: #E2BE86; color: #2A1E17; }
 .btn-dourado:hover { background: #F6EEDD; color: #2A1E17; }
 @media (max-width: 760px) { .cartaz-natal { width: min(75%, 260px); } }
+/* Destaque festivo (ex.: Domingo Feliz): vermelho uva, cartaz em imagem à direita */
+.destaque.festa { align-items: center; }
+.destaque.festa .botoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.destaque.festa .destaque-arte { background: radial-gradient(70% 70% at 50% 45%, #D8434F, var(--uva-escura)); padding: clamp(24px, 4vw, 40px); }
+.cartaz-img { display: block; width: min(100%, 300px); border-radius: 12px; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.35); transform: rotate(-1.5deg); transition: transform .4s var(--ease); }
+.cartaz-img:hover { transform: translateY(-4px) rotate(0); }
+.cartaz-img img { display: block; width: 100%; height: auto; }
+.btn-branco { background: #fff; color: var(--uva-escura); }
+.btn-branco:hover { background: var(--pergaminho); color: var(--uva-escura); }
+@media (max-width: 760px) { .cartaz-img { width: min(62%, 230px); } }
+
+/* Carrossel de destaques da página inicial */
+.carrossel-janela { overflow: hidden; border-radius: var(--raio-g); }
+.carrossel-trilho { display: flex; transition: transform .7s var(--ease); }
+.carrossel-slide { flex: 0 0 100%; min-width: 0; display: flex; }
+.carrossel-slide > .destaque { flex: 1; border-radius: 0; }
+.carrossel-controles { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 16px; }
+.carrossel.unico .carrossel-controles { display: none; }
+.carrossel-seta { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--linha); background: var(--branco); color: var(--videira); display: grid; place-items: center; cursor: pointer; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.carrossel-seta:hover { background: var(--videira); border-color: var(--videira); color: #fff; }
+.carrossel-seta svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.carrossel-pontos { display: flex; gap: 8px; }
+.carrossel-pontos button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 99px; background: var(--linha); cursor: pointer; transition: width .35s var(--ease), background-color .25s ease; }
+.carrossel-pontos button[aria-current="true"] { width: 28px; background: var(--uva); }
+@media (prefers-reduced-motion: reduce) { .carrossel-trilho { transition: none; } }
 
 /* ---------- Chamada final ---------- */
 .chamada { text-align: center; }

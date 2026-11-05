@@ -43,25 +43,24 @@ Na página `/eventos`, todo evento especial ganha o botão **Adicionar à minha 
 
 **Mudar o menu:** lista `MENU` em `assets/js/site.js`.
 
-**Destaque da página inicial** (hoje: Cantata de Natal, até 13/12; o bloco some sozinho depois da data em `data-ate`. O cartaz é feito em HTML/CSS, classe `cartaz-natal`: para mudar data ou local, edite o texto no `index.html`): no lugar do comentário `DESTAQUE SAZONAL` em `index.html`, cole o bloco abaixo e troque os textos e o link.
+**Destaques da página inicial** (carrossel; hoje: Domingo Feliz até 08/11 e Cantata de Natal até 13/12). Cada destaque é um `.carrossel-slide` dentro do bloco `DESTAQUES DA PÁGINA INICIAL` em `index.html` e some sozinho depois da data em `data-ate`. O carrossel avança sozinho a cada 7 s; com um slide só, as setas e bolinhas somem, e sem nenhum a seção some. Para incluir um destaque, cole um slide como o abaixo dentro de `.carrossel-trilho`, na ordem em que deve aparecer. Fundos prontos: `destaque` (vermelho), `destaque festa` (vermelho com cartaz em imagem, classe `cartaz-img`) e `destaque cartaz` (madeira, usado na Cantata, cujo cartaz é feito em HTML/CSS na classe `cartaz-natal`).
 
 ```html
-<section class="secao" style="padding-top:0">
-  <div class="container">
-    <div class="destaque revelar">
-      <div class="destaque-texto">
-        <div class="sobretitulo">Sobretítulo</div>
-        <h2>Título do destaque</h2>
-        <p>Texto curto.</p>
-        <a class="btn btn-claro" href="/link">Botão</a>
-      </div>
-      <div class="destaque-arte" aria-hidden="true">
-        <div class="aneis"><span></span><span></span><span></span></div>
-        <span class="estrela">✶</span>
+<div class="carrossel-slide" data-ate="AAAA-MM-DD" role="group" aria-roledescription="slide">
+  <div class="destaque festa">
+    <div class="destaque-texto">
+      <div class="sobretitulo">Nome do evento · data, hora</div>
+      <h2>Título do destaque</h2>
+      <p>Texto curto.</p>
+      <div class="botoes">
+        <a class="btn btn-branco" href="/eventos?dia=AAAA-MM-DD">Ver na agenda</a>
       </div>
     </div>
+    <div class="destaque-arte">
+      <a class="cartaz-img" href="/eventos?dia=AAAA-MM-DD"><img src="/assets/img/arquivo.jpg" alt="Descrição do cartaz" loading="lazy"></a>
+    </div>
   </div>
-</section>
+</div>
 ```
 
 **PDFs dos Símbolos de Fé:** ficam em `assets/docs/` (Confissão, Catecismo Maior e Breve Catecismo) e são linkados pelos cartões da página `/cremos`. Para trocar um documento, substitua o arquivo mantendo o mesmo nome.

@@ -31,6 +31,17 @@ const EVENTOS_ESPECIAIS = [
       'Aprovação, ou não, de empréstimo junto à Junta Patrimonial da IPB para a construção do templo da congregação em Santa Maria de Jetibá',
       'Proposta de título de diácono emérito ao irmão Ismael Silva',
     ] },
+  { data: '2026-11-08', titulo: 'Domingo Feliz · 2ª edição', hora: '9h00', sub: 'No nosso templo · Para toda a família · Entrada gratuita',
+    arte: '/assets/img/domingo-feliz-2026.jpg', duracao: 240,
+    resumo: {
+      sobretitulo: 'Para toda a família',
+      titulo: 'Uma manhã de festa',
+      texto: [
+        'Café da manhã, história, brincadeiras, almoço e um brinde especial para as crianças.',
+        'A entrada é gratuita. Venha com sua família e traga os vizinhos!',
+      ],
+      info: ['Entrada gratuita', 'A partir das 9h', 'Café da manhã e almoço'],
+    } },
   { data: '2026-12-13', titulo: 'Cantata de Natal “Santo pra Sempre”', hora: '19h30', sub: 'No nosso templo · Aberta à comunidade: traga um convidado', substitui: 'Culto de Adoração',
     cancela: { 'Escola Bíblica Dominical': 'Excepcionalmente neste dia não haverá EBD, por causa da preparação do coral. Esperamos você na Cantata, às 19h30!' },
     link: 'https://natal.ipjc.org.br/?ref=site-chacara', arte: '/assets/img/cantata-santo-pra-sempre.jpg?v=2', duracao: 60,
