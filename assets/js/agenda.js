@@ -22,6 +22,7 @@ const PROGRAMACAO_SEMANAL = [
 //   link: endereço de outro site (https://...) abre em nova aba
 //   local: 'Nome, endereço'          lugar do evento no "Adicionar à agenda" (padrão: o nosso templo)
 //   duracao: 90                      minutos, para o "Adicionar à agenda" (padrão: 120)
+//   chegar: 'https://...'           botão "Como chegar" no resumo (só em /eventos), ex.: perfil da igreja no Google
 //   resumo: { sobretitulo, titulo, texto: ['parágrafo', ...], info: ['etiqueta', ...] }
 //                                    mostra a arte com um resumo ao lado e o botão "Saiba mais" embaixo (só em /eventos)
 const EVENTOS_ESPECIAIS = [
@@ -32,7 +33,7 @@ const EVENTOS_ESPECIAIS = [
       'Proposta de título de diácono emérito ao irmão Ismael Silva',
     ] },
   { data: '2026-11-08', titulo: 'Domingo Feliz · 2ª edição', hora: '9h00', sub: 'No nosso templo · Para toda a família · Entrada gratuita',
-    arte: '/assets/img/domingo-feliz-2026.jpg', duracao: 240,
+    arte: '/assets/img/domingo-feliz-2026.jpg?v=2', duracao: 240, chegar: 'https://share.google/Zyz6tsCCchU8Y2XDF',
     resumo: {
       sobretitulo: 'Para toda a família',
       titulo: 'Uma manhã de festa',
