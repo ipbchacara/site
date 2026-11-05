@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css?v=6">
 <script src="/assets/js/site.js?v=2" defer></script>
-<script src="/assets/js/agenda.js?v=12" defer></script>
+<script src="/assets/js/agenda.js?v=13" defer></script>
 <style>
   :root { --c-culto: #BE1E2D; --c-escola: #2E6A9E; --c-oracao: #3F6005; --c-especial: #D9822B; }
   .agenda-wrap { max-width: 920px; margin: 0 auto; }
@@ -53,7 +53,7 @@
   .item .btn-agenda, .item .btn-saiba { display: inline-flex; align-items: center; gap: 6px; padding: .5rem 1rem; border-radius: 999px; font-size: .86rem; font-weight: 700; text-decoration: none; transition: background .2s, color .2s, border-color .2s; }
   .item .btn-agenda { border: 1px solid var(--linha); background: #fff; color: var(--videira); }
   .item .btn-agenda:hover { background: var(--videira); border-color: var(--videira); color: #fff; }
-  .item .btn-agenda svg { width: 16px; height: 16px; }
+  .item .btn-agenda svg, .item .btn-saiba svg { width: 16px; height: 16px; }
   .item .btn-saiba { background: var(--videira); color: #fff; border: 1px solid var(--videira); }
   .item .btn-saiba:hover { background: var(--videira-profunda); color: #fff; }
   .item.cancelado { opacity: .85; }
@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const ICONE_CAL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>';
+  const ICONE_MAPA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
   function renderDia() {
     const evs = eventosDoDia(diaSel);
     let txt = diaSel.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
@@ -228,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ${r.sobretitulo ? `<div class="r-sobre">${r.sobretitulo}</div>` : ''}${r.titulo ? `<h4>${r.titulo}</h4>` : ''}
       ${(r.texto || []).map(t => `<p>${t}</p>`).join('')}
       ${r.info ? `<ul class="r-info">${r.info.map(t => `<li>${t}</li>`).join('')}</ul>` : ''}
-      <div class="acoes">${e.link ? `<a class="btn-saiba" ${attrsLink(e.link)}>Saiba mais sobre a cantata →</a>` : ''}${botaoAgenda(e)}</div>
+      <div class="acoes">${e.link ? `<a class="btn-saiba" ${attrsLink(e.link)}>Saiba mais sobre a cantata →</a>` : ''}${e.chegar ? `<a class="btn-saiba" ${attrsLink(e.chegar)}>${ICONE_MAPA} Como chegar</a>` : ''}${botaoAgenda(e)}</div>
     </div></div>`;
   }
 
