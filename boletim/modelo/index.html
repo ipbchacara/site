@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>entre nós. · Modelo das seções | Presbiteriana Chácara Parreiral</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#15240F">
+<link rel="icon" type="image/png" href="/Imagens/Logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/boletim.css">
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<!--
+  MODELO DA REVISTA "entre nós."
+  Todas as seções diagramadas, com textos de exemplo. Para montar uma edição:
+  copie a pasta da edição anterior, troque a capa e cole aqui de dentro só as
+  seções que entram no mês, renumerando (01, 02...) na ordem em que aparecem.
+  As marcas "Fixa"/"Rotativa" (.rv-tipo) existem só neste modelo.
+  Ordem sugerida: as fixas abrem, as rotativas vêm no meio, Orando juntos fecha.
+  Rubrica com a classe "nome": o nome da seção é o destaque (seções de referência).
+  Sem ela: o título do mês é o destaque e o nome fica pequeno (seções de matéria).
+-->
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="rv-topo">
+  <div class="container rv-topo-inner">
+    <a class="rv-topo-marca" href="/" aria-label="Site da Presbiteriana Chácara Parreiral"><img src="/assets/img/logo-horizontal-colorida.svg" alt="" width="141" height="40"></a>
+    <nav class="rv-topo-nav" aria-label="Revista">
+      <a href="/boletim/"><span class="rv-so-largo">Todas as edições</span><span class="rv-so-curto">Edições</span></a>
+      <a class="btn btn-contorno" href="/sobre">Conheça a igreja</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <div class="rv-aviso">Página modelo: todas as seções da revista, com textos de exemplo. Cada edição usa só as que tiverem conteúdo no mês.</div>
+
+  <!-- CAPA: em cada edição, a arte do mês entra como fundo (classe com-arte e as variáveis --arte-larga / --arte-alta) -->
+  <section class="rv-capa" aria-label="Capa">
+    <div class="container">
+      <div class="rv-cabeca">
+        <div>
+          <p class="rv-titulo">entre nós<i>.</i></p>
+          <p class="rv-linha-fixa">Revista mensal · Presbiteriana Chácara Parreiral</p>
+        </div>
+        <div class="rv-edicao">Nº 0<span>Mês e ano</span></div>
+      </div>
+      <div class="rv-chamada">
+        <h2>Título da carta do <em>pastor</em></h2>
+        <p>Uma frase de apoio que convida a ler a edição, em até duas linhas.</p>
+      </div>
+      <ul class="rv-linhas">
+        <li><a href="#leia"><span class="n">31</span><strong>Leia comigo</strong><span>O plano de leitura do mês</span></a></li>
+        <li><a href="#anote"><span class="n">4</span><strong>Anote aí</strong><span>As datas do mês</span></a></li>
+        <li><a href="#perto"><span class="n">★</span><strong>De perto</strong><span>O perfil do mês</span></a></li>
+      </ul>
+      <div class="rv-rodape-capa">
+        <img src="/assets/marca/svg/logo-horizontal-branca.svg" alt="Presbiteriana Chácara Parreiral" width="160" height="44">
+        <a href="#sumario">Ler a edição ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NESTA EDIÇÃO (sumário): uma linha por seção usada no mês -->
+  <section class="secao" id="sumario" style="padding-bottom:0">
+    <div class="container">
+      <div class="sobretitulo">Nesta edição</div>
+      <nav class="rv-sumario" aria-label="Sumário">
+        <a href="#carta"><span class="n">01</span><span><strong>Carta do pastor</strong><span>Fixa</span></span></a>
+        <a href="#anote"><span class="n">02</span><span><strong>Anote aí</strong><span>Fixa</span></span></a>
+        <a href="#palavra"><span class="n">03</span><span><strong>Na Palavra</strong><span>Fixa</span></span></a>
+        <a href="#leia"><span class="n">04</span><span><strong>Leia comigo</strong><span>Fixa</span></span></a>
+        <a href="#perto"><span class="n">05</span><span><strong>De perto</strong><span>Rotativa</span></span></a>
+        <a href="#aconteceu"><span class="n">06</span><span><strong>Aconteceu entre nós</strong><span>Rotativa</span></span></a>
+        <a href="#boas-vindas"><span class="n">07</span><span><strong>Boas-vindas</strong><span>Rotativa</span></span></a>
+        <a href="#juntos"><span class="n">08</span><span><strong>Juntos</strong><span>Rotativa</span></span></a>
+        <a href="#muros"><span class="n">09</span><span><strong>Além dos muros</strong><span>Rotativa</span></span></a>
+        <a href="#em-casa"><span class="n">10</span><span><strong>Em casa</strong><span>Rotativa</span></span></a>
+        <a href="#estante"><span class="n">11</span><span><strong>Na estante</strong><span>Rotativa</span></span></a>
+        <a href="#orando"><span class="n">12</span><span><strong>Orando juntos</strong><span>Fixa · fecha a edição</span></span></a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 01 CARTA DO PASTOR (fixa): duas colunas, frase de destaque e capitular -->
+  <section class="secao rv-materia" id="carta">
+    <div class="container rv-pastoral">
+      <div class="revelar">
+        <div class="rv-rubrica nome"><span class="n">01</span><div class="sobretitulo">Carta do pastor</div><span class="rv-tipo">Fixa</span></div>
+        <h2>Título da carta</h2>
+        <p class="rv-destaque">“Uma frase forte da carta, para chamar a leitura.”</p>
+        <div class="autor">
+          <div class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
+          <div><strong>Rev. Oscar Alvarez</strong><span>Pastor da igreja</span></div>
+        </div>
+      </div>
+      <div class="rv-texto revelar">
+        <p>Texto da carta, de quatro a seis parágrafos curtos. A primeira letra ganha a capitular vermelha automaticamente. Fala com “você”, de forma próxima, e cita a Escritura com a referência.</p>
+        <blockquote>“O versículo central da carta, na versão Almeida.”<cite>Livro 0.0</cite></blockquote>
+        <p>No computador, o texto se divide em duas colunas, como numa revista; no celular, vira uma coluna só.</p>
+        <p>Termina com um convite prático para o mês: a leitura, um culto especial, um gesto em família.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ANOTE AÍ (fixa): a semana em três cartões e a lista das datas do mês -->
+  <section class="secao areia rv-materia" id="anote">
+    <div class="container">
+      <div class="revelar">
+        <div class="rv-rubrica nome"><span class="n">02</span><div class="sobretitulo">Anote aí</div><span class="rv-tipo">Fixa</span></div>
+        <h2>O mês, semana a semana</h2>
+        <p class="lead" style="margin-bottom:28px">A programação de sempre e as datas especiais.</p>
+      </div>
+      <div class="rv-semana revelar">
+        <div><div class="dia">Domingo</div><div class="hora">18h00</div><div class="nome">Escola Bíblica</div></div>
+        <div><div class="dia">Domingo</div><div class="hora">19h30</div><div class="nome">Culto de Adoração</div></div>
+        <div><div class="dia">Terça</div><div class="hora">19h30</div><div class="nome">Reunião de Oração</div></div>
+      </div>
+      <div class="eventos-lista revelar">
+        <div class="evento-linha"><div class="data-bloco"><span class="d">1</span><span class="m">mês</span></div><div><h3>Culto com Santa Ceia</h3><div class="meta">Domingo · 19h30</div></div><span class="selo culto">Culto</span></div>
+        <div class="evento-linha"><div class="data-bloco"><span class="d">15</span><span class="m">mês</span></div><div><h3>Evento especial</h3><div class="meta">Sábado · horário · local</div></div><span class="selo especial">Especial</span></div>
+        <div class="evento-linha"><div class="data-bloco"><span class="d">22</span><span class="m">mês</span></div><div><h3>Encontro de uma sociedade</h3><div class="meta">Dia · horário</div></div><span class="selo">Sociedade</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 NA PALAVRA (fixa): série de sermões, EBD e a pergunta do catecismo em destaque -->
+  <section class="secao rv-materia" id="palavra">
+    <div class="container duas-colunas" style="align-items:start">
+      <div class="revelar">
+        <div class="rv-rubrica"><span class="n">03</span><div class="sobretitulo">Na Palavra</div><span class="rv-tipo">Fixa</span></div>
+        <!-- O título sai do assunto do mês (em dezembro: "Deus feito homem"), nunca "sermões e EBD" -->
+        <h2>Um título que nasce do que estamos estudando</h2>
+        <p class="lead">Uma frase que liga a pregação, a Escola Bíblica e a pergunta do mês.</p>
+        <p>Um texto corrido, sem subtítulos: o que tem sido pregado aos domingos, o que as classes da Escola Bíblica estão estudando e por que a pergunta do Catecismo, ao lado, conversa com isso.</p>
+      </div>
+      <div class="rv-catecismo revelar">
+        <div class="sobretitulo">Pergunta para o mês</div>
+        <p class="pergunta">A pergunta do Catecismo ligada ao tema do mês?</p>
+        <p>A resposta, copiada do Catecismo Maior ou do Breve Catecismo de Westminster.</p>
+        <div class="ref">Catecismo Maior · Pergunta 00 · referências</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 LEIA COMIGO (fixa): o plano do mês. Na edição, a lista é gerada pelo script (ver dezembro) -->
+  <section class="secao areia rv-materia" id="leia">
+    <div class="container">
+      <div class="revelar">
+        <div class="rv-rubrica nome"><span class="n">04</span><div class="sobretitulo">Leia comigo</div><span class="rv-tipo">Fixa</span></div>
+        <h2>Nome do plano do mês</h2>
+        <p class="lead">Um texto por dia. Cada pessoa marca o que já leu, e a marcação fica guardada no aparelho.</p>
+      </div>
+      <div class="rv-progresso revelar"><div class="barra"><i style="width:20%"></i></div><span>2 de 10 leituras</span></div>
+      <ol class="rv-leitura revelar">
+        <li class="grupo" aria-hidden="true">Etapa do plano</li>
+        <li><label><span class="d">1<small>dia</small></span><span><strong>Livro 1.1-10</strong><span class="t">Tema da leitura</span></span><input type="checkbox" checked aria-label="Exemplo"></label></li>
+        <li><label><span class="d">2<small>dia</small></span><span><strong>Livro 1.11-20</strong><span class="t">Tema da leitura</span></span><input type="checkbox" checked aria-label="Exemplo"></label></li>
+        <li class="hoje"><label><span class="d">3<small>hoje</small></span><span><strong>Livro 2.1-12</strong><span class="t">O dia de hoje fica em vermelho</span></span><input type="checkbox" aria-label="Exemplo"></label></li>
+        <li><label><span class="d">4<small>dia</small></span><span><strong>Livro 2.13-25</strong><span class="t">Tema da leitura</span></span><input type="checkbox" aria-label="Exemplo"></label></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 05 DE PERTO (rotativa): um perfil por mês, com foto ou arte ao lado -->
+  <section class="secao rv-materia" id="perto">
+    <div class="container rv-conheca">
+      <div class="revelar">
+        <div class="rv-foto" data-legenda="Foto do perfil" style="aspect-ratio:4/3.4"></div>
+      </div>
+      <div class="revelar">
+        <div class="rv-rubrica"><span class="n">05</span><div class="sobretitulo">De perto</div><span class="rv-tipo rotativa">Rotativa</span></div>
+        <h2>Quem ou o que é o perfil do mês</h2>
+        <p class="lead">Um ministério, uma sociedade interna, um oficial ou uma família da igreja (com autorização).</p>
+        <p>Dois ou três parágrafos contando a história, o que faz e como participar.</p>
+        <div class="rv-fatos">
+          <div><strong>18h</strong><span>quando</span></div>
+          <div><strong>12</strong><span>pessoas</span></div>
+          <div><strong>2019</strong><span>desde</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ACONTECEU ENTRE NÓS (rotativa): uma foto grande, duas menores e a legenda -->
+  <section class="secao areia rv-materia" id="aconteceu">
+    <div class="container">
+      <div class="revelar">
+        <div class="rv-rubrica"><span class="n">06</span><div class="sobretitulo">Aconteceu entre nós</div><span class="rv-tipo rotativa">Rotativa</span></div>
+        <h2>Nome do evento que passou</h2>
+        <p class="lead" style="margin-bottom:28px">Um parágrafo sobre o que aconteceu e o que ficou de bom.</p>
+      </div>
+      <div class="rv-galeria revelar">
+        <div class="rv-foto" data-legenda="Foto principal"></div>
+        <div class="rv-foto" data-legenda="Foto 2"></div>
+        <div class="rv-foto" data-legenda="Foto 3"></div>
+      </div>
+      <p class="rv-galeria-legenda revelar">Legenda: data, local e quem participou.</p>
+
+      <!-- Quando houve mais de um evento no mês: o principal fica na galeria acima e os outros entram aqui,
+           um cartão para cada. Sem evento principal, use só os cartões (apague a galeria e o h2 vira "O mês que passou"). -->
+      <h3 class="rv-tambem revelar">Também aconteceu</h3>
+      <div class="rv-ocorridos revelar">
+        <article class="rv-ocorrido"><div class="rv-foto" data-legenda="Foto"></div><div><span class="quando">Dia 00</span><h4>Outro evento</h4><p>Duas ou três linhas sobre o que aconteceu.</p></div></article>
+        <article class="rv-ocorrido"><div class="rv-foto" data-legenda="Foto"></div><div><span class="quando">Dia 00</span><h4>Outro evento</h4><p>Duas ou três linhas sobre o que aconteceu.</p></div></article>
+        <article class="rv-ocorrido"><div class="rv-foto" data-legenda="Foto"></div><div><span class="quando">Dia 00</span><h4>Outro evento</h4><p>Duas ou três linhas sobre o que aconteceu.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 BOAS-VINDAS (rotativa): novos membros, batismos, profissões de fé (sempre com autorização) -->
+  <section class="secao rv-materia" id="boas-vindas">
+    <div class="container">
+      <div class="revelar">
+        <div class="rv-rubrica nome"><span class="n">07</span><div class="sobretitulo">Boas-vindas</div><span class="rv-tipo rotativa">Rotativa</span></div>
+        <h2>Chegou gente na família</h2>
+        <p class="lead" style="margin-bottom:28px">Quem foi recebido na igreja neste mês. Publique só com autorização de cada pessoa.</p>
+      </div>
+      <div class="rv-pessoas revelar">
+        <div class="rv-pessoa"><div class="rv-foto" data-legenda="Foto"></div><strong>Nome da pessoa</strong><span class="selo culto">Batismo · dia</span></div>
+        <div class="rv-pessoa"><div class="rv-foto" data-legenda="Foto"></div><strong>Nome da pessoa</strong><span class="selo">Profissão de fé</span></div>
+        <div class="rv-pessoa"><div class="rv-foto" data-legenda="Foto"></div><strong>Nome da família</strong><span class="selo escola">Transferência</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 JUNTOS (rotativa): sociedades internas e Junta Diaconal (Rede Juntos) -->
+  <section class="secao areia rv-materia" id="juntos">
+    <div class="container">
+      <div class="revelar">
+        <div class="rv-rubrica nome"><span class="n">08</span><div class="sobretitulo">Juntos</div><span class="rv-tipo rotativa">Rotativa</span></div>
+        <h2>As sociedades neste mês</h2>
+        <p class="lead" style="margin-bottom:28px">O que cada sociedade interna e a Junta Diaconal estão preparando. Entram só as que tiverem notícia.</p>
+      </div>
+      <div class="rv-sociedades revelar">
+        <div class="rv-soc"><img src="/assets/img/sociedades/ucp.png" alt="UCP"><div><strong>Crianças · UCP</strong><p>Notícia curta da sociedade.</p><span class="quando">Sábado, dia 00 · 15h</span></div></div>
+        <div class="rv-soc"><img src="/assets/img/sociedades/upa.png" alt="UPA"><div><strong>Adolescentes · UPA</strong><p>Notícia curta da sociedade.</p><span class="quando">Dia e horário</span></div></div>
+        <div class="rv-soc"><img src="/assets/img/sociedades/ump.png" alt="UMP"><div><strong>Jovens · UMP</strong><p>Notícia curta da sociedade.</p><span class="quando">Dia e horário</span></div></div>
+        <div class="rv-soc"><img src="/assets/img/sociedades/saf.png" alt="SAF"><div><strong>Mulheres · SAF</strong><p>Notícia curta da sociedade.</p><span class="quando">Dia e horário</span></div></div>
+        <div class="rv-soc"><img src="/assets/img/sociedades/uph.png" alt="UPH"><div><strong>Homens · UPH</strong><p>Notícia curta da sociedade.</p><span class="quando">Dia e horário</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 ALÉM DOS MUROS (rotativa): missões e ação na cidade; foto grande com o texto por cima -->
+  <section class="secao rv-materia" id="muros">
+    <div class="container">
+      <div class="rv-rubrica revelar"><span class="n">09</span><div class="sobretitulo">Além dos muros</div><span class="rv-tipo rotativa">Rotativa</span></div>
+      <div class="rv-muros revelar" style="margin-top:18px">
+        <div class="rv-foto" data-legenda="Foto do campo ou da ação"></div>
+        <div class="rv-muros-texto">
+          <div class="sobretitulo">Missões · Lugar</div>
+          <h3>Nome do missionário, campo ou ação</h3>
+          <p>O que está sendo feito, como orar e como ajudar. Três ou quatro linhas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 EM CASA (rotativa): roteiro de culto doméstico em três passos -->
+  <section class="secao areia rv-materia" id="em-casa">
+    <div class="container">
+      <div class="revelar">
+        <div class="rv-rubrica nome"><span class="n">10</span><div class="sobretitulo">Em casa</div><span class="rv-tipo rotativa">Rotativa</span></div>
+        <h2>Culto em família, em 15 minutos</h2>
+        <p class="lead" style="margin-bottom:28px">Um roteiro simples para fazer em casa, à mesa ou antes de dormir.</p>
+      </div>
+      <ol class="rv-roteiro revelar">
+        <li><strong>Leiam juntos</strong><p>Livro 0.0-00. Um texto curto, ligado ao tema do mês.</p><div class="criancas">Para as crianças: uma pergunta simples sobre o texto.</div></li>
+        <li><strong>Conversem</strong><p>Duas perguntas para todos responderem.</p><div class="criancas">Para as crianças: o que você aprendeu sobre Deus?</div></li>
+        <li><strong>Orem e cantem</strong><p>Um motivo de oração e um hino ou cântico conhecido.</p><div class="criancas">Para as crianças: cada um agradece por uma coisa.</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 11 NA ESTANTE (rotativa): uma indicação por mês -->
+  <section class="secao rv-materia" id="estante">
+    <div class="container">
+      <div class="rv-rubrica revelar"><span class="n">11</span><div class="sobretitulo">Na estante</div><span class="rv-tipo rotativa">Rotativa</span></div>
+      <div class="rv-livro revelar" style="margin-top:18px">
+        <div class="rv-foto" data-legenda="Capa do livro"></div>
+        <div>
+          <div class="autor">Nome do autor · Editora</div>
+          <h2>Título do livro</h2>
+          <p class="lead">Por que vale a leitura, em duas ou três frases. Pode ser também um artigo ou um podcast.</p>
+          <p><em class="a-definir">Se a igreja tiver o livro para empréstimo, diga aqui como pegar.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 ORANDO JUNTOS (fixa): fecha a edição; só temas, nunca nomes de pessoas -->
+  <section class="secao escura rv-materia" id="orando">
+    <div class="container estreito centro revelar">
+      <div class="rv-rubrica nome" style="justify-content:center"><span class="n" style="color:#F2A7AE">12</span><div class="sobretitulo">Orando juntos</div><span class="rv-tipo">Fixa</span></div>
+      <h2 style="max-width:none">Toda terça, às 19h30</h2>
+      <p class="lead" style="color:#C9D6BD">Um versículo sobre oração e o convite para a reunião. Só temas fixos; pedidos com nome de pessoa ficam na reunião e no grupo.</p>
+      <ul class="rv-temas" style="justify-content:center">
+        <li>A igreja e a sua liderança</li><li>As famílias</li><li>As crianças e os jovens</li><li>A nossa cidade, Serra</li><li>As autoridades</li><li>As missões</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMPARTILHE E EXPEDIENTE (fixo) -->
+  <section class="secao">
+    <div class="container rv-final">
+      <div class="rv-compartilhar revelar">
+        <div class="sobretitulo">Compartilhe</div>
+        <h2>Mande esta edição para alguém</h2>
+        <p class="lead">Um amigo, um parente, um vizinho que gostaria de conhecer a igreja.</p>
+        <div class="grupo-btn"><span class="btn btn-uva">Enviar pelo WhatsApp</span><span class="btn btn-contorno">Copiar link</span></div>
+        <p style="margin-top:28px">Primeira vez por aqui? <a href="/visitante">Avise que você vem</a> · <a href="/boletim/">Ver todas as edições →</a></p>
+      </div>
+      <dl class="rv-expediente revelar">
+        <dt>entre nós.</dt><dd>Revista mensal da Presbiteriana Chácara Parreiral · Nº 0 · Mês e ano</dd>
+        <dt>Pastor</dt><dd>Rev. Oscar Alvarez</dd>
+        <dt>Edição</dt><dd>Nome de quem edita</dd>
+        <dt>Contato</dt><dd><a href="mailto:secretaria@ipchacara.org">secretaria@ipchacara.org</a></dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+</body>
+</html>
