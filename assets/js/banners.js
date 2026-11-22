@@ -138,3 +138,6 @@
     return lista.length ? `<div class="bns">${lista.map(n => ARTES[n]()).join('')}</div>` : '';
   };
 })();
+
+// Páginas fixas: <div data-banners="ebd-adultos ebd-criancas"></div> recebe as artes
+document.querySelectorAll('[data-banners]').forEach(el => { el.innerHTML = window.bannersHTML(el.dataset.banners.split(/\s+/)); });
