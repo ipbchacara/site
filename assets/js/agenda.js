@@ -22,6 +22,8 @@ const PROGRAMACAO_SEMANAL = [
 //   link: endereço de outro site (https://...) abre em nova aba
 //   local: 'Nome, endereço'          lugar do evento no "Adicionar à agenda" (padrão: o nosso templo)
 //   duracao: 90                      minutos, para o "Adicionar à agenda" (padrão: 120)
+//   hora: 'A confirmar'              texto sem número = horário ainda não definido (vai para o fim do dia e entra na agenda como dia inteiro)
+//   textoLink: 'Inscreva-se →'       texto do botão do link no resumo (padrão: 'Saiba mais →')
 //   chegar: 'https://...'           botão "Como chegar" no resumo (só em /eventos), ex.: perfil da igreja no Google
 //   resumo: { sobretitulo, titulo, texto: ['parágrafo', ...], info: ['etiqueta', ...] }
 //                                    mostra a arte com um resumo ao lado e o botão "Saiba mais" embaixo (só em /eventos)
@@ -43,9 +45,26 @@ const EVENTOS_ESPECIAIS = [
       ],
       info: ['Entrada gratuita', 'A partir das 9h', 'Café da manhã e almoço'],
     } },
+  ...[['2026-11-27', '1º dia'], ['2026-11-28', '2º dia']].map(([data, dia]) => ({
+    data, titulo: 'Capacitação “Minha Cidade para Cristo” · ' + dia, hora: 'Horário a confirmar',
+    sub: 'Na IPB Jaburuna, Vila Velha · Campanha Nacional de Evangelização',
+    local: 'Igreja Presbiteriana em Jaburuna, Rua Maria Amália, 757 - Jaburuna, Vila Velha - ES',
+    link: 'https://forms.gle/6gm1Qay5fLugo1RD8', textoLink: 'Inscreva-se →',
+    chegar: 'https://www.google.com/maps/search/?api=1&query=Igreja+Presbiteriana+em+Jaburuna%2C+Rua+Maria+Am%C3%A1lia%2C+757%2C+Vila+Velha+ES',
+    arte: '/assets/img/minha-cidade-para-cristo-2026.jpg',
+    resumo: {
+      sobretitulo: 'Capacitação de Evangelismo e Discipulado',
+      titulo: 'Minha Cidade para Cristo',
+      texto: [
+        'A transformação de uma cidade começa quando a Igreja compreende e assume sua missão de anunciar o Evangelho de Jesus Cristo.',
+        'Dois dias de aprendizado, comunhão e preparação com o Rev. Kleiber Morais e o Rev. Daniel Leite, na IPB Jaburuna (Rua Maria Amália, 757, Vila Velha). Faça sua inscrição pelo formulário. Dúvidas: Luciana Reis, (27) 99907-6461.',
+      ],
+      info: ['27 e 28 de novembro', 'Inscrição pelo formulário', 'Campanha Nacional de Evangelização'],
+    },
+  })),
   { data: '2026-12-13', titulo: 'Cantata de Natal “Santo pra Sempre”', hora: '19h30', sub: 'No nosso templo · Aberta à comunidade: traga um convidado', substitui: 'Culto de Adoração',
     cancela: { 'Escola Bíblica Dominical': 'Excepcionalmente neste dia não haverá EBD, por causa da preparação do coral. Esperamos você na Cantata, às 19h30!' },
-    link: 'https://natal.ipjc.org.br/?ref=site-chacara', arte: '/assets/img/cantata-santo-pra-sempre.jpg?v=2', duracao: 60,
+    link: 'https://natal.ipjc.org.br/?ref=site-chacara', textoLink: 'Saiba mais sobre a cantata →', arte: '/assets/img/cantata-santo-pra-sempre.jpg?v=2', duracao: 60,
     resumo: {
       sobretitulo: 'O tema',
       titulo: 'O Santo deitado numa manjedoura',
@@ -66,12 +85,18 @@ function attrsLink(link) {
 const LOCAL_PADRAO = 'Igreja Presbiteriana Chácara Parreiral, Rua Teresa Tironi, 15 - Guaraciaba, Serra - ES';
 
 // Horário "de parede" de Brasília guardado nos campos UTC de um Date (não depende do fuso do aparelho)
+const temHora = e => /^d/.test(e.hora || '');
 function horariosAgenda(e, data) {
+  if (!temHora(e)) { // dia inteiro: do início do dia ao início do dia seguinte
+    const ini = new Date(Date.UTC(data.getFullYear(), data.getMonth(), data.getDate()));
+    return { ini, fim: new Date(ini.getTime() + 86400000) };
+  }
   const [hh, mm] = e.hora.split('h').map(Number);
   const ini = new Date(Date.UTC(data.getFullYear(), data.getMonth(), data.getDate(), hh, mm || 0));
   const fim = new Date(ini.getTime() + (e.duracao || 120) * 60000);
   return { ini, fim };
 }
+const fmtDia = d => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, '0') + String(d.getUTCDate()).padStart(2, '0');
 const fmtAgenda = (d, z) => d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, '0') + String(d.getUTCDate()).padStart(2, '0')
   + 'T' + String(d.getUTCHours()).padStart(2, '0') + String(d.getUTCMinutes()).padStart(2, '0') + '00' + (z ? 'Z' : '');
 
@@ -81,7 +106,7 @@ function linkGoogleAgenda(e, data) {
   const url = e.link && /^https?:/.test(e.link) ? e.link : '';
   return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
     + '&text=' + encodeURIComponent(e.titulo)
-    + '&dates=' + fmtAgenda(ini) + '/' + fmtAgenda(fim) + '&ctz=America/Sao_Paulo'
+    + '&dates=' + (temHora(e) ? fmtAgenda(ini) + '/' + fmtAgenda(fim) : fmtDia(ini) + '/' + fmtDia(fim)) + '&ctz=America/Sao_Paulo'
     + '&details=' + encodeURIComponent([e.sub, url].filter(Boolean).join('\n\n'))
     + '&location=' + encodeURIComponent(e.local || LOCAL_PADRAO);
 }
@@ -97,7 +122,8 @@ function linkArquivoAgenda(e, data) {
     'BEGIN:VEVENT',
     'UID:' + dataISO(data) + '-' + e.titulo.normalize('NFD').toLowerCase().replace(/[^a-z0-9]+/g, '-') + '@ipchacara.org',
     'DTSTAMP:' + fmtAgenda(new Date(), true),
-    'DTSTART:' + fmtAgenda(utc(ini), true), 'DTEND:' + fmtAgenda(utc(fim), true),
+    ...(temHora(e) ? ['DTSTART:' + fmtAgenda(utc(ini), true), 'DTEND:' + fmtAgenda(utc(fim), true)]
+      : ['DTSTART;VALUE=DATE:' + fmtDia(ini), 'DTEND;VALUE=DATE:' + fmtDia(fim)]),
     'SUMMARY:' + esc(e.titulo),
     'DESCRIPTION:' + esc([e.sub, url].filter(Boolean).join('\n\n')),
     'LOCATION:' + esc(e.local || LOCAL_PADRAO),
@@ -123,7 +149,7 @@ function eventosDoDia(data) {
     .map(e => cancelados[e.titulo] ? { ...e, cancelado: cancelados[e.titulo] } : { ...e });
   especiais.forEach(e => lista.push({ tipo: 'especial', selo: 'Especial', ...e }));
   // '8h30' antes de '18h00': compara em minutos, não como texto
-  const minutos = h => { const [hh, mm] = h.split('h').map(Number); return hh * 60 + (mm || 0); };
+  const minutos = h => { if (!/^d/.test(h || '')) return 24 * 60; const [hh, mm] = h.split('h').map(Number); return hh * 60 + (mm || 0); };
   return lista.sort((a, b) => minutos(a.hora) - minutos(b.hora));
 }
 
