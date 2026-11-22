@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css?v=7">
 <script src="/assets/js/site.js?v=2" defer></script>
-<script src="/assets/js/agenda.js?v=14" defer></script>
+<script src="/assets/js/agenda.js?v=15" defer></script>
 <style>
   :root { --c-culto: #BE1E2D; --c-escola: #2E6A9E; --c-oracao: #3F6005; --c-especial: #D9822B; }
   .agenda-wrap { max-width: 920px; margin: 0 auto; }
@@ -49,6 +49,8 @@
   .item .pauta li + li { margin-top: 3px; }
   .item .arte { display: block; width: min(100%, 280px); margin-top: 12px; border-radius: 10px; box-shadow: 0 6px 18px rgba(21,36,15,.12); }
   .item .link-arte { display: inline-block; }
+  .item .artes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .item .artes .arte { margin-top: 0; }
   .item .acoes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
   .item .btn-agenda, .item .btn-saiba { display: inline-flex; align-items: center; gap: 6px; padding: .5rem 1rem; border-radius: 999px; font-size: .86rem; font-weight: 700; text-decoration: none; transition: background .2s, color .2s, border-color .2s; }
   .item .btn-agenda { border: 1px solid var(--linha); background: #fff; color: var(--videira); }
@@ -219,8 +221,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function imgArte(e) {
     if (!e.arte) return '';
-    const img = `<img class="arte" src="${e.arte}" alt="Arte: ${e.titulo}" loading="lazy">`;
-    return e.link ? `<a class="link-arte" ${attrsLink(e.link)}>${img}</a>` : img;
+    const artes = [].concat(e.arte).map(src => {
+      const img = `<img class="arte" src="${src}" alt="Arte: ${e.titulo}" loading="lazy">`;
+      return e.link ? `<a class="link-arte" ${attrsLink(e.link)}>${img}</a>` : img;
+    });
+    return artes.length > 1 ? `<div class="artes">${artes.join('')}</div>` : artes[0];
   }
   // Arte à esquerda e, ao lado, o resumo do evento com os botões
   function blocoResumo(e) {
