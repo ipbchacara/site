@@ -1,0 +1,108 @@
+/* ==========================================================================
+   ARTES DA AGENDA em HTML/CSS (ver /assets/js/banners.js)
+   Tudo é medido em --u: 1/1920 da largura da arte (formato largo 16:9).
+   Em caixas estreitas a arte vira retrato 4:5 e --u passa a 1/900 da largura.
+   ========================================================================== */
+.bns { display: grid; gap: 14px; margin-top: 12px; max-width: 760px; }
+.bn { container-type: inline-size; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 22px rgba(21,36,15,.16); }
+.bn-in { --u: calc(100cqi / 1920); position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
+.bn p { margin: 0; }
+.bn-in > * { position: absolute; }
+@container (max-width: 540px) {
+  .bn-in { --u: calc(100cqi / 900); aspect-ratio: 4 / 5; }
+}
+
+/* ── Reunião de Oração ─────────────────────────────── */
+.bn-oracao .bn-in { background: linear-gradient(180deg, #10172F 0%, #1F2A52 70%, #2D3A6B 100%); color: #FFF4DC; font-family: 'DM Sans', sans-serif; }
+.bn-oracao .bn-estrelas { right: 0; top: 0; width: 55%; height: 45%; }
+.bn-oracao .bn-lua { right: calc(136 * var(--u)); top: calc(116 * var(--u)); width: calc(108 * var(--u)); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 34% 40%, #E3D5B8 0 8%, transparent 9%), radial-gradient(circle at 66% 68%, #E3D5B8 0 6%, transparent 7%), #F4E9D2;
+  box-shadow: 0 0 calc(140 * var(--u)) calc(50 * var(--u)) rgba(244,233,210,.16); }
+.bn-oracao .bn-horizonte { left: 0; bottom: 0; width: 100%; height: auto; display: block; }
+.bn-oracao .bn-texto { left: calc(120 * var(--u)); top: calc(92 * var(--u)); }
+.bn-oracao .bn-sobre { display: flex; align-items: center; gap: calc(14 * var(--u)); font-weight: 800; font-size: max(11px, calc(30 * var(--u))); letter-spacing: .16em; text-transform: uppercase; color: #FFC857; }
+.bn-oracao .bn-sobre i { width: calc(14 * var(--u)); aspect-ratio: 1; border-radius: 50%; background: #FFC857; }
+.bn-oracao .bn-titulo { margin-top: calc(26 * var(--u)); font-family: 'DM Serif Display', Georgia, serif; font-size: calc(112 * var(--u)); line-height: 1; letter-spacing: -.01em; }
+.bn-oracao .bn-titulo em { color: #FFC857; }
+.bn-oracao .bn-hora { margin-top: calc(38 * var(--u)); font-weight: 800; font-size: calc(76 * var(--u)); line-height: 1; }
+.bn-oracao .bn-hora b { color: #FFC857; margin-left: .2em; }
+.bn-oracao .bn-versiculo { margin-top: calc(34 * var(--u)); font-family: 'DM Serif Display', Georgia, serif; font-style: italic; font-size: max(12px, calc(52 * var(--u))); line-height: 1.12; color: #E4E8F5; }
+.bn-oracao .bn-ref { margin-top: calc(12 * var(--u)); font-weight: 800; font-size: max(10px, calc(28 * var(--u))); letter-spacing: .14em; text-transform: uppercase; color: #FFC857; }
+@container (max-width: 540px) {
+  .bn-oracao .bn-horizonte { width: 160%; left: auto; right: 0; }
+  .bn-oracao .bn-estrelas { width: 100%; }
+  .bn-oracao .bn-lua { right: calc(60 * var(--u)); top: calc(56 * var(--u)); width: calc(80 * var(--u)); }
+  .bn-oracao .bn-texto { left: calc(60 * var(--u)); top: calc(64 * var(--u)); }
+  .bn-oracao .bn-sobre { font-size: max(11px, calc(30 * var(--u))); }
+  .bn-oracao .bn-titulo { font-size: calc(96 * var(--u)); margin-top: calc(22 * var(--u)); }
+  .bn-oracao .bn-hora { font-size: calc(70 * var(--u)); margin-top: calc(30 * var(--u)); }
+  .bn-oracao .bn-versiculo { font-size: max(12px, calc(46 * var(--u))); margin-top: calc(26 * var(--u)); }
+  .bn-oracao .bn-ref { font-size: max(10px, calc(28 * var(--u))); }
+}
+
+/* ── EBD jovens e adultos ──────────────────────────── */
+.bn-ebd-adultos .bn-in { background: #43111A; color: #F1E6CC; font-family: 'IM Fell English', Georgia, serif; }
+.bn-ebd-adultos .bn-gravura { top: 0; right: 0; width: calc(860 * var(--u)); height: 100%; background: #E8DBBE; overflow: hidden; }
+.bn-ebd-adultos .bn-gravura img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; mix-blend-mode: multiply; filter: sepia(.55) contrast(1.05); display: block; }
+.bn-ebd-adultos .bn-gravura::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(67,17,26,.3), rgba(67,17,26,0) 14%); }
+.bn-ebd-adultos .bn-credito { position: absolute; right: calc(28 * var(--u)); bottom: calc(22 * var(--u)); z-index: 1; font-family: 'IM Fell English SC', Georgia, serif; font-size: max(9px, calc(20 * var(--u))); letter-spacing: .08em; color: #43111A; background: rgba(232,219,190,.85); padding: .2em .5em; }
+.bn-ebd-adultos .bn-filete { top: 0; bottom: 0; left: calc(1052 * var(--u)); width: calc(8 * var(--u)); background: #B8924A; }
+.bn-ebd-adultos .bn-texto { left: calc(130 * var(--u)); top: calc(104 * var(--u)); width: calc(840 * var(--u)); }
+.bn-ebd-adultos .bn-sobre { font-family: 'IM Fell English SC', Georgia, serif; font-size: max(11px, calc(36 * var(--u))); letter-spacing: .14em; color: #D4AF63; }
+.bn-ebd-adultos .bn-titulo { margin-top: calc(34 * var(--u)); font-size: calc(196 * var(--u)); line-height: .86; letter-spacing: -.01em; }
+.bn-ebd-adultos .bn-titulo em { display: inline-block; padding-left: calc(80 * var(--u)); color: #D4AF63; }
+.bn-ebd-adultos .bn-de { margin-top: calc(30 * var(--u)); display: flex; align-items: center; gap: calc(24 * var(--u)); font-family: 'IM Fell English SC', Georgia, serif; font-size: max(11px, calc(44 * var(--u))); letter-spacing: .1em; }
+.bn-ebd-adultos .bn-de i { width: calc(120 * var(--u)); height: max(1px, calc(2 * var(--u))); background: #B8924A; }
+.bn-ebd-adultos .bn-de b { font-weight: 400; color: #D4AF63; }
+.bn-ebd-adultos .bn-pergunta { margin-top: calc(44 * var(--u)); max-width: calc(640 * var(--u)); font-size: max(11px, calc(38 * var(--u))); font-style: italic; line-height: 1.3; color: #E6D5B0; }
+.bn-ebd-adultos .bn-pergunta span { font-style: normal; font-family: 'IM Fell English SC', Georgia, serif; font-size: .7em; letter-spacing: .12em; color: #D4AF63; }
+.bn-ebd-adultos .bn-rodape { left: calc(130 * var(--u)); bottom: calc(96 * var(--u)); display: flex; flex-direction: column; gap: calc(8 * var(--u)); white-space: nowrap; }
+.bn-ebd-adultos .bn-classe { font-family: 'IM Fell English SC', Georgia, serif; font-size: max(11px, calc(34 * var(--u))); letter-spacing: .12em; color: #D4AF63; }
+.bn-ebd-adultos .bn-quando { font-size: calc(112 * var(--u)); line-height: 1; }
+.bn-ebd-adultos .bn-selo { --s: calc(290 * var(--u)); left: calc(1056 * var(--u)); top: calc(560 * var(--u)); width: var(--s); aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: #B8924A; box-shadow: 0 calc(10 * var(--u)) calc(30 * var(--u)) rgba(20,4,8,.45); display: grid; place-items: center; z-index: 2; }
+.bn-ebd-adultos .bn-selo > div { width: 88%; aspect-ratio: 1; border-radius: 50%; border: max(1px, calc(2 * var(--u))) solid #43111A; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #43111A; }
+.bn-ebd-adultos .bn-selo b { font-weight: 400; font-size: calc(var(--s) * .41); line-height: .85; }
+.bn-ebd-adultos .bn-selo span { font-family: 'IM Fell English SC', Georgia, serif; font-size: calc(var(--s) * .086); letter-spacing: .08em; line-height: 1.2; }
+@container (max-width: 540px) {
+  .bn-ebd-adultos .bn-gravura { width: 100%; height: calc(400 * var(--u)); }
+  .bn-ebd-adultos .bn-gravura img { object-position: 50% 30%; }
+  .bn-ebd-adultos .bn-filete { top: calc(396 * var(--u)); bottom: auto; left: 0; width: 100%; height: calc(8 * var(--u)); }
+  .bn-ebd-adultos .bn-selo { --s: calc(200 * var(--u)); left: calc(770 * var(--u)); top: calc(400 * var(--u)); }
+  .bn-ebd-adultos .bn-texto { left: calc(60 * var(--u)); top: calc(450 * var(--u)); width: calc(780 * var(--u)); }
+  .bn-ebd-adultos .bn-sobre { font-size: max(11px, calc(30 * var(--u))); }
+  .bn-ebd-adultos .bn-titulo { font-size: calc(150 * var(--u)); margin-top: calc(20 * var(--u)); }
+  .bn-ebd-adultos .bn-de { font-size: max(11px, calc(36 * var(--u))); margin-top: calc(24 * var(--u)); }
+  .bn-ebd-adultos .bn-pergunta { display: none; }
+  .bn-ebd-adultos .bn-rodape { left: calc(60 * var(--u)); bottom: calc(60 * var(--u)); }
+  .bn-ebd-adultos .bn-classe { font-size: max(11px, calc(30 * var(--u))); }
+  .bn-ebd-adultos .bn-quando { font-size: calc(96 * var(--u)); }
+  .bn-ebd-adultos .bn-credito { display: none; }
+}
+
+/* ── EBD das crianças ──────────────────────────────── */
+.bn-ebd-criancas .bn-in { background: #FBF5E9; color: #2B3A55; font-family: 'Baloo 2', sans-serif; }
+.bn-ebd-criancas .bn-cena { inset: 0; width: 100%; height: 100%; }
+.bn-ebd-criancas .bn-alta { display: none; }
+.bn-ebd-criancas .bn-topo, .bn-ebd-criancas .bn-base { left: 0; right: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.bn-ebd-criancas .bn-topo { top: calc(190 * var(--u)); }
+.bn-ebd-criancas .bn-sobre { background: #2F6B45; color: #fff; font-weight: 700; font-size: max(11px, calc(32 * var(--u))); letter-spacing: .06em; padding: .25em .9em .12em; border-radius: 999px; }
+.bn-ebd-criancas .bn-titulo { margin-top: calc(30 * var(--u)); font-weight: 800; line-height: .92; letter-spacing: -.01em; }
+.bn-ebd-criancas .bn-titulo span { display: block; font-size: calc(150 * var(--u)); }
+.bn-ebd-criancas .bn-titulo .bn-verde { font-size: calc(130 * var(--u)); color: #2F6B45; }
+.bn-ebd-criancas .bn-titulo em { font-style: normal; color: #E07A22; }
+.bn-ebd-criancas .bn-base { top: calc(710 * var(--u)); color: #fff; }
+.bn-ebd-criancas .bn-hora { display: flex; align-items: baseline; gap: calc(26 * var(--u)); font-weight: 800; font-size: calc(66 * var(--u)); line-height: 1; }
+.bn-ebd-criancas .bn-hora b { font-size: calc(150 * var(--u)); color: #F2B233; }
+.bn-ebd-criancas .bn-sub { font-weight: 600; font-size: max(11px, calc(34 * var(--u))); line-height: 1.3; color: #E9EEF2; }
+@container (max-width: 540px) {
+  .bn-ebd-criancas .bn-larga { display: none; }
+  .bn-ebd-criancas .bn-alta { display: block; }
+  .bn-ebd-criancas .bn-topo { top: calc(150 * var(--u)); }
+  .bn-ebd-criancas .bn-sobre { font-size: max(11px, calc(32 * var(--u))); }
+  .bn-ebd-criancas .bn-titulo span { font-size: calc(104 * var(--u)); }
+  .bn-ebd-criancas .bn-titulo .bn-verde { font-size: calc(92 * var(--u)); }
+  .bn-ebd-criancas .bn-base { top: calc(800 * var(--u)); }
+  .bn-ebd-criancas .bn-hora { font-size: calc(54 * var(--u)); }
+  .bn-ebd-criancas .bn-hora b { font-size: calc(120 * var(--u)); }
+  .bn-ebd-criancas .bn-sub { font-size: max(11px, calc(30 * var(--u))); margin-top: calc(10 * var(--u)); }
+}
