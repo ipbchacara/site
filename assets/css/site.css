@@ -405,6 +405,16 @@ a.cartao:hover .icone { transform: scale(1.08) rotate(-4deg); }
 .btn-branco:hover { background: var(--pergaminho); color: var(--uva-escura); }
 @media (max-width: 760px) { .cartaz-img { width: min(62%, 230px); } }
 
+/* Destaque de campanha da IPB (ex.: CNE / Minha Cidade para Cristo): azul e roxo da campanha */
+.destaque.cne { background: #315D93; align-items: center; }
+.destaque.cne p { color: #DCE8F5; }
+.destaque.cne .sobretitulo { color: #C4F7D0; }
+.destaque.cne .sobretitulo::before { border-color: #C4F7D0; }
+.destaque.cne .botoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.destaque.cne .destaque-arte { background: radial-gradient(70% 70% at 50% 45%, #497FBE, #2A5285); padding: clamp(24px, 4vw, 40px); }
+.btn-menta { background: #C4F7D0; color: #1D3A5E; }
+.btn-menta:hover { background: #fff; color: #1D3A5E; }
+
 /* Carrossel de destaques da página inicial */
 .carrossel-janela { overflow: hidden; border-radius: var(--raio-g); }
 .carrossel-trilho { display: flex; transition: transform .7s var(--ease); }
