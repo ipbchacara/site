@@ -6,9 +6,9 @@
 // Programação fixa. dia: 0 = domingo, 1 = segunda ... 6 = sábado
 const PROGRAMACAO_SEMANAL = [
   { dia: 0, titulo: 'Escola Bíblica Dominical', hora: '18h00', tipo: 'escola', selo: 'Semanal', sub: 'Jovens e adultos: Catecismo Maior · Crianças: classes por idade', link: '/ministerios#ebd',
-    arte: ['/assets/img/ebd-adultos-catecismo-maior.jpg', '/assets/img/ebd-criancas.jpg'] },
+    banner: ['ebd-adultos', 'ebd-criancas'] },
   { dia: 0, titulo: 'Culto de Adoração',        hora: '19h30', tipo: 'culto',  selo: 'Semanal' },
-  { dia: 2, titulo: 'Reunião de Oração',        hora: '19h30', tipo: 'oracao', selo: 'Semanal', arte: '/assets/img/reuniao-de-oracao.jpg' },
+  { dia: 2, titulo: 'Reunião de Oração',        hora: '19h30', tipo: 'oracao', selo: 'Semanal', banner: 'oracao' },
 ];
 
 // Eventos especiais. Formato da data: 'AAAA-MM-DD'.
@@ -21,6 +21,7 @@ const PROGRAMACAO_SEMANAL = [
 //                                    mantém o item semanal em /eventos, riscado e com o motivo; some da página inicial
 //   arte: '/assets/img/arquivo.jpg' imagem do evento, mostrada só na página /eventos (clicável se houver link)
 //                                    também vale na programação semanal; use uma lista ['a.jpg', 'b.jpg'] para várias artes
+//   banner: 'oracao'                 arte feita em HTML (assets/js/banners.js), mostrada só em /eventos; aceita lista
 //   link: endereço de outro site (https://...) abre em nova aba
 //   local: 'Nome, endereço'          lugar do evento no "Adicionar à agenda" (padrão: o nosso templo)
 //   duracao: 90                      minutos, para o "Adicionar à agenda" (padrão: 120)
